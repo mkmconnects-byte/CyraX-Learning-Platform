@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- courses.xml: Stores all course data for the MiniLMS platform -->
+<courses>
+
+  <course id="c1" level="Foundation">
+    <title>Introduction to Programming</title>
+    <duration>6 Weeks</duration>
+    <instructor>Dr. Alice Morgan</instructor>
+    <description>Learn the core concepts of programming logic, variables, loops, and functions using Python as the teaching language.</description>
+    <image>https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>What is Programming?</lesson>
+      <lesson>Variables and Data Types</lesson>
+      <lesson>Control Flow: If/Else</lesson>
+      <lesson>Loops: For and While</lesson>
+      <lesson>Functions and Scope</lesson>
+      <lesson>Introduction to Debugging</lesson>
+    </lessons>
+  </course>
+
+  <course id="c2" level="Foundation">
+    <title>Web Development Fundamentals</title>
+    <duration>8 Weeks</duration>
+    <instructor>Prof. James Carter</instructor>
+    <description>A beginner-friendly introduction to building websites using HTML5, CSS3, and the basics of responsive design.</description>
+    <image>https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>HTML5 Structure and Semantics</lesson>
+      <lesson>CSS3 Selectors and Properties</lesson>
+      <lesson>Box Model and Layout</lesson>
+      <lesson>Flexbox Basics</lesson>
+      <lesson>Responsive Design with Media Queries</lesson>
+      <lesson>Deploying a Static Website</lesson>
+    </lessons>
+  </course>
+
+  <course id="c3" level="Undergraduate">
+    <title>JavaScript Essentials</title>
+    <duration>8 Weeks</duration>
+    <instructor>Ms. Sofia Nguyen</instructor>
+    <description>Master the fundamentals of JavaScript including DOM manipulation, events, and asynchronous programming.</description>
+    <image>https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>JavaScript Syntax and Operators</lesson>
+      <lesson>DOM Manipulation</lesson>
+      <lesson>Event Handling</lesson>
+      <lesson>Arrays and Objects</lesson>
+      <lesson>Fetch API and AJAX</lesson>
+      <lesson>ES6+ Features</lesson>
+      <lesson>Error Handling</lesson>
+    </lessons>
+  </course>
+
+  <course id="c4" level="Undergraduate">
+    <title>Advanced Java Programming</title>
+    <duration>10 Weeks</duration>
+    <instructor>Dr. Samuel Osei</instructor>
+    <description>Deep dive into Java OOP principles, generics, collections, multithreading, and enterprise-level patterns.</description>
+    <image>https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>OOP Revisited: Classes and Interfaces</lesson>
+      <lesson>Generics and Collections Framework</lesson>
+      <lesson>Exception Handling Strategies</lesson>
+      <lesson>Multithreading and Concurrency</lesson>
+      <lesson>Java I/O and NIO</lesson>
+      <lesson>Design Patterns in Java</lesson>
+      <lesson>Unit Testing with JUnit</lesson>
+      <lesson>Introduction to Spring Framework</lesson>
+    </lessons>
+  </course>
+
+  <course id="c5" level="Undergraduate">
+    <title>Data Structures and Algorithms</title>
+    <duration>10 Weeks</duration>
+    <instructor>Prof. Linda Zhao</instructor>
+    <description>Explore essential data structures and algorithmic thinking required for technical interviews and efficient software development.</description>
+    <image>https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>Arrays and Linked Lists</lesson>
+      <lesson>Stacks and Queues</lesson>
+      <lesson>Trees and Binary Search Trees</lesson>
+      <lesson>Graphs and Traversal Algorithms</lesson>
+      <lesson>Sorting Algorithms</lesson>
+      <lesson>Searching Algorithms</lesson>
+      <lesson>Dynamic Programming</lesson>
+      <lesson>Big-O Complexity Analysis</lesson>
+    </lessons>
+  </course>
+
+  <course id="c6" level="Undergraduate">
+    <title>Database Systems</title>
+    <duration>8 Weeks</duration>
+    <instructor>Dr. Michael Torres</instructor>
+    <description>Learn relational database design, SQL querying, normalization, and an introduction to NoSQL databases.</description>
+    <image>https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>Relational Model and ER Diagrams</lesson>
+      <lesson>SQL: SELECT, INSERT, UPDATE, DELETE</lesson>
+      <lesson>Joins and Subqueries</lesson>
+      <lesson>Database Normalization (1NF–3NF)</lesson>
+      <lesson>Transactions and ACID Properties</lesson>
+      <lesson>Indexes and Query Optimization</lesson>
+      <lesson>Introduction to MongoDB</lesson>
+    </lessons>
+  </course>
+
+  <course id="c7" level="Undergraduate">
+    <title>Software Engineering</title>
+    <duration>10 Weeks</duration>
+    <instructor>Prof. Rachel Kim</instructor>
+    <description>Understand the software development lifecycle, Agile methodologies, version control, and team collaboration practices.</description>
+    <image>https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>Software Development Life Cycle</lesson>
+      <lesson>Agile and Scrum Methodology</lesson>
+      <lesson>Requirements Engineering</lesson>
+      <lesson>UML Diagrams</lesson>
+      <lesson>Version Control with Git</lesson>
+      <lesson>Code Review and Refactoring</lesson>
+      <lesson>Testing Strategies</lesson>
+      <lesson>Deployment and DevOps Overview</lesson>
+    </lessons>
+  </course>
+
+  <course id="c8" level="Foundation">
+    <title>UI/UX Design Principles</title>
+    <duration>6 Weeks</duration>
+    <instructor>Ms. Priya Sharma</instructor>
+    <description>Discover the principles of user-centered design, wireframing, prototyping, and creating intuitive digital experiences.</description>
+    <image>https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>Introduction to User-Centred Design</lesson>
+      <lesson>Design Thinking Process</lesson>
+      <lesson>Wireframing and Prototyping</lesson>
+      <lesson>Typography and Colour Theory</lesson>
+      <lesson>Accessibility in Design</lesson>
+      <lesson>Usability Testing</lesson>
+    </lessons>
+  </course>
+
+  <course id="c9" level="Postgraduate">
+    <title>Cybersecurity Basics</title>
+    <duration>12 Weeks</duration>
+    <instructor>Dr. Ethan Williams</instructor>
+    <description>An advanced introduction to cybersecurity concepts, network security, ethical hacking fundamentals, and data protection regulations.</description>
+    <image>https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>Cybersecurity Landscape and Threats</lesson>
+      <lesson>Network Security Fundamentals</lesson>
+      <lesson>Cryptography and Encryption</lesson>
+      <lesson>Authentication and Access Control</lesson>
+      <lesson>Ethical Hacking Overview</lesson>
+      <lesson>Web Application Security (OWASP)</lesson>
+      <lesson>Incident Response</lesson>
+      <lesson>GDPR and Data Protection</lesson>
+      <lesson>Security Auditing</lesson>
+    </lessons>
+  </course>
+
+  <course id="c10" level="Postgraduate">
+    <title>Artificial Intelligence Fundamentals</title>
+    <duration>12 Weeks</duration>
+    <instructor>Prof. Yuki Tanaka</instructor>
+    <description>Explore the foundations of AI including machine learning, neural networks, natural language processing, and ethical AI considerations.</description>
+    <image>https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>History and Scope of AI</lesson>
+      <lesson>Machine Learning Basics</lesson>
+      <lesson>Supervised vs Unsupervised Learning</lesson>
+      <lesson>Neural Networks and Deep Learning</lesson>
+      <lesson>Natural Language Processing</lesson>
+      <lesson>Computer Vision Overview</lesson>
+      <lesson>Reinforcement Learning</lesson>
+      <lesson>AI Ethics and Bias</lesson>
+      <lesson>AI in Industry: Case Studies</lesson>
+      <lesson>Building a Simple ML Model</lesson>
+    </lessons>
+  </course>
+
+</courses>
