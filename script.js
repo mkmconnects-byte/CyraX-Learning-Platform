@@ -1,5 +1,5 @@
-/**
- * script.js — MiniLMS Online Learning Platform
+﻿/**
+ * script.js — CyraX Online Learning Platform
  * -----------------------------------------------
  * Handles:
  *  1. Loading course data from courses.xml (XMLHttpRequest)
