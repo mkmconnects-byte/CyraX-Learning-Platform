@@ -1,4 +1,4 @@
-﻿/**
+/**
  * script.js — CyraX Online Learning Platform
  * -----------------------------------------------
  * Handles:
@@ -103,15 +103,15 @@ function renderCourses(courses) {
   grid.innerHTML = '';
 
   if (courses.length === 0) {
-    noResults.classList.remove('hidden');
+    noResults.classList.remove('crx-hidden');
     return;
   }
 
-  noResults.classList.add('hidden');
+  noResults.classList.add('crx-hidden');
 
   courses.forEach(function (course) {
     const card = document.createElement('div');
-    card.className = 'course-card';
+    card.className = 'crx-course-card';
     card.setAttribute('data-id', course.id);
     card.setAttribute('data-level', course.level);
 
@@ -123,26 +123,26 @@ function renderCourses(courses) {
 
     // Build the card's inner HTML
     card.innerHTML = `
-      <div class="course-card-image">
+      <div class="crx-course-card-image">
         <img src="${escapeHtml(course.image)}"
              alt="${escapeHtml(course.title)}"
              onerror="this.parentElement.innerHTML='<i class=\\"fas fa-book-open\\"></i>'" />
       </div>
-      <div class="course-card-body">
-        <span class="course-level-badge ${badgeClass}">${escapeHtml(course.level)}</span>
-        <h3 class="course-card-title">${escapeHtml(course.title)}</h3>
-        <p class="course-card-desc">${escapeHtml(course.description)}</p>
-        <div class="course-meta">
+      <div class="crx-course-card-body">
+        <span class="crx-course-level-badge ${badgeClass}">${escapeHtml(course.level)}</span>
+        <h3 class="crx-course-card-title">${escapeHtml(course.title)}</h3>
+        <p class="crx-course-card-desc">${escapeHtml(course.description)}</p>
+        <div class="crx-course-meta">
           <span><i class="fas fa-clock"></i> ${escapeHtml(course.duration)}</span>
           <span><i class="fas fa-list"></i> ${course.lessons.length} Lessons</span>
         </div>
       </div>
-      <div class="course-card-footer">
-        <div class="course-instructor">
-          <div class="instructor-avatar">${escapeHtml(initials)}</div>
+      <div class="crx-course-card-footer">
+        <div class="crx-course-instructor">
+          <div class="crx-instructor-avatar">${escapeHtml(initials)}</div>
           <span>${escapeHtml(course.instructor)}</span>
         </div>
-        <button class="btn btn-outline view-lessons-btn"
+        <button class="crx-btn crx-btn-outline crx-view-lessons-btn"
                 data-id="${escapeHtml(course.id)}">
           View Lessons
         </button>
@@ -161,11 +161,11 @@ function renderCourses(courses) {
 /** Return the CSS class name for a level badge */
 function getBadgeClass(level) {
   const map = {
-    'Foundation':    'badge-foundation',
-    'Undergraduate': 'badge-undergraduate',
-    'Postgraduate':  'badge-postgraduate'
+    'Foundation':    'crx-badge-foundation',
+    'Undergraduate': 'crx-badge-undergraduate',
+    'Postgraduate':  'crx-badge-postgraduate'
   };
-  return map[level] || 'badge-foundation';
+  return map[level] || 'crx-badge-foundation';
 }
 
 /** Generate up-to-2-letter initials from an instructor name */
@@ -196,14 +196,14 @@ function initFilters() {
   const filterBar = document.getElementById('filterBar');
 
   filterBar.addEventListener('click', function (e) {
-    const btn = e.target.closest('.filter-btn');
+    const btn = e.target.closest('.crx-filter-btn');
     if (!btn) return;
 
     // Update active state
-    document.querySelectorAll('.filter-btn').forEach(function (b) {
-      b.classList.remove('active');
+    document.querySelectorAll('.crx-filter-btn').forEach(function (b) {
+      b.classList.remove('crx-active');
     });
-    btn.classList.add('active');
+    btn.classList.add('crx-active');
 
     activeFilter = btn.getAttribute('data-level');
 
@@ -237,7 +237,7 @@ function showLessons(courseId) {
   // Build lesson header HTML
   lessonHeader.innerHTML = `
     <h2>${escapeHtml(course.title)}</h2>
-    <div class="lesson-meta">
+    <div class="crx-lesson-meta">
       <span><i class="fas fa-layer-group"></i> ${escapeHtml(course.level)}</span>
       <span><i class="fas fa-clock"></i> ${escapeHtml(course.duration)}</span>
       <span><i class="fas fa-user-tie"></i> ${escapeHtml(course.instructor)}</span>
@@ -249,23 +249,23 @@ function showLessons(courseId) {
   lessonList.innerHTML = '';
   course.lessons.forEach(function (lesson, index) {
     const item = document.createElement('div');
-    item.className = 'lesson-item';
+    item.className = 'crx-lesson-item';
     item.innerHTML = `
-      <div class="lesson-number">${index + 1}</div>
-      <span class="lesson-title">${escapeHtml(lesson)}</span>
-      <i class="fas fa-play-circle lesson-icon"></i>
+      <div class="crx-lesson-number">${index + 1}</div>
+      <span class="crx-lesson-title">${escapeHtml(lesson)}</span>
+      <i class="fas fa-play-circle crx-lesson-icon"></i>
     `;
     lessonList.appendChild(item);
   });
 
   // Show the lesson section and scroll to it
-  lessonSection.classList.remove('hidden');
+  lessonSection.classList.remove('crx-hidden');
   lessonSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function hideLessons() {
   const lessonSection = document.getElementById('lessonSection');
-  lessonSection.classList.add('hidden');
+  lessonSection.classList.add('crx-hidden');
 }
 
 /* ============================================================
@@ -314,8 +314,8 @@ function initFormValidation() {
       // Hide form, show success message
       form.style.display = 'none';
       const successMsg = document.getElementById('formSuccess');
-      successMsg.classList.remove('hidden');
-      successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      successMsg.classList.remove('crx-hidden');
+      successMsg.scrollIntoView({ behavior: 'smooth', block: 'crx-center' });
     }
   });
 
@@ -453,9 +453,9 @@ function showFieldError(fieldId, message) {
 
   if (el) {
     if (message) {
-      el.classList.add('error');
+      el.classList.add('crx-error');
     } else {
-      el.classList.remove('error');
+      el.classList.remove('crx-error');
     }
   }
 
@@ -468,7 +468,7 @@ function showFieldError(fieldId, message) {
 function clearFieldError(fieldId) {
   const el      = document.getElementById(fieldId);
   const errorEl = document.getElementById(fieldId + 'Error');
-  if (el)      el.classList.remove('error');
+  if (el)      el.classList.remove('crx-error');
   if (errorEl) errorEl.textContent = '';
 }
 
@@ -491,21 +491,21 @@ function initSignInValidation() {
     // Email
     if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim())) {
       emailErr.textContent = 'Please enter a valid email.';
-      email.classList.add('error');
+      email.classList.add('crx-error');
       valid = false;
     } else {
       emailErr.textContent = '';
-      email.classList.remove('error');
+      email.classList.remove('crx-error');
     }
 
     // Password
     if (!password.value) {
       pwErr.textContent = 'Password is required.';
-      password.classList.add('error');
+      password.classList.add('crx-error');
       valid = false;
     } else {
       pwErr.textContent = '';
-      password.classList.remove('error');
+      password.classList.remove('crx-error');
     }
 
     if (valid) {
@@ -521,15 +521,15 @@ function initSignInValidation() {
 
 /** Navbar: add shadow on scroll & highlight active link */
 function initNavbar() {
-  const navbar = document.getElementById('navbar');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navbar = document.getElementById('crx-navbar');
+  const navLinks = document.querySelectorAll('.crx-nav-link');
 
   // Scroll shadow
   window.addEventListener('scroll', function () {
     if (window.scrollY > 20) {
-      navbar.classList.add('scrolled');
+      navbar.classList.add('crx-scrolled');
     } else {
-      navbar.classList.remove('scrolled');
+      navbar.classList.remove('crx-scrolled');
     }
 
     // Highlight the active section link
@@ -539,10 +539,10 @@ function initNavbar() {
   // Smooth scroll for anchor links and active class
   navLinks.forEach(function (link) {
     link.addEventListener('click', function () {
-      navLinks.forEach(function (l) { l.classList.remove('active'); });
-      link.classList.add('active');
+      navLinks.forEach(function (l) { l.classList.remove('crx-active'); });
+      link.classList.add('crx-active');
       // Close mobile menu if open
-      document.getElementById('navLinks').classList.remove('open');
+      document.getElementById('navLinks').classList.remove('crx-open');
     });
   });
 }
@@ -553,7 +553,7 @@ function initNavbar() {
  *  when a section is actually found in the viewport. */
 function updateActiveNavLink() {
   const sections = ['home', 'courses', 'register', 'about', 'contact'];
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navLinks = document.querySelectorAll('.crx-nav-link');
   let current = '';
 
   sections.forEach(function (id) {
@@ -569,20 +569,20 @@ function updateActiveNavLink() {
   if (current === '') return;
 
   navLinks.forEach(function (link) {
-    link.classList.remove('active');
+    link.classList.remove('crx-active');
     if (link.getAttribute('href') === '#' + current) {
-      link.classList.add('active');
+      link.classList.add('crx-active');
     }
   });
 }
 
 /** Hamburger menu toggle (mobile) */
 function initHamburger() {
-  const btn   = document.getElementById('hamburger');
+  const btn   = document.getElementById('crx-hamburger');
   const links = document.getElementById('navLinks');
 
   btn.addEventListener('click', function () {
-    links.classList.toggle('open');
+    links.classList.toggle('crx-open');
   });
 }
 
@@ -595,14 +595,14 @@ function initModals() {
   // Open sign-in modal
   if (signInBtn) {
     signInBtn.addEventListener('click', function () {
-      signInModal.classList.remove('hidden');
+      signInModal.classList.remove('crx-hidden');
     });
   }
 
   // Close modal via X button
   if (closeSignIn) {
     closeSignIn.addEventListener('click', function () {
-      signInModal.classList.add('hidden');
+      signInModal.classList.add('crx-hidden');
     });
   }
 
@@ -610,7 +610,7 @@ function initModals() {
   if (signInModal) {
     signInModal.addEventListener('click', function (e) {
       if (e.target === signInModal) {
-        signInModal.classList.add('hidden');
+        signInModal.classList.add('crx-hidden');
       }
     });
   }
@@ -618,7 +618,7 @@ function initModals() {
   // Escape key closes modal
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
-      signInModal.classList.add('hidden');
+      signInModal.classList.add('crx-hidden');
     }
   });
 
@@ -629,7 +629,7 @@ function initModals() {
 
 /** Password visibility toggle */
 function initPasswordToggles() {
-  document.querySelectorAll('.toggle-password').forEach(function (btn) {
+  document.querySelectorAll('.crx-toggle-password').forEach(function (btn) {
     btn.addEventListener('click', function () {
       const targetId = btn.getAttribute('data-target');
       const input = document.getElementById(targetId);
@@ -674,11 +674,11 @@ function initContactForm() {
     const nameErr = document.getElementById('contactNameError');
     if (!name.value.trim() || name.value.trim().length < 2) {
       nameErr.textContent = 'Please enter your name.';
-      name.classList.add('error');
+      name.classList.add('crx-error');
       valid = false;
     } else {
       nameErr.textContent = '';
-      name.classList.remove('error');
+      name.classList.remove('crx-error');
     }
 
     // Email
@@ -686,11 +686,11 @@ function initContactForm() {
     const emailErr = document.getElementById('contactEmailError');
     if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim())) {
       emailErr.textContent = 'Please enter a valid email address.';
-      email.classList.add('error');
+      email.classList.add('crx-error');
       valid = false;
     } else {
       emailErr.textContent = '';
-      email.classList.remove('error');
+      email.classList.remove('crx-error');
     }
 
     // Subject
@@ -698,11 +698,11 @@ function initContactForm() {
     const subjectErr = document.getElementById('contactSubjectError');
     if (!subject.value.trim()) {
       subjectErr.textContent = 'Please enter a subject.';
-      subject.classList.add('error');
+      subject.classList.add('crx-error');
       valid = false;
     } else {
       subjectErr.textContent = '';
-      subject.classList.remove('error');
+      subject.classList.remove('crx-error');
     }
 
     // Message
@@ -710,19 +710,19 @@ function initContactForm() {
     const messageErr = document.getElementById('contactMessageError');
     if (!message.value.trim() || message.value.trim().length < 10) {
       messageErr.textContent = 'Please enter a message (at least 10 characters).';
-      message.classList.add('error');
+      message.classList.add('crx-error');
       valid = false;
     } else {
       messageErr.textContent = '';
-      message.classList.remove('error');
+      message.classList.remove('crx-error');
     }
 
     if (valid) {
       form.style.display = 'none';
       const successMsg = document.getElementById('contactSuccess');
       if (successMsg) {
-        successMsg.classList.remove('hidden');
-        successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        successMsg.classList.remove('crx-hidden');
+        successMsg.scrollIntoView({ behavior: 'smooth', block: 'crx-center' });
       }
     }
   });
