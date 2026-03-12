@@ -437,6 +437,7 @@ img {
   border: 1px solid var(--border);
 }
 
+.contact-section--light .contact-card h2,
 .contact-section--light .contact-card h4 {
   color: var(--dark);
 }
@@ -1255,6 +1256,7 @@ img {
   margin: 0 auto 1rem;
 }
 
+.contact-card h2,
 .contact-card h4 {
   font-size: 0.95rem;
   font-weight: 700;
