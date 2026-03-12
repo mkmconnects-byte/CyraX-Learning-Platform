@@ -315,7 +315,7 @@ function initFormValidation() {
       form.style.display = 'none';
       const successMsg = document.getElementById('formSuccess');
       successMsg.classList.remove('crx-hidden');
-      successMsg.scrollIntoView({ behavior: 'smooth', block: 'crx-center' });
+      successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   });
 
@@ -521,7 +521,7 @@ function initSignInValidation() {
 
 /** Navbar: add shadow on scroll & highlight active link */
 function initNavbar() {
-  const navbar = document.getElementById('crx-navbar');
+  const navbar = document.getElementById('navbar');
   const navLinks = document.querySelectorAll('.crx-nav-link');
 
   // Scroll shadow
@@ -578,7 +578,7 @@ function updateActiveNavLink() {
 
 /** Hamburger menu toggle (mobile) */
 function initHamburger() {
-  const btn   = document.getElementById('crx-hamburger');
+  const btn   = document.getElementById('hamburger');
   const links = document.getElementById('navLinks');
 
   btn.addEventListener('click', function () {
@@ -722,7 +722,7 @@ function initContactForm() {
       const successMsg = document.getElementById('contactSuccess');
       if (successMsg) {
         successMsg.classList.remove('crx-hidden');
-        successMsg.scrollIntoView({ behavior: 'smooth', block: 'crx-center' });
+        successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     }
   });
