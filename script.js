@@ -2,12 +2,49 @@
 let allCourses = []; 
 let activeFilter = 'All'; 
 
+function getFallbackCourses() {
+  return [
+    { id: 'c1', level: 'Foundation', title: 'Introduction to Programming', duration: '6 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c2', level: 'Foundation', title: 'Web Development Fundamentals', duration: '8 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c3', level: 'Undergraduate', title: 'JavaScript Essentials', duration: '8 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c4', level: 'Undergraduate', title: 'Advanced Java Programming', duration: '10 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c5', level: 'Undergraduate', title: 'Data Structures and Algorithms', duration: '10 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c6', level: 'Undergraduate', title: 'Database Systems', duration: '8 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c7', level: 'Undergraduate', title: 'Software Engineering', duration: '10 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c8', level: 'Foundation', title: 'UI/UX Design Principles', duration: '6 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c9', level: 'Postgraduate', title: 'Cybersecurity Basics', duration: '12 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c10', level: 'Postgraduate', title: 'Artificial Intelligence Fundamentals', duration: '12 Weeks', instructor: '', description: '', image: '', lessons: [] }
+  ];
+}
+
+function useFallbackCourses(reason) {
+  console.warn('Using fallback course data: ' + reason);
+  allCourses = getFallbackCourses();
+  hideSpinner();
+  renderCourses(allCourses);
+  populateCourseDropdown(allCourses);
+}
+
 function loadCourses() {
+  const hasCourseDropdown = !!document.getElementById('courseSelect');
+  console.log('[loadCourses] hasCourseDropdown:', hasCourseDropdown);
+
+  // Ensure register page dropdown is usable immediately, even before network/XML completes.
+  if (hasCourseDropdown) {
+    const fallbackNow = getFallbackCourses();
+    console.log('[loadCourses] Populating with', fallbackNow.length, 'fallback courses');
+    populateCourseDropdown(fallbackNow);
+  }
+
   const xhr = new XMLHttpRequest();
 
-
-  xhr.open('GET', 'courses.xml', true);
-  xhr.overrideMimeType('text/xml');
+  try {
+    xhr.open('GET', 'courses.xml', true);
+    xhr.overrideMimeType('text/xml');
+  } catch (err) {
+    useFallbackCourses('XHR open failed');
+    return;
+  }
 
   xhr.onload = function () {
     if (xhr.status === 200 || xhr.status === 0) {
@@ -29,8 +66,7 @@ function loadCourses() {
       }
 
       if (!xmlDoc) {
-        console.error('Failed to parse XML document.');
-        hideSpinner();
+        useFallbackCourses('XML parsing failed');
         return;
       }
 
@@ -55,21 +91,28 @@ function loadCourses() {
         };
       });
 
+      if (allCourses.length === 0) {
+        useFallbackCourses('No course nodes found in XML');
+        return;
+      }
+
       hideSpinner();
       renderCourses(allCourses);          
       populateCourseDropdown(allCourses);
     } else {
-      console.error('XHR error: ' + xhr.status);
-      hideSpinner();
+      useFallbackCourses('XHR status ' + xhr.status);
     }
   };
 
   xhr.onerror = function () {
-    console.error('Network error while loading courses.xml');
-    hideSpinner();
+    useFallbackCourses('Network error while loading courses.xml');
   };
 
-  xhr.send();
+  try {
+    xhr.send();
+  } catch (err) {
+    useFallbackCourses('XHR send failed');
+  }
 }
 
 
@@ -180,6 +223,7 @@ function escapeHtml(str) {
 
 function initFilters() {
   const filterBar = document.getElementById('filterBar');
+  if (!filterBar) return;
 
   filterBar.addEventListener('click', function (e) {
     const btn = e.target.closest('.crx-filter-btn');
@@ -256,6 +300,7 @@ function hideLessons() {
 
 function populateCourseDropdown(courses) {
   const select = document.getElementById('courseSelect');
+  console.log('populateCourseDropdown called with', courses.length, 'courses. Select element:', !!select);
   if (!select) return;
 
   // Clear existing options except the placeholder
@@ -269,6 +314,8 @@ function populateCourseDropdown(courses) {
     option.textContent = course.title + ' (' + course.level + ')';
     select.appendChild(option);
   });
+
+  console.log('Populated dropdown. Total options now:', select.options.length);
 }
 
 
