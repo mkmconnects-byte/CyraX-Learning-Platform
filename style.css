@@ -276,24 +276,7 @@ img {
   color: var(--white);
 }
 
-.crx-hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.35rem 1rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #c7d2fe;
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.03em;
-}
 
-.crx-hero-badge i {
-  color: var(--warning);
-}
 
 .crx-hero-title {
   font-size: clamp(2rem, 5vw, 3.5rem);
@@ -615,20 +598,23 @@ img {
 .crx-course-card-image {
   width: 100%;
   height: 180px;
-  object-fit: cover;
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(135deg, var(--primary), var(--accent));
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: var(--white);
   font-size: 3rem;
   flex-shrink: 0;
 }
 
 .crx-course-card-image img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  margin: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .crx-course-card-body {
