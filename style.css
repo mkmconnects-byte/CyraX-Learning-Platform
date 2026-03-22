@@ -1,9 +1,4 @@
-/* ==========================================================
-   style.css — CyraX Online Learning Platform
-   Modern, clean design inspired by Coursera / Udemy
-   ========================================================== */
 
-/* ---- CSS Custom Properties (Design Tokens) ---- */
 :root {
   --primary:       #4f46e5;   /* Indigo */
   --primary-dark:  #3730a3;
@@ -27,7 +22,7 @@
   --transition:    0.25s ease;
 }
 
-/* ---- Reset & Base ---- */
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;

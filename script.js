@@ -1,33 +1,11 @@
-/**
- * script.js — CyraX Online Learning Platform
- * -----------------------------------------------
- * Handles:
- *  1. Loading course data from courses.xml (XMLHttpRequest)
- *  2. Dynamically rendering course cards
- *  3. Filtering courses by level
- *  4. Displaying lessons when a course is selected
- *  5. Populating the registration form's course dropdown
- *  6. JavaScript form validation (no HTML5 built-in validation)
- *  7. UI interactions (navbar scroll, hamburger, modal, password toggle)
- */
 
-/* ============================================================
-   GLOBAL STATE
-   ============================================================ */
-let allCourses = []; // Stores all parsed course objects from XML
-let activeFilter = 'All'; // Currently selected filter level
+let allCourses = []; 
+let activeFilter = 'All'; 
 
-/* ============================================================
-   1. XML LOADING
-   ============================================================
-   Uses XMLHttpRequest (XHR) to fetch courses.xml.
-   The XML is parsed using the browser's DOMParser.
-   Each <course> element is mapped to a plain JavaScript object.
-   ============================================================ */
 function loadCourses() {
   const xhr = new XMLHttpRequest();
 
-  // Open a GET request for the local XML file
+
   xhr.open('GET', 'courses.xml', true);
   xhr.overrideMimeType('text/xml');
 
@@ -64,8 +42,8 @@ function loadCourses() {
       });
 
       hideSpinner();
-      renderCourses(allCourses);          // Display all courses
-      populateCourseDropdown(allCourses); // Fill the register form's <select>
+      renderCourses(allCourses);          
+      populateCourseDropdown(allCourses);
     } else {
       console.error('XHR error: ' + xhr.status);
       hideSpinner();
@@ -80,7 +58,7 @@ function loadCourses() {
   xhr.send();
 }
 
-/** Helper: safely get text content of first matching child element */
+
 function getNodeText(parentNode, tagName) {
   const el = parentNode.querySelector(tagName);
   return el ? el.textContent.trim() : '';
@@ -91,12 +69,7 @@ function hideSpinner() {
   if (spinner) spinner.style.display = 'none';
 }
 
-/* ============================================================
-   2. RENDERING COURSES
-   ============================================================
-   Builds course card HTML dynamically and injects it into
-   the #coursesGrid div. No templating library is used.
-   ============================================================ */
+
 function renderCourses(courses) {
   const grid = document.getElementById('coursesGrid');
   const noResults = document.getElementById('noResults');
@@ -186,12 +159,7 @@ function escapeHtml(str) {
     .replace(/'/g, '&#039;');
 }
 
-/* ============================================================
-   3. COURSE FILTERING
-   ============================================================
-   Listens for clicks on the filter buttons. Filters the
-   allCourses array and re-renders only matching courses.
-   ============================================================ */
+
 function initFilters() {
   const filterBar = document.getElementById('filterBar');
 
@@ -219,12 +187,9 @@ function initFilters() {
   });
 }
 
-/* ============================================================
-   4. LESSON VIEWER
-   ============================================================
-   When a "View Lessons" button is clicked, the lesson section
-   scrolls into view and shows the lesson list for that course.
-   ============================================================ */
+
+
+
 function showLessons(courseId) {
   // Find the course object
   const course = allCourses.find(function (c) { return c.id === courseId; });
@@ -268,11 +233,9 @@ function hideLessons() {
   lessonSection.classList.add('crx-hidden');
 }
 
-/* ============================================================
-   5. POPULATE COURSE DROPDOWN IN REGISTRATION FORM
-   ============================================================
-   Adds an <option> for each course into the select element.
-   ============================================================ */
+
+
+
 function populateCourseDropdown(courses) {
   const select = document.getElementById('courseSelect');
   if (!select) return;
@@ -290,15 +253,10 @@ function populateCourseDropdown(courses) {
   });
 }
 
-/* ============================================================
-   6. FORM VALIDATION
-   ============================================================
-   Validates: Full Name, Email, Password, Confirm Password,
-   Course Selection, Learning Level, and Terms checkbox.
-   Uses pure JavaScript — NO HTML5 built-in validation.
-   Displays inline error messages on failure.
-   Shows a success message on pass.
-   ============================================================ */
+
+
+
+
 function initFormValidation() {
   const form = document.getElementById('registrationForm');
   if (!form) return;
@@ -472,9 +430,9 @@ function clearFieldError(fieldId) {
   if (errorEl) errorEl.textContent = '';
 }
 
-/* ============================================================
-   Sign-In Modal form mini-validation
-   ============================================================ */
+
+
+
 function initSignInValidation() {
   const form = document.getElementById('signInForm');
   if (!form) return;
@@ -515,11 +473,9 @@ function initSignInValidation() {
   });
 }
 
-/* ============================================================
-   7. UI INTERACTIONS
-   ============================================================ */
 
-/** Navbar: add shadow on scroll & highlight active link */
+
+
 function initNavbar() {
   const navbar = document.getElementById('navbar');
   const navLinks = document.querySelectorAll('.crx-nav-link');
@@ -547,10 +503,9 @@ function initNavbar() {
   });
 }
 
-/** Highlight the nav link matching the visible section.
- *  Only runs on the single-page version; on multi-page the
- *  active class is already set in the HTML and only updated
- *  when a section is actually found in the viewport. */
+
+
+
 function updateActiveNavLink() {
   const sections = ['home', 'courses', 'register', 'about', 'contact'];
   const navLinks = document.querySelectorAll('.crx-nav-link');
@@ -622,9 +577,9 @@ function initModals() {
     }
   });
 
-  // Go to register section — link now points directly to register.html, no JS needed
+ 
 
-  // Sign Up is now an <a href="register.html"> link — no JS handler needed
+
 }
 
 /** Password visibility toggle */
@@ -728,10 +683,9 @@ function initContactForm() {
   });
 }
 
-/* ============================================================
-   INITIALISATION
-   All setup runs after the DOM is fully loaded.
-   ============================================================ */
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
   // UI interactions
   initNavbar();
