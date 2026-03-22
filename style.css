@@ -97,6 +97,15 @@ img {
   box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
 }
 
+.crx-btn-primary:disabled {
+  background: #cbd5e1;
+  border-color: #cbd5e1;
+  color: #64748b;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
 .crx-btn-outline {
   background: transparent;
   color: var(--primary);
@@ -910,6 +919,63 @@ img {
   margin: 0 auto;
 }
 
+.crx-form-rules {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.1rem 1.1rem 1rem;
+  margin-bottom: 1.4rem;
+}
+
+.crx-form-rules h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.35rem;
+}
+
+.crx-form-rules h2 i {
+  color: var(--primary);
+}
+
+.crx-form-rules p {
+  font-size: 0.86rem;
+  color: var(--mid);
+  margin-bottom: 0.7rem;
+}
+
+.crx-rules-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem 1rem;
+}
+
+.crx-rules-list li {
+  font-size: 0.82rem;
+  color: var(--mid);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  line-height: 1.35;
+}
+
+.crx-rules-list li i {
+  font-size: 0.45rem;
+  color: var(--muted);
+  transition: color var(--transition);
+}
+
+.crx-rules-list li.crx-rule-ok {
+  color: #065f46;
+}
+
+.crx-rules-list li.crx-rule-ok i {
+  color: var(--success);
+}
+
 /* Form Layout */
 .crx-form-row {
   display: grid;
@@ -968,6 +1034,13 @@ img {
   box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
 }
 
+.crx-form-group input.crx-valid,
+.crx-form-group select.crx-valid,
+.crx-form-group textarea.crx-valid {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.12);
+}
+
 .crx-form-group input.crx-error,
 .crx-form-group select.crx-error,
 .crx-form-group textarea.crx-error {
@@ -978,6 +1051,12 @@ img {
 .crx-form-group textarea {
   resize: vertical;
   min-height: 100px;
+}
+
+.crx-field-hint {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: -0.1rem;
 }
 
 .crx-form-group select {
@@ -1503,6 +1582,10 @@ img {
 
   .crx-form-group.crx-full-width {
     grid-column: span 1;
+  }
+
+  .crx-rules-list {
+    grid-template-columns: 1fr;
   }
 
   /* Footer */

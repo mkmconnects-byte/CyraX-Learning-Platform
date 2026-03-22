@@ -56,18 +56,35 @@
           <p>Your account has been created. You can now explore all our courses.</p>
         </div>
 
+        <div class="crx-form-rules" id="formRules">
+          <h2><i class="fas fa-shield-check"></i> Registration Rules</h2>
+          <p>Please complete all required fields using accurate information.</p>
+          <ul class="crx-rules-list">
+            <li id="rule-name"><i class="fas fa-circle"></i> Full name: 2+ letters, spaces/hyphen/apostrophe only</li>
+            <li id="rule-email"><i class="fas fa-circle"></i> Use a valid personal email address</li>
+            <li id="rule-password-length"><i class="fas fa-circle"></i> Password must be at least 8 characters</li>
+            <li id="rule-password-lower"><i class="fas fa-circle"></i> Include at least one lowercase letter</li>
+            <li id="rule-password-upper"><i class="fas fa-circle"></i> Include at least one uppercase letter</li>
+            <li id="rule-password-number"><i class="fas fa-circle"></i> Include at least one number</li>
+            <li id="rule-password-special"><i class="fas fa-circle"></i> Include at least one special character</li>
+            <li id="rule-match"><i class="fas fa-circle"></i> Confirm password must match</li>
+            <li id="rule-course"><i class="fas fa-circle"></i> Select one course and one learning level</li>
+            <li id="rule-terms"><i class="fas fa-circle"></i> Accept Terms of Service and Privacy Policy</li>
+          </ul>
+        </div>
+
         <form id="registrationForm" novalidate>
 
           <!-- Row 1: Full Name + Email -->
           <div class="crx-form-row">
             <div class="crx-form-group">
               <label for="fullName">Full Name <span class="crx-required">*</span></label>
-              <input type="text" id="fullName" name="fullName" placeholder="e.g. Jane Smith" />
+              <input type="text" id="fullName" name="fullName" placeholder="e.g. Jane Smith" autocomplete="name" required minlength="2" maxlength="80" />
               <span class="crx-error-msg" id="fullNameError"></span>
             </div>
             <div class="crx-form-group">
               <label for="email">Email Address <span class="crx-required">*</span></label>
-              <input type="email" id="email" name="email" placeholder="e.g. jane@example.com" />
+              <input type="email" id="email" name="email" placeholder="e.g. jane@example.com" autocomplete="email" required />
               <span class="crx-error-msg" id="emailError"></span>
             </div>
           </div>
@@ -77,17 +94,18 @@
             <div class="crx-form-group">
               <label for="password">Password <span class="crx-required">*</span></label>
               <div class="crx-password-wrapper">
-                <input type="password" id="password" name="password" placeholder="Min. 8 characters" />
+                <input type="password" id="password" name="password" placeholder="At least 8 chars, upper/lower/number/symbol" autocomplete="new-password" required minlength="8" />
                 <button type="button" class="crx-toggle-password" data-target="password" aria-label="Toggle password visibility">
                   <i class="fas fa-eye"></i>
                 </button>
               </div>
+              <small class="crx-field-hint">Use a strong password with mixed character types.</small>
               <span class="crx-error-msg" id="passwordError"></span>
             </div>
             <div class="crx-form-group">
               <label for="confirmPassword">Confirm Password <span class="crx-required">*</span></label>
               <div class="crx-password-wrapper">
-                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repeat your password" />
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repeat your password" autocomplete="new-password" required />
                 <button type="button" class="crx-toggle-password" data-target="confirmPassword" aria-label="Toggle confirm password visibility">
                   <i class="fas fa-eye"></i>
                 </button>
@@ -100,7 +118,7 @@
           <div class="crx-form-row">
             <div class="crx-form-group crx-full-width">
               <label for="courseSelect">Select a Course <span class="crx-required">*</span></label>
-              <select id="courseSelect" name="courseSelect">
+              <select id="courseSelect" name="courseSelect" required>
                 <option value="">-- Choose a course --</option>
               </select>
               <span class="crx-error-msg" id="courseSelectError"></span>
@@ -190,7 +208,7 @@
           <!-- Submit Button -->
           <div class="crx-form-row">
             <div class="crx-form-group crx-full-width crx-center">
-              <button type="submit" class="crx-btn crx-btn-primary crx-btn-large crx-btn-block">
+              <button type="submit" id="registerSubmitBtn" class="crx-btn crx-btn-primary crx-btn-large crx-btn-block" disabled>
                 <i class="fas fa-user-plus"></i> Create My Account
               </button>
             </div>

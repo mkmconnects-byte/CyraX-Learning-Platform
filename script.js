@@ -12,7 +12,21 @@ function loadCourses() {
   xhr.onload = function () {
     if (xhr.status === 200 || xhr.status === 0) {
       // Parse the XML response
-      const xmlDoc = xhr.responseXML;
+      let xmlDoc = xhr.responseXML;
+
+      // Some servers/local environments do not populate responseXML reliably.
+      // Fallback to parsing responseText manually so dropdown/course loading still works.
+      if (!xmlDoc && xhr.responseText) {
+        try {
+          xmlDoc = new DOMParser().parseFromString(xhr.responseText, 'application/xml');
+          const parseError = xmlDoc.querySelector('parsererror');
+          if (parseError) {
+            xmlDoc = null;
+          }
+        } catch (err) {
+          xmlDoc = null;
+        }
+      }
 
       if (!xmlDoc) {
         console.error('Failed to parse XML document.');
@@ -73,6 +87,10 @@ function hideSpinner() {
 function renderCourses(courses) {
   const grid = document.getElementById('coursesGrid');
   const noResults = document.getElementById('noResults');
+
+  // Some pages (e.g., register page) do not have a courses grid.
+  if (!grid) return;
+
   grid.innerHTML = '';
 
   if (courses.length === 0) {
@@ -283,13 +301,24 @@ function initFormValidation() {
     if (el) {
       el.addEventListener('blur', function () {
         validateField(id);
+        updateRegistrationRulesUI();
       });
       // Clear error on input
       el.addEventListener('input', function () {
         clearFieldError(id);
+        updateRegistrationRulesUI();
       });
     }
   });
+
+  // Keep rules panel in sync with radios/checkboxes.
+  document.querySelectorAll('input[name="learningLevel"]').forEach(function (radio) {
+    radio.addEventListener('change', updateRegistrationRulesUI);
+  });
+  const terms = document.getElementById('termsCheck');
+  if (terms) terms.addEventListener('change', updateRegistrationRulesUI);
+
+  updateRegistrationRulesUI();
 }
 
 /** Run all validation checks. Returns true if all pass. */
@@ -344,12 +373,19 @@ function validateField(id) {
     case 'password':
       if (value === '') {
         error = 'Password is required.';
-      } else if (value.length < 8) {
-        error = 'Password must be at least 8 characters.';
-      } else if (!/[A-Z]/.test(value)) {
-        error = 'Password must contain at least one uppercase letter.';
-      } else if (!/[0-9]/.test(value)) {
-        error = 'Password must contain at least one number.';
+      } else {
+        const checks = getPasswordChecks(value);
+        if (!checks.length) {
+          error = 'Password must be at least 8 characters.';
+        } else if (!checks.lower) {
+          error = 'Password must contain at least one lowercase letter.';
+        } else if (!checks.upper) {
+          error = 'Password must contain at least one uppercase letter.';
+        } else if (!checks.number) {
+          error = 'Password must contain at least one number.';
+        } else if (!checks.special) {
+          error = 'Password must contain at least one special character.';
+        }
       }
       break;
 
@@ -372,6 +408,7 @@ function validateField(id) {
   }
 
   showFieldError(id, error);
+  updateRegistrationRulesUI();
   return error === '';
 }
 
@@ -383,10 +420,12 @@ function validateLearningLevel() {
 
   if (!selected) {
     if (errorEl) errorEl.textContent = 'Please select a learning level.';
+    updateRegistrationRulesUI();
     return false;
   }
 
   if (errorEl) errorEl.textContent = '';
+  updateRegistrationRulesUI();
   return true;
 }
 
@@ -397,11 +436,79 @@ function validateTerms() {
 
   if (!terms.checked) {
     if (errorEl) errorEl.textContent = 'You must agree to the Terms of Service.';
+    updateRegistrationRulesUI();
     return false;
   }
 
   if (errorEl) errorEl.textContent = '';
+  updateRegistrationRulesUI();
   return true;
+}
+
+function getPasswordChecks(value) {
+  return {
+    length: value.length >= 8,
+    lower: /[a-z]/.test(value),
+    upper: /[A-Z]/.test(value),
+    number: /[0-9]/.test(value),
+    special: /[^A-Za-z0-9]/.test(value)
+  };
+}
+
+function updateRegistrationRulesUI() {
+  const fullName = document.getElementById('fullName');
+  const email = document.getElementById('email');
+  const password = document.getElementById('password');
+  const confirmPassword = document.getElementById('confirmPassword');
+  const courseSelect = document.getElementById('courseSelect');
+  const terms = document.getElementById('termsCheck');
+  const levelSelected = Array.from(document.querySelectorAll('input[name="learningLevel"]')).some(function (r) { return r.checked; });
+
+  if (!fullName || !email || !password || !confirmPassword || !courseSelect || !terms) return;
+
+  const pwChecks = getPasswordChecks(password.value);
+  const nameOk = /^[a-zA-Z\s\-']{2,}$/.test(fullName.value.trim());
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim());
+  const matchOk = confirmPassword.value.length > 0 && confirmPassword.value === password.value;
+  const courseOk = courseSelect.value !== '' && levelSelected;
+
+  toggleRule('rule-name', nameOk);
+  toggleRule('rule-email', emailOk);
+  toggleRule('rule-password-length', pwChecks.length);
+  toggleRule('rule-password-lower', pwChecks.lower);
+  toggleRule('rule-password-upper', pwChecks.upper);
+  toggleRule('rule-password-number', pwChecks.number);
+  toggleRule('rule-password-special', pwChecks.special);
+  toggleRule('rule-match', matchOk);
+  toggleRule('rule-course', courseOk);
+  toggleRule('rule-terms', terms.checked);
+
+  updateRegisterSubmitState({
+    nameOk: nameOk,
+    emailOk: emailOk,
+    passwordOk: pwChecks.length && pwChecks.lower && pwChecks.upper && pwChecks.number && pwChecks.special,
+    matchOk: matchOk,
+    courseOk: courseOk,
+    termsOk: terms.checked
+  });
+}
+
+function updateRegisterSubmitState(status) {
+  const submitBtn = document.getElementById('registerSubmitBtn');
+  if (!submitBtn || !status) return;
+
+  const ready = status.nameOk && status.emailOk && status.passwordOk && status.matchOk && status.courseOk && status.termsOk;
+  submitBtn.disabled = !ready;
+}
+
+function toggleRule(ruleId, pass) {
+  const rule = document.getElementById(ruleId);
+  if (!rule) return;
+  if (pass) {
+    rule.classList.add('crx-rule-ok');
+  } else {
+    rule.classList.remove('crx-rule-ok');
+  }
 }
 
 /** Display an error message and mark the input as invalid */
@@ -412,8 +519,12 @@ function showFieldError(fieldId, message) {
   if (el) {
     if (message) {
       el.classList.add('crx-error');
+      el.classList.remove('crx-valid');
     } else {
       el.classList.remove('crx-error');
+      if (el.value && el.value.trim() !== '') {
+        el.classList.add('crx-valid');
+      }
     }
   }
 
