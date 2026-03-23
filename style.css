@@ -1,9 +1,9 @@
 
 :root {
-  --primary:       #4f46e5;   /* Indigo */
-  --primary-dark:  #3730a3;
-  --primary-light: #818cf8;
-  --accent:        #06b6d4;   /* Cyan */
+  --primary:       #1d4ed8;
+  --primary-dark:  #1e40af;
+  --primary-light: #93c5fd;
+  --accent:        #1d4ed8;
   --success:       #10b981;
   --warning:       #f59e0b;
   --danger:        #ef4444;
@@ -15,7 +15,7 @@
   --bg:            #f8fafc;
   --white:         #ffffff;
   --card-shadow:   0 4px 24px rgba(15, 23, 42, 0.08);
-  --card-shadow-hover: 0 12px 40px rgba(79, 70, 229, 0.18);
+  --card-shadow-hover: 0 12px 40px rgba(29, 78, 216, 0.2);
   --radius:        12px;
   --radius-lg:     20px;
   --font:          'Inter', sans-serif;
@@ -206,7 +206,7 @@ img {
 .crx-nav-link:hover,
 .crx-nav-link.crx-active {
   color: var(--primary);
-  background: rgba(79, 70, 229, 0.08);
+  background: rgba(29, 78, 216, 0.08);
 }
 
 /* Nav Auth Buttons */
@@ -237,9 +237,10 @@ img {
 }
 
 /* ---- Hero Section ---- */
-.crx-hero {
+.crx-hero,
+.crx-horo {
   min-height: 100vh;
-  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #1e40af 70%, #0369a1 100%);
+  background: var(--white);
   display: flex;
   align-items: center;
   padding: 100px 1.5rem 60px;
@@ -249,12 +250,7 @@ img {
 
 /* Subtle background pattern */
 .crx-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle at 20% 50%, rgba(129, 140, 248, 0.15) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.12) 0%, transparent 40%);
-  pointer-events: none;
+  content: none;
 }
 
 .crx-hero > * {
@@ -278,11 +274,28 @@ img {
   align-items: center;
 }
 
+.crx-hero-banner-photo {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  height: 380px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0.25rem;
+}
+
+.crx-hero-banner-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .crx-hero-content {
   flex: 1;
   min-width: 300px;
   max-width: 640px;
-  color: var(--white);
+  color: var(--dark);
 }
 
 
@@ -295,15 +308,12 @@ img {
 }
 
 .crx-hero-highlight {
-  background: linear-gradient(90deg, var(--accent), #f0abfc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary);
 }
 
 .crx-hero-subtitle {
   font-size: 1.1rem;
-  color: #c7d2fe;
+  color: var(--mid);
   margin-bottom: 2rem;
   line-height: 1.7;
   max-width: 520px;
@@ -333,19 +343,19 @@ img {
 .crx-stat-item strong {
   font-size: 1.6rem;
   font-weight: 800;
-  color: var(--white);
+  color: var(--dark);
 }
 
 .crx-stat-item span {
   font-size: 0.8rem;
-  color: #a5b4fc;
+  color: var(--mid);
   font-weight: 500;
 }
 
 .crx-stat-divider {
   width: 1px;
   height: 36px;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--border);
 }
 
 /* Hero visual cards */
@@ -357,18 +367,19 @@ img {
 }
 
 .crx-hero-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--white);
+  backdrop-filter: none;
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1rem 1.5rem;
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: var(--white);
+  color: var(--dark);
   font-weight: 600;
   font-size: 0.95rem;
   min-width: 180px;
+  box-shadow: var(--card-shadow);
 }
 
 .crx-hero-card i {
@@ -388,7 +399,7 @@ img {
 
 /* ---- Page Hero (inner pages) ---- */
 .crx-page-hero {
-  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e40af 100%);
+  background: #0f172a;
   padding: 120px 1.5rem 60px;
   text-align: center;
   color: var(--white);
@@ -461,13 +472,14 @@ img {
 .crx-feature-icon {
   width: 56px;
   height: 56px;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
   border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.4rem;
-  color: var(--white);
+  color: var(--primary);
   margin: 0 auto 1rem;
 }
 
@@ -609,7 +621,7 @@ img {
   height: 180px;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
+  background: var(--primary);
   color: var(--white);
   font-size: 3rem;
   flex-shrink: 0;
@@ -702,7 +714,7 @@ img {
 .crx-instructor-avatar {
   width: 28px;
   height: 28px;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
+  background: var(--primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -882,7 +894,7 @@ img {
 }
 
 .crx-about-img-placeholder {
-  background: linear-gradient(135deg, #ede9fe, #dbeafe);
+  background: #e2e8f0;
   border-radius: var(--radius-lg);
   height: 380px;
   display: flex;
@@ -1239,7 +1251,7 @@ img {
 
 /* Success message */
 .crx-form-success {
-  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  background: #dcfce7;
   border: 1px solid #6ee7b7;
   border-radius: var(--radius);
   padding: 2rem;
@@ -1496,6 +1508,70 @@ img {
   margin-top: 1.25rem;
 }
 
+/* ---- Home Info Sections ---- */
+.crx-info-section {
+  padding: 5rem 0;
+  background: var(--bg);
+}
+
+.crx-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.crx-info-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
+}
+
+.crx-info-card h3 {
+  font-size: 1.05rem;
+  color: var(--dark);
+  margin-bottom: 0.55rem;
+}
+
+.crx-info-card p {
+  font-size: 0.9rem;
+  color: var(--mid);
+  line-height: 1.65;
+}
+
+.crx-faq-section {
+  padding: 5rem 0;
+  background: var(--white);
+}
+
+.crx-faq-list {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.crx-faq-item {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  background: #f8fafc;
+}
+
+.crx-faq-item summary {
+  font-weight: 600;
+  color: var(--dark-2);
+  cursor: pointer;
+}
+
+.crx-faq-item p {
+  margin-top: 0.55rem;
+  color: var(--mid);
+  font-size: 0.9rem;
+}
+
 /* ---- Responsive Design ---- */
 @media (max-width: 1024px) {
   .crx-footer-grid {
@@ -1553,6 +1629,10 @@ img {
     gap: 2.5rem;
   }
 
+  .crx-hero-banner-photo {
+    height: 320px;
+  }
+
   .crx-hero-content {
     max-width: 100%;
   }
@@ -1569,10 +1649,6 @@ img {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-  }
-
-  .crx-hero-card {
-    min-width: unset;
   }
 
   /* Form */
@@ -1596,6 +1672,11 @@ img {
 }
 
 @media (max-width: 480px) {
+  .crx-hero-banner-photo {
+    height: 280px;
+
+  }
+
   .crx-hero-stats {
     gap: 1rem;
   }
