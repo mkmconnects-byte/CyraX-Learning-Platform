@@ -177,4 +177,40 @@
     </lessons>
   </course>
 
+  <course id="c11" level="Foundation">
+    <title>Digital Marketing Fundamentals</title>
+    <duration>7 Weeks</duration>
+    <instructor>Ms. Hannah Reed</instructor>
+    <description>Learn core digital marketing skills including SEO basics, social media strategy, and campaign performance tracking.</description>
+    <image>https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>Introduction to Digital Marketing</lesson>
+      <lesson>Audience Research and Personas</lesson>
+      <lesson>SEO Fundamentals</lesson>
+      <lesson>Social Media Content Strategy</lesson>
+      <lesson>Email Marketing Basics</lesson>
+      <lesson>Analytics and KPI Tracking</lesson>
+      <lesson>Campaign Planning Project</lesson>
+    </lessons>
+  </course>
+
+  <course id="c12" level="Postgraduate">
+    <title>Cloud Computing and DevOps</title>
+    <duration>12 Weeks</duration>
+    <instructor>Dr. Omar Nasser</instructor>
+    <description>Build practical cloud and DevOps skills with CI/CD pipelines, containerization, and scalable deployment practices.</description>
+    <image>https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>Cloud Service Models: IaaS, PaaS, SaaS</lesson>
+      <lesson>Virtualization and Containers</lesson>
+      <lesson>Docker and Image Management</lesson>
+      <lesson>CI/CD Pipeline Fundamentals</lesson>
+      <lesson>Infrastructure as Code</lesson>
+      <lesson>Monitoring and Logging</lesson>
+      <lesson>Kubernetes Basics</lesson>
+      <lesson>Cloud Security Best Practices</lesson>
+      <lesson>Scalable Deployment Project</lesson>
+    </lessons>
+  </course>
+
 </courses>

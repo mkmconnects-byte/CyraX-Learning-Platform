@@ -13,7 +13,9 @@ function getFallbackCourses() {
     { id: 'c7', level: 'Undergraduate', title: 'Software Engineering', duration: '10 Weeks', instructor: '', description: '', image: '', lessons: [] },
     { id: 'c8', level: 'Foundation', title: 'UI/UX Design Principles', duration: '6 Weeks', instructor: '', description: '', image: '', lessons: [] },
     { id: 'c9', level: 'Postgraduate', title: 'Cybersecurity Basics', duration: '12 Weeks', instructor: '', description: '', image: '', lessons: [] },
-    { id: 'c10', level: 'Postgraduate', title: 'Artificial Intelligence Fundamentals', duration: '12 Weeks', instructor: '', description: '', image: '', lessons: [] }
+    { id: 'c10', level: 'Postgraduate', title: 'Artificial Intelligence Fundamentals', duration: '12 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c11', level: 'Foundation', title: 'Digital Marketing Fundamentals', duration: '7 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c12', level: 'Postgraduate', title: 'Cloud Computing and DevOps', duration: '12 Weeks', instructor: '', description: '', image: '', lessons: [] }
   ];
 }
 
