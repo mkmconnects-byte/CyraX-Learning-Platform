@@ -14,12 +14,12 @@
   --border:        #e2e8f0;
   --bg:            #f8fafc;
   --white:         #ffffff;
-  --card-shadow:   0 4px 24px rgba(15, 23, 42, 0.08);
-  --card-shadow-hover: 0 12px 40px rgba(29, 78, 216, 0.2);
-  --radius:        12px;
-  --radius-lg:     20px;
-  --font:          'Inter', sans-serif;
-  --transition:    0.25s ease;
+  --card-shadow:   0 2px 10px rgba(15, 23, 42, 0.08);
+  --card-shadow-hover: 0 6px 18px rgba(15, 23, 42, 0.14);
+  --radius:        10px;
+  --radius-lg:     14px;
+  --font:          'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --transition:    0.2s ease;
 }
 
 
@@ -30,7 +30,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   font-size: 16px;
 }
 
@@ -58,7 +58,7 @@ img {
 
 /* ---- Utility ---- */
 .crx-container {
-  max-width: 1200px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -93,8 +93,8 @@ img {
 .crx-btn-primary:hover {
   background: var(--primary-dark);
   border-color: var(--primary-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.22);
 }
 
 .crx-btn-primary:disabled {
@@ -115,7 +115,7 @@ img {
 .crx-btn-outline:hover {
   background: var(--primary);
   color: var(--white);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .crx-btn-large {
@@ -141,13 +141,13 @@ img {
   width: 100%;
   z-index: 1000;
   background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
+  backdrop-filter: none;
   border-bottom: 1px solid var(--border);
   transition: box-shadow var(--transition);
 }
 
 .crx-navbar.crx-scrolled {
-  box-shadow: 0 2px 20px rgba(15, 23, 42, 0.1);
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
 }
 
 .crx-nav-container {
@@ -239,11 +239,11 @@ img {
 /* ---- Hero Section ---- */
 .crx-hero,
 .crx-horo {
-  min-height: 100vh;
+  min-height: auto;
   background: var(--white);
   display: flex;
   align-items: center;
-  padding: 100px 1.5rem 60px;
+  padding: 86px 1.5rem 36px;
   position: relative;
   overflow: hidden;
 }
@@ -259,7 +259,7 @@ img {
 }
 
 .crx-hero {
-  gap: 4rem;
+  gap: 2.25rem;
   justify-content: center;
   flex-wrap: wrap;
   text-align: left;
@@ -275,13 +275,15 @@ img {
 }
 
 .crx-hero-banner-photo {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  height: 465px;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 1140px;
+  height: 240px;
   overflow: hidden;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 0.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 0.4rem;
 }
 
 .crx-hero-banner-photo img {
@@ -301,7 +303,7 @@ img {
 
 
 .crx-hero-title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(1.9rem, 4.2vw, 3rem);
   font-weight: 800;
   line-height: 1.15;
   margin-bottom: 1.25rem;
@@ -323,7 +325,7 @@ img {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Hero stats */
@@ -379,7 +381,7 @@ img {
   font-weight: 600;
   font-size: 0.95rem;
   min-width: 180px;
-  box-shadow: var(--card-shadow);
+  box-shadow: none;
 }
 
 .crx-hero-card i {
@@ -397,10 +399,16 @@ img {
 .crx-floating.crx-delay-1 { animation-delay: 0.8s; }
 .crx-floating.crx-delay-2 { animation-delay: 1.6s; }
 
+.crx-floating,
+.crx-floating.crx-delay-1,
+.crx-floating.crx-delay-2 {
+  animation: none;
+}
+
 /* ---- Page Hero (inner pages) ---- */
 .crx-page-hero {
   background: #0f172a;
-  padding: 120px 1.5rem 60px;
+  padding: 108px 1.5rem 52px;
   text-align: center;
   color: var(--white);
 }
@@ -446,7 +454,7 @@ img {
 
 /* ---- Features Section ---- */
 .crx-features-section {
-  padding: 4rem 0;
+  padding: 3.25rem 0;
   background: var(--white);
   border-bottom: 1px solid var(--border);
 }
@@ -459,13 +467,15 @@ img {
 
 .crx-feature-card {
   text-align: center;
-  padding: 2rem 1.5rem;
+  padding: 1.5rem 1.25rem;
   border-radius: var(--radius);
   transition: transform var(--transition), box-shadow var(--transition);
+  border: 1px solid var(--border);
+  background: var(--white);
 }
 
 .crx-feature-card:hover {
-  transform: translateY(-4px);
+  transform: none;
   box-shadow: var(--card-shadow);
 }
 
@@ -498,17 +508,17 @@ img {
 /* ---- Section Shared Styles ---- */
 .crx-section-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.25rem;
 }
 
 .crx-section-badge {
   display: inline-block;
-  background: rgba(79, 70, 229, 0.1);
-  color: var(--primary);
-  font-size: 0.8rem;
+  background: #e2e8f0;
+  color: #334155;
+  font-size: 0.78rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  text-transform: none;
+  letter-spacing: 0.02em;
   padding: 0.3rem 0.9rem;
   border-radius: 999px;
   margin-bottom: 0.75rem;
@@ -604,6 +614,7 @@ img {
   background: var(--white);
   border-radius: var(--radius-lg);
   overflow: hidden;
+  border: 1px solid var(--border);
   box-shadow: var(--card-shadow);
   transition: transform var(--transition), box-shadow var(--transition);
   cursor: pointer;
@@ -612,8 +623,8 @@ img {
 }
 
 .crx-course-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow);
 }
 
 .crx-course-card-image {
@@ -649,8 +660,8 @@ img {
   display: inline-block;
   font-size: 0.72rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  text-transform: none;
+  letter-spacing: 0.01em;
   padding: 0.25rem 0.65rem;
   border-radius: 999px;
   margin-bottom: 0.75rem;
@@ -1510,13 +1521,8 @@ img {
 
 /* ---- Home Info Sections ---- */
 .crx-info-section {
-  padding: 5rem 0;
-  background-image:
-    linear-gradient(rgba(248, 250, 252, 0.9), rgba(248, 250, 252, 0.9)),
-    url('https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?auto=format&fit=crop&w=1800&q=80');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  padding: 3.5rem 0;
+  background: var(--bg);
 }
 
 .crx-info-grid {
@@ -1546,7 +1552,7 @@ img {
 }
 
 .crx-faq-section {
-  padding: 5rem 0;
+  padding: 3.5rem 0;
   background: var(--white);
 }
 
@@ -1630,12 +1636,12 @@ img {
   .crx-hero {
     flex-direction: column;
     text-align: center;
-    padding: 100px 1.5rem 4rem;
-    gap: 2.5rem;
+    padding: 90px 1.5rem 3rem;
+    gap: 1.75rem;
   }
 
   .crx-hero-banner-photo {
-    height: 480px;
+    height: 180px;
   }
 
   .crx-hero-content {
@@ -1678,7 +1684,7 @@ img {
 
 @media (max-width: 480px) {
   .crx-hero-banner-photo {
-    height: 440px;
+    height: 130px;
 
   }
 
