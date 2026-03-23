@@ -58,7 +58,7 @@ img {
 
 /* ---- Utility ---- */
 .crx-container {
-  max-width: 1200px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -278,7 +278,7 @@ img {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  height: 380px;
+  height: 465px;
   overflow: hidden;
   border-bottom: 1px solid var(--border);
   margin-bottom: 0.25rem;
@@ -294,7 +294,7 @@ img {
 .crx-hero-content {
   flex: 1;
   min-width: 300px;
-  max-width: 640px;
+  max-width: 760px;
   color: var(--dark);
 }
 
@@ -323,7 +323,7 @@ img {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 3rem;
+  margin-bottom: 2.25rem;
 }
 
 /* Hero stats */
@@ -364,6 +364,7 @@ img {
   flex-direction: column;
   gap: 1rem;
   flex-shrink: 0;
+  min-width: 280px;
 }
 
 .crx-hero-card {
@@ -371,14 +372,14 @@ img {
   backdrop-filter: none;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1rem 1.5rem;
+  padding: 1.25rem 1.5rem;
   display: flex;
   align-items: center;
   gap: 0.75rem;
   color: var(--dark);
   font-weight: 600;
-  font-size: 0.95rem;
-  min-width: 180px;
+  font-size: 1rem;
+  min-width: 240px;
   box-shadow: var(--card-shadow);
 }
 
@@ -446,22 +447,25 @@ img {
 
 /* ---- Features Section ---- */
 .crx-features-section {
-  padding: 4rem 0;
+  padding: 4.75rem 0;
   background: var(--white);
   border-bottom: 1px solid var(--border);
 }
 
 .crx-features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.75rem;
 }
 
 .crx-feature-card {
   text-align: center;
-  padding: 2rem 1.5rem;
+  padding: 2.25rem 1.6rem;
   border-radius: var(--radius);
   transition: transform var(--transition), box-shadow var(--transition);
+  min-height: 360px;
+  border: 1px solid var(--border);
+  box-shadow: var(--card-shadow);
 }
 
 .crx-feature-card:hover {
@@ -469,18 +473,20 @@ img {
   box-shadow: var(--card-shadow);
 }
 
-.crx-feature-icon {
-  width: 56px;
-  height: 56px;
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
+.crx-feature-photo {
+  width: 100%;
+  height: 190px;
   border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  color: var(--primary);
+  overflow: hidden;
   margin: 0 auto 1rem;
+  border: 1px solid var(--border);
+}
+
+.crx-feature-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .crx-feature-card h3 {
@@ -595,7 +601,7 @@ img {
 /* Course Grid */
 .crx-courses-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 1.75rem;
 }
 
@@ -618,7 +624,7 @@ img {
 
 .crx-course-card-image {
   width: 100%;
-  height: 180px;
+  height: 220px;
   position: relative;
   overflow: hidden;
   background: var(--primary);
@@ -1516,16 +1522,17 @@ img {
 
 .crx-info-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.5rem;
 }
 
 .crx-info-card {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.5rem;
+  padding: 1.75rem;
   box-shadow: var(--card-shadow);
+  min-height: 200px;
 }
 
 .crx-info-card h3 {
@@ -1546,17 +1553,17 @@ img {
 }
 
 .crx-faq-list {
-  max-width: 860px;
+  max-width: 980px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 1rem;
 }
 
 .crx-faq-item {
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 0.85rem 1rem;
+  padding: 1rem 1.2rem;
   background: #f8fafc;
 }
 
@@ -1630,7 +1637,7 @@ img {
   }
 
   .crx-hero-banner-photo {
-    height: 320px;
+    height: 480px;
   }
 
   .crx-hero-content {
@@ -1673,7 +1680,7 @@ img {
 
 @media (max-width: 480px) {
   .crx-hero-banner-photo {
-    height: 280px;
+    height: 440px;
 
   }
 
