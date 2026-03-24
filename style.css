@@ -12,15 +12,15 @@
   --dark-2:        #2b2b40;
   --mid:           #5c5c72;
   --muted:         #8e8ea0;
-  --border:        #ddd8d0;
+  --border:        #ccc8c0;
   --bg:            #f5f2eb;
   --white:         #fefdfb;
-  --card-shadow:   0 2px 8px rgba(26, 26, 46, 0.06);
-  --card-shadow-hover: 0 8px 20px rgba(26, 26, 46, 0.10);
-  --radius:        8px;
-  --radius-lg:     12px;
+  --card-shadow:   0 1px 4px rgba(0,0,0,0.07);
+  --card-shadow-hover: 0 3px 10px rgba(0,0,0,0.10);
+  --radius:        5px;
+  --radius-lg:     7px;
   --font:          'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --transition:    0.22s ease;
+  --transition:    0.12s ease;
 }
 
 
@@ -72,16 +72,15 @@ img {
 .crx-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.55rem 1.15rem;
-  border-radius: 7px;
-  font-size: 0.92rem;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  border-radius: 4px;
+  font-size: 0.91rem;
   font-weight: 600;
   cursor: pointer;
   border: 2px solid transparent;
   transition: background var(--transition), color var(--transition),
-              border-color var(--transition), transform var(--transition),
-              box-shadow var(--transition);
+              border-color var(--transition);
   white-space: nowrap;
 }
 
@@ -94,8 +93,6 @@ img {
 .crx-btn-primary:hover {
   background: var(--primary-dark);
   border-color: var(--primary-dark);
-  transform: translateY(-1px) rotate(-0.3deg);
-  box-shadow: 0 4px 14px rgba(45, 106, 111, 0.25);
 }
 
 .crx-btn-primary:disabled {
@@ -103,8 +100,6 @@ img {
   border-color: #c8c5be;
   color: #7a7872;
   cursor: not-allowed;
-  box-shadow: none;
-  transform: none;
 }
 
 .crx-btn-outline {
@@ -116,18 +111,16 @@ img {
 .crx-btn-outline:hover {
   background: var(--primary);
   color: var(--white);
-  transform: translateY(-1px);
 }
 
 .crx-btn-large {
-  padding: 0.75rem 1.7rem;
-  font-size: 0.97rem;
-  border-radius: 9px;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.95rem;
 }
 
 .crx-btn-sm {
-  padding: 0.4rem 0.9rem;
-  font-size: 0.84rem;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.83rem;
 }
 
 .crx-btn-block {
@@ -141,14 +134,13 @@ img {
   top: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(254, 253, 251, 0.92);
-  backdrop-filter: blur(8px);
+  background: var(--white);
   border-bottom: 1px solid var(--border);
   transition: box-shadow var(--transition);
 }
 
 .crx-navbar.crx-scrolled {
-  box-shadow: 0 2px 12px rgba(26, 26, 46, 0.07);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
 }
 
 .crx-nav-container {
@@ -244,7 +236,7 @@ img {
   background: var(--white);
   display: flex;
   align-items: center;
-  padding: 76px 1.25rem 20px;
+  padding: 66px 1.25rem 8px;
   position: relative;
   overflow: hidden;
 }
@@ -280,27 +272,12 @@ img {
   margin-left: 0;
   margin-right: 0;
   max-width: 1100px;
-  height: 220px;
+  height: 180px;
   overflow: hidden;
-  border: none;
-  border-radius: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   margin-bottom: 0.3rem;
   position: relative;
-}
-
-/* Gradient overlay on hero banner */
-.crx-hero-banner-photo::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(26, 26, 46, 0.55) 0%,
-    rgba(45, 106, 111, 0.30) 50%,
-    transparent 100%
-  );
-  z-index: 1;
-  border-radius: 10px;
 }
 
 .crx-hero-banner-photo img {
@@ -332,16 +309,16 @@ img {
 .crx-hero-subtitle {
   font-size: 1.02rem;
   color: var(--mid);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.9rem;
   line-height: 1.65;
   max-width: 490px;
 }
 
 .crx-hero-buttons {
   display: flex;
-  gap: 0.85rem;
+  gap: 0.6rem;
   flex-wrap: wrap;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.9rem;
 }
 
 /* Hero stats */
@@ -386,41 +363,25 @@ img {
 
 .crx-hero-card {
   background: var(--white);
-  backdrop-filter: none;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 0.85rem 1.25rem;
+  padding: 0.7rem 1rem;
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.55rem;
   color: var(--dark);
   font-weight: 600;
   font-size: 0.9rem;
   min-width: 170px;
-  box-shadow: var(--card-shadow);
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.crx-hero-card:nth-child(1) {
-  transform: rotate(-0.5deg);
-}
-
-.crx-hero-card:nth-child(2) {
-  transform: translateX(8px) rotate(0.3deg);
-}
-
-.crx-hero-card:nth-child(3) {
-  transform: rotate(-0.2deg) translateX(-4px);
 }
 
 .crx-hero-card:hover {
-  transform: translateY(-2px) rotate(0deg) !important;
-  box-shadow: var(--card-shadow-hover);
+  background: #f0ede6;
 }
 
 .crx-hero-card i {
-  font-size: 1.2rem;
-  color: var(--accent);
+  font-size: 1.1rem;
+  color: var(--primary);
 }
 
 /* Floating animation — disabled for organic feel */
@@ -437,44 +398,30 @@ img {
 
 /* ---- Page Hero (inner pages) ---- */
 .crx-page-hero {
-  background: var(--dark);
-  padding: 100px 1.25rem 42px;
-  text-align: center;
-  color: var(--white);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Subtle diagonal accent line */
-.crx-page-hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent) 0%, var(--primary) 50%, transparent 100%);
+  background: var(--bg);
+  padding: 80px 1.25rem 20px;
+  text-align: left;
+  color: var(--dark);
+  border-bottom: 2px solid var(--border);
 }
 
 .crx-page-hero .crx-section-badge {
-  background: rgba(255, 255, 255, 0.10);
-  color: #b8c9ca;
+  background: rgba(45, 106, 111, 0.08);
+  color: var(--primary);
 }
 
 .crx-page-hero-title {
-  font-size: clamp(1.7rem, 3.8vw, 2.6rem);
-  font-weight: 800;
-  color: var(--white);
-  margin: 0.65rem 0;
-  letter-spacing: -0.01em;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0.4rem 0 0.3rem;
 }
 
 .crx-page-hero-subtitle {
-  font-size: 1.02rem;
-  color: #a8b5b7;
+  font-size: 0.95rem;
+  color: var(--mid);
   max-width: 500px;
-  margin: 0 auto;
-  line-height: 1.65;
+  line-height: 1.5;
 }
 
 /* ---- Contact section light variant (contact.html) ---- */
@@ -485,6 +432,7 @@ img {
 .crx-contact-section--light .crx-contact-card {
   background: var(--white);
   border: 1px solid var(--border);
+  box-shadow: none;
 }
 
 .crx-contact-section--light .crx-contact-card h2,
@@ -496,54 +444,35 @@ img {
   color: var(--mid);
 }
 
-/* ---- Features Section ---- */
-.crx-features-section {
-  padding: 2.75rem 0 3rem;
-  background: var(--white);
-  border-bottom: none;
-  position: relative;
+/* override contact icon colors — all same */
+.crx-contact-section--light .crx-contact-icon {
+  background: rgba(45, 106, 111, 0.08);
+  color: var(--primary);
 }
 
-/* Section divider — angled bottom edge */
-.crx-features-section::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  right: 0;
-  height: 40px;
-  background: var(--bg);
-  clip-path: polygon(0 60%, 100% 0, 100% 100%, 0 100%);
+/* ---- Features Section ---- */
+.crx-features-section {
+  padding: 1rem 0 1.1rem;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
 }
 
 .crx-features-grid {
   display: grid;
-  grid-template-columns: 1fr 1.08fr;
-  gap: 1.1rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
 }
 
 .crx-feature-card {
   text-align: left;
-  padding: 1.15rem 1.1rem;
+  padding: 0.85rem 0.9rem;
   border-radius: var(--radius);
-  transition: transform var(--transition), box-shadow var(--transition);
   border: 1px solid var(--border);
   background: var(--white);
-  position: relative;
 }
-
-.crx-feature-card:nth-child(1) { border-radius: 8px 12px 8px 6px; }
-.crx-feature-card:nth-child(2) { border-radius: 6px 8px 12px 8px; }
-.crx-feature-card:nth-child(3) { border-radius: 12px 6px 8px 10px; }
-.crx-feature-card:nth-child(4) { border-radius: 8px 10px 6px 12px; }
 
 .crx-feature-card:hover {
-  transform: translateY(-3px) rotate(-0.4deg);
-  box-shadow: var(--card-shadow-hover);
-}
-
-.crx-feature-card:nth-child(even):hover {
-  transform: translateY(-3px) rotate(0.4deg);
+  background: #f9f7f2;
 }
 
 /* Thumbnail images for feature cards */
@@ -556,17 +485,19 @@ img {
 }
 
 .crx-feature-icon {
-  width: 46px;
-  height: 46px;
+  width: 52px;
+  height: 52px;
   background: rgba(45, 106, 111, 0.08);
   border: 1px solid rgba(45, 106, 111, 0.15);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  width: 42px;
+  height: 42px;
+  font-size: 1.15rem;
   color: var(--primary);
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.5rem;
 }
 
 .crx-feature-card:nth-child(2) .crx-feature-icon {
@@ -588,14 +519,14 @@ img {
 }
 
 .crx-feature-card h3 {
-  font-size: 0.97rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
   color: var(--dark);
 }
 
 .crx-feature-card p {
-  font-size: 0.87rem;
+  font-size: 0.9rem;
   color: var(--mid);
   line-height: 1.55;
 }
@@ -603,7 +534,7 @@ img {
 /* ---- Section Shared Styles ---- */
 .crx-section-header {
   text-align: center;
-  margin-bottom: 1.75rem;
+  margin-bottom: 0.9rem;
 }
 
 .crx-section-badge {
@@ -637,7 +568,7 @@ img {
 
 /* ---- Courses Section ---- */
 .crx-courses-section {
-  padding: 3.5rem 0;
+  padding: 1.25rem 0 1.5rem;
   background: var(--bg);
 }
 
@@ -647,19 +578,19 @@ img {
   gap: 0.6rem;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .crx-filter-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.5rem 1.1rem;
-  border-radius: 999px;
-  border: 2px solid var(--border);
+  padding: 0.4rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
   background: var(--white);
   color: var(--mid);
-  font-size: 0.87rem;
+  font-size: 0.86rem;
   font-weight: 600;
   cursor: pointer;
   transition: all var(--transition);
@@ -674,7 +605,6 @@ img {
   background: var(--primary);
   border-color: var(--primary);
   color: var(--white);
-  box-shadow: 0 3px 10px rgba(45, 106, 111, 0.25);
 }
 
 /* Loading Spinner */
@@ -701,43 +631,28 @@ img {
 /* Course Grid */
 .crx-courses-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.4rem;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 0.9rem;
 }
 
 /* Course Card */
 .crx-course-card {
   background: var(--white);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--border);
-  box-shadow: var(--card-shadow);
-  transition: transform var(--transition), box-shadow var(--transition);
   cursor: pointer;
   display: flex;
   flex-direction: column;
 }
 
-.crx-course-card:nth-child(odd) {
-  border-radius: 12px 8px 10px 8px;
-}
-
-.crx-course-card:nth-child(even) {
-  border-radius: 8px 12px 8px 10px;
-}
-
 .crx-course-card:hover {
-  transform: translateY(-3px) rotate(-0.3deg);
-  box-shadow: var(--card-shadow-hover);
-}
-
-.crx-course-card:nth-child(even):hover {
-  transform: translateY(-3px) rotate(0.3deg);
+  background: #f9f7f2;
 }
 
 .crx-course-card-image {
   width: 100%;
-  height: 160px;
+  height: 150px;
   position: relative;
   overflow: hidden;
   background: var(--primary);
@@ -758,7 +673,7 @@ img {
 }
 
 .crx-course-card-body {
-  padding: 1.1rem 1.1rem 0.65rem;
+  padding: 0.85rem 0.95rem 0.5rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -790,8 +705,8 @@ img {
 .crx-course-card-desc {
   font-size: 0.84rem;
   color: var(--mid);
-  line-height: 1.5;
-  margin-bottom: 0.85rem;
+  line-height: 1.45;
+  margin-bottom: 0.55rem;
   flex: 1;
 }
 
@@ -938,7 +853,6 @@ img {
 .crx-lesson-item:hover {
   background: rgba(45, 106, 111, 0.04);
   border-color: var(--primary-light);
-  transform: translateX(3px);
 }
 
 .crx-lesson-number {
@@ -969,14 +883,14 @@ img {
 
 /* ---- About Section ---- */
 .crx-about-section {
-  padding: 3.5rem 0;
+  padding: 2.25rem 0;
   background: var(--white);
 }
 
 .crx-about-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 3rem;
+  gap: 2rem;
   align-items: center;
 }
 
@@ -1042,19 +956,17 @@ img {
   height: 340px;
   object-fit: cover;
   border-radius: var(--radius-lg);
-  transform: rotate(1.2deg);
-  box-shadow: 6px 8px 24px rgba(26, 26, 46, 0.12);
-  transition: transform var(--transition), box-shadow var(--transition);
+  box-shadow: 4px 6px 18px rgba(26, 26, 46, 0.1);
+  transition: box-shadow var(--transition);
 }
 
 .crx-about-image img:hover {
-  transform: rotate(0deg);
-  box-shadow: 4px 6px 18px rgba(26, 26, 46, 0.1);
+  box-shadow: 6px 10px 24px rgba(26, 26, 46, 0.15);
 }
 
 /* ---- Registration Section ---- */
 .crx-register-section {
-  padding: 3.5rem 0;
+  padding: 2.25rem 0;
   background: var(--bg);
 }
 
@@ -1415,7 +1327,7 @@ img {
 
 /* ---- Contact Section ---- */
 .crx-contact-section {
-  padding: 3.5rem 0;
+  padding: 2.25rem 0;
   background: var(--dark);
 }
 
@@ -1444,12 +1356,12 @@ img {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 10px;
-  padding: 1.25rem 1.4rem;
+  padding: 1.4rem 1.6rem;
   text-align: left;
   transition: background var(--transition), transform var(--transition);
   flex: 1;
-  min-width: 200px;
-  max-width: 260px;
+  min-width: 220px;
+  max-width: 280px;
   display: flex;
   align-items: flex-start;
   gap: 0.85rem;
@@ -1457,35 +1369,19 @@ img {
 
 .crx-contact-card:hover {
   background: rgba(255, 255, 255, 0.07);
-  transform: translateY(-2px);
 }
 
 .crx-contact-icon {
-  width: 40px;
-  height: 40px;
-  background: rgba(224, 122, 95, 0.15);
-  border-radius: 10px;
+  width: 36px;
+  height: 36px;
+  background: rgba(45, 106, 111, 0.15);
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
-  color: var(--accent);
-  flex-shrink: 0;
-}
-
-.crx-contact-card:nth-child(2) .crx-contact-icon {
-  background: rgba(45, 106, 111, 0.15);
+  font-size: 0.95rem;
   color: var(--primary-light);
-}
-
-.crx-contact-card:nth-child(3) .crx-contact-icon {
-  background: rgba(106, 159, 107, 0.15);
-  color: var(--success);
-}
-
-.crx-contact-card:nth-child(4) .crx-contact-icon {
-  background: rgba(212, 163, 74, 0.15);
-  color: var(--warning);
+  flex-shrink: 0;
 }
 
 .crx-contact-card h2,
@@ -1505,7 +1401,7 @@ img {
 .crx-footer {
   background: #111122;
   color: #8e8ea0;
-  padding: 3rem 0 0;
+  padding: 2rem 0 0;
 }
 
 .crx-footer-container {
@@ -1551,7 +1447,7 @@ img {
 .crx-social-links a:hover {
   background: var(--accent);
   color: var(--white);
-  transform: translateY(-2px) rotate(-3deg);
+  transform: translateY(-2px);
 }
 
 .crx-footer-col h2,
@@ -1672,7 +1568,7 @@ img {
 
 /* ---- Home Info Sections ---- */
 .crx-info-section {
-  padding: 2.75rem 0;
+  padding: 1.75rem 0;
   background: var(--bg);
   position: relative;
 }
@@ -1688,7 +1584,7 @@ img {
   border: 1px solid var(--border);
   border-left: 3px solid var(--accent);
   border-radius: 4px var(--radius) var(--radius) 4px;
-  padding: 1.15rem 1.1rem;
+  padding: 1.3rem 1.2rem;
   box-shadow: var(--card-shadow);
   transition: transform var(--transition), box-shadow var(--transition);
 }
@@ -1706,24 +1602,24 @@ img {
 }
 
 .crx-info-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: var(--card-shadow-hover);
 }
 
 .crx-info-card h3 {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--dark);
   margin-bottom: 0.4rem;
 }
 
 .crx-info-card p {
-  font-size: 0.87rem;
+  font-size: 0.9rem;
   color: var(--mid);
   line-height: 1.6;
 }
 
 .crx-faq-section {
-  padding: 2.75rem 0;
+  padding: 1.75rem 0;
   background: var(--white);
 }
 
@@ -1775,7 +1671,7 @@ img {
 
   .crx-about-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .crx-about-img-placeholder {
