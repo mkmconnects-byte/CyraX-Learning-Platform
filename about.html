@@ -47,6 +47,24 @@
         <button class="crx-btn crx-btn-outline" id="signInBtn">Sign In</button>
         <a href="register.html" class="crx-btn crx-btn-primary">Sign Up</a>
       </div>
+      <div class="crx-language-selector">
+        <button class="crx-language-toggle" id="languageToggle" aria-label="Select language">
+          <i class="fas fa-globe"></i>
+          <span class="crx-language-text">English</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="crx-language-dropdown" id="languageDropdown">
+          <a href="#" class="crx-language-option crx-language-active" data-lang="en">
+            <span>English</span>
+          </a>
+          <a href="#" class="crx-language-option" data-lang="si">
+            <span>සිංහල (Sinhala)</span>
+          </a>
+          <a href="#" class="crx-language-option" data-lang="ta">
+            <span>தமிழ் (Tamil)</span>
+          </a>
+        </div>
+      </div>
       <button class="crx-hamburger" id="hamburger" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
       </button>
@@ -54,7 +72,7 @@
   </header>
 
   <!--page header-->
-  <section class="crx-page-hero">
+  <section class="crx-page-hero crx-page-hero-about">
     <div class="crx-container">
       
       <h1 class="crx-page-hero-title">About CyraX</h1>

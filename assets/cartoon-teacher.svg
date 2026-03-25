@@ -1,0 +1,27 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300">
+  <!-- Body -->
+  <ellipse cx="100" cy="120" rx="35" ry="50" fill="#8B6F47"/>
+  <!-- Neck -->
+  <rect x="90" y="70" width="20" height="20" fill="#FDBCB4"/>
+  <!-- Head -->
+  <circle cx="100" cy="50" r="25" fill="#FDBCB4"/>
+  <!-- Eyes -->
+  <circle cx="92" cy="45" r="3" fill="#000"/>
+  <circle cx="108" cy="45" r="3" fill="#000"/>
+  <!-- Smile -->
+  <path d="M 92 55 Q 100 60 108 55" stroke="#000" stroke-width="2" fill="none"/>
+  <!-- Hair -->
+  <path d="M 75 35 Q 100 15 125 35 Q 100 25 75 35" fill="#8B4513"/>
+  <!-- Arms -->
+  <line x1="65" y1="110" x2="30" y2="130" stroke="#FDBCB4" stroke-width="8" stroke-linecap="round"/>
+  <line x1="135" y1="110" x2="170" y2="100" stroke="#FDBCB4" stroke-width="8" stroke-linecap="round"/>
+  <!-- Stick (pointing upper left) -->
+  <line x1="30" y1="130" x2="10" y2="60" stroke="#654321" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="10" cy="60" r="5" fill="#FFD700"/>
+  <!-- Legs -->
+  <line x1="85" y1="170" x2="85" y2="230" stroke="#333" stroke-width="8" stroke-linecap="round"/>
+  <line x1="115" y1="170" x2="115" y2="230" stroke="#333" stroke-width="8" stroke-linecap="round"/>
+  <!-- Shoes -->
+  <ellipse cx="85" cy="235" rx="8" ry="5" fill="#000"/>
+  <ellipse cx="115" cy="235" rx="8" ry="5" fill="#000"/>
+</svg>

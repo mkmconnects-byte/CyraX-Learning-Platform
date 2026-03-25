@@ -50,6 +50,24 @@
         <button class="crx-btn crx-btn-outline" id="signInBtn">Sign In</button>
         <a href="register.html" class="crx-btn crx-btn-primary">Sign Up</a>
       </div>
+      <div class="crx-language-selector">
+        <button class="crx-language-toggle" id="languageToggle" aria-label="Select language">
+          <i class="fas fa-globe"></i>
+          <span class="crx-language-text">English</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="crx-language-dropdown" id="languageDropdown">
+          <a href="#" class="crx-language-option crx-language-active" data-lang="en">
+            <span>English</span>
+          </a>
+          <a href="#" class="crx-language-option" data-lang="si">
+            <span>සිංහල (Sinhala)</span>
+          </a>
+          <a href="#" class="crx-language-option" data-lang="ta">
+            <span>தமிழ் (Tamil)</span>
+          </a>
+        </div>
+      </div>
       <button class="crx-hamburger" id="hamburger" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
       </button>
@@ -121,8 +139,16 @@
         <p>Loading courses...</p>
       </div>
 
-      <!-- Course Grid - populated by JavaScript from courses.xml -->
-      <div class="crx-courses-grid" id="coursesGrid"></div>
+      <!-- Course Grid Wrapper with Teacher -->
+      <div class="crx-courses-grid-wrapper">
+        <!-- Teacher Character (Next to Intro to Programming) -->
+        <div class="crx-teacher-intro">
+          <img src="assets/cartoon-teacher.png" alt="Teacher assistant" class="crx-teacher-intro-img" />
+        </div>
+
+        <!-- Course Grid - populated by JavaScript from courses.xml -->
+        <div class="crx-courses-grid" id="coursesGrid"></div>
+      </div>
 
       <!-- No Results Message -->
       <div class="crx-no-results crx-hidden" id="noResults">

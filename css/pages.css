@@ -129,11 +129,51 @@
   to { transform: rotate(360deg); }
 }
 
+/* Course Grid Wrapper (with Teacher) */
+.crx-courses-grid-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  position: relative;
+}
+
+/* Teacher Next to Introduction Course */
+.crx-teacher-intro {
+  flex-shrink: 0;
+  width: 140px;
+  animation: crxTeacherIntroWave 3.5s ease-in-out infinite;
+  pointer-events: none;
+  position: sticky;
+  top: 280px;
+  height: fit-content;
+}
+
+.crx-teacher-intro-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(165, 28, 48, 0.25));
+  transform: scaleX(-1);
+}
+
+@keyframes crxTeacherIntroWave {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  35% {
+    transform: translateY(-8px) rotate(-2deg);
+  }
+  65% {
+    transform: translateY(-4px) rotate(2deg);
+  }
+}
+
 /* Course Grid */
 .crx-courses-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
   gap: 1.5rem;
+  flex: 1;
 }
 
 @media (max-width: 900px) {
@@ -151,6 +191,16 @@
   .crx-courses-topic-item {
     font-size: 0.78rem;
     letter-spacing: 0.08em;
+  }
+
+  .crx-courses-grid-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .crx-teacher-intro {
+    width: 110px;
   }
 }
 
@@ -406,6 +456,33 @@
   background: var(--white);
 }
 
+.crx-page-hero-about {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 140px 1rem 80px;
+}
+
+.crx-page-hero-about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../assets/hero-students-graduating.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(7px);
+  transform: scale(1.08);
+  z-index: -2;
+}
+
+.crx-page-hero-about::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(250, 247, 241, 0.78);
+  z-index: -1;
+}
+
 .crx-about-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -528,6 +605,10 @@
 }
 
 @media (max-width: 900px) {
+  .crx-page-hero-about {
+    padding: 128px 1rem 64px;
+  }
+
   .crx-about-trust-text {
     font-size: 1.05rem;
     margin-bottom: 1rem;
@@ -1202,5 +1283,81 @@
 .crx-callout-bar span i {
   color: var(--primary-light);
   margin-right: 0.3rem;
+}
+
+/* ---- Cartoon Teacher Character (Left side of Courses) ---- */
+.crx-teacher-left {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: -80px;
+  margin-bottom: 0.5rem;
+  pointer-events: none;
+}
+
+.crx-teacher-left-img {
+  width: 150px;
+  height: auto;
+  transform: scaleX(-1);
+  filter: drop-shadow(0 4px 8px rgba(165, 28, 48, 0.2));
+  animation: crxTeacherWave 3s ease-in-out infinite;
+}
+
+@keyframes crxTeacherWave {
+  0%, 20%, 50%, 80%, 100% {
+    transform: scaleX(-1) translateY(0);
+  }
+  40% {
+    transform: scaleX(-1) translateY(-6px);
+  }
+  60% {
+    transform: scaleX(-1) translateY(-3px);
+  }
+}
+
+/* ---- Cartoon Teacher Character (Chatbot companion - Right Side) ---- */
+.crx-teacher-character {
+  position: fixed;
+  bottom: 2rem;
+  right: 7.5rem;
+  width: 100px;
+  height: auto;
+  z-index: 998;
+  animation: crxTeacherBounce 3s infinite;
+  pointer-events: none;
+}
+
+.crx-teacher-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 4px 8px rgba(165, 28, 48, 0.2));
+}
+
+@keyframes crxTeacherBounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 900px) {
+  .crx-teacher-left {
+    margin-top: -60px;
+  }
+
+  .crx-teacher-left-img {
+    width: 120px;
+  }
+
+  .crx-teacher-character {
+    width: 75px;
+    bottom: 1.8rem;
+    right: 6.5rem;
+  }
 }
 
