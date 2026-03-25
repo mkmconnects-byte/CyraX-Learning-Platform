@@ -1,13 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+﻿<?xml version="1.0" encoding="utf-8"?>
 <courses>
-
   <course id="c1" level="Foundation">
     <title>Introduction to Programming</title>
     <duration>6 Weeks</duration>
     <instructor>Dr. Alice Morgan</instructor>
     <description>Learn the core concepts of programming logic, variables, loops, and functions using Python as the teaching language.</description>
-    <image>https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&amp;q=80</image>
+    <image>assets/courses/course-introduction-to-programming.jpg</image>
     <lessons>
       <lesson>What is Programming?</lesson>
       <lesson>Variables and Data Types</lesson>
@@ -17,13 +15,12 @@
       <lesson>Introduction to Debugging</lesson>
     </lessons>
   </course>
-
   <course id="c2" level="Foundation">
     <title>Web Development Fundamentals</title>
     <duration>8 Weeks</duration>
     <instructor>Prof. James Carter</instructor>
     <description>A beginner-friendly introduction to building websites using HTML5, CSS3, and the basics of responsive design.</description>
-    <image>https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&amp;q=80</image>
+    <image>assets/courses/course-web-development-fundamentals.jpg</image>
     <lessons>
       <lesson>HTML5 Structure and Semantics</lesson>
       <lesson>CSS3 Selectors and Properties</lesson>
@@ -33,13 +30,12 @@
       <lesson>Deploying a Static Website</lesson>
     </lessons>
   </course>
-
   <course id="c3" level="Undergraduate">
     <title>JavaScript Essentials</title>
     <duration>8 Weeks</duration>
     <instructor>Ms. Sofia Nguyen</instructor>
     <description>Master the fundamentals of JavaScript including DOM manipulation, events, and asynchronous programming.</description>
-    <image>https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=400&amp;q=80</image>
+    <image>assets/courses/course-javascript-essentials.jpg</image>
     <lessons>
       <lesson>JavaScript Syntax and Operators</lesson>
       <lesson>DOM Manipulation</lesson>
@@ -50,13 +46,12 @@
       <lesson>Error Handling</lesson>
     </lessons>
   </course>
-
   <course id="c4" level="Undergraduate">
     <title>Advanced Java Programming</title>
     <duration>10 Weeks</duration>
     <instructor>Dr. Samuel Osei</instructor>
     <description>Deep dive into Java OOP principles, generics, collections, multithreading, and enterprise-level patterns.</description>
-    <image>https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=400&amp;q=80</image>
+    <image>assets/courses/course-advanced-java-programming.jpg</image>
     <lessons>
       <lesson>OOP Revisited: Classes and Interfaces</lesson>
       <lesson>Generics and Collections Framework</lesson>
@@ -68,13 +63,12 @@
       <lesson>Introduction to Spring Framework</lesson>
     </lessons>
   </course>
-
   <course id="c5" level="Undergraduate">
     <title>Data Structures and Algorithms</title>
     <duration>10 Weeks</duration>
     <instructor>Prof. Linda Zhao</instructor>
     <description>Explore essential data structures and algorithmic thinking required for technical interviews and efficient software development.</description>
-    <image>https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&amp;q=80</image>
+    <image>assets/courses/course-data-structures-and-algorithms.jpg</image>
     <lessons>
       <lesson>Arrays and Linked Lists</lesson>
       <lesson>Stacks and Queues</lesson>
@@ -86,30 +80,28 @@
       <lesson>Big-O Complexity Analysis</lesson>
     </lessons>
   </course>
-
   <course id="c6" level="Undergraduate">
     <title>Database Systems</title>
     <duration>8 Weeks</duration>
     <instructor>Dr. Michael Torres</instructor>
     <description>Learn relational database design, SQL querying, normalization, and an introduction to NoSQL databases.</description>
-    <image>https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=400&amp;q=80</image>
+    <image>assets/courses/course-database-systems.jpg</image>
     <lessons>
       <lesson>Relational Model and ER Diagrams</lesson>
       <lesson>SQL: SELECT, INSERT, UPDATE, DELETE</lesson>
       <lesson>Joins and Subqueries</lesson>
-      <lesson>Database Normalization (1NF–3NF)</lesson>
+      <lesson>Database Normalization (1NFâ€“3NF)</lesson>
       <lesson>Transactions and ACID Properties</lesson>
       <lesson>Indexes and Query Optimization</lesson>
       <lesson>Introduction to MongoDB</lesson>
     </lessons>
   </course>
-
   <course id="c7" level="Undergraduate">
     <title>Software Engineering</title>
     <duration>10 Weeks</duration>
     <instructor>Prof. Rachel Kim</instructor>
     <description>Understand the software development lifecycle, Agile methodologies, version control, and team collaboration practices.</description>
-    <image>https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&amp;q=80</image>
+    <image>assets/courses/course-software-engineering.jpg</image>
     <lessons>
       <lesson>Software Development Life Cycle</lesson>
       <lesson>Agile and Scrum Methodology</lesson>
@@ -121,13 +113,12 @@
       <lesson>Deployment and DevOps Overview</lesson>
     </lessons>
   </course>
-
   <course id="c8" level="Foundation">
     <title>UI/UX Design Principles</title>
     <duration>6 Weeks</duration>
     <instructor>Ms. Priya Sharma</instructor>
     <description>Discover the principles of user-centered design, wireframing, prototyping, and creating intuitive digital experiences.</description>
-    <image>https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&amp;q=80</image>
+    <image>assets/courses/course-ui-ux-design-principles.jpg</image>
     <lessons>
       <lesson>Introduction to User-Centred Design</lesson>
       <lesson>Design Thinking Process</lesson>
@@ -137,13 +128,12 @@
       <lesson>Usability Testing</lesson>
     </lessons>
   </course>
-
   <course id="c9" level="Postgraduate">
     <title>Cybersecurity Basics</title>
     <duration>12 Weeks</duration>
     <instructor>Dr. Ethan Williams</instructor>
     <description>An advanced introduction to cybersecurity concepts, network security, ethical hacking fundamentals, and data protection regulations.</description>
-    <image>https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&amp;q=80</image>
+    <image>assets/courses/course-cybersecurity-basics.jpg</image>
     <lessons>
       <lesson>Cybersecurity Landscape and Threats</lesson>
       <lesson>Network Security Fundamentals</lesson>
@@ -156,13 +146,12 @@
       <lesson>Security Auditing</lesson>
     </lessons>
   </course>
-
   <course id="c10" level="Postgraduate">
     <title>Artificial Intelligence Fundamentals</title>
     <duration>12 Weeks</duration>
     <instructor>Prof. Yuki Tanaka</instructor>
     <description>Explore the foundations of AI including machine learning, neural networks, natural language processing, and ethical AI considerations.</description>
-    <image>https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=400&amp;q=80</image>
+    <image>assets/courses/course-artificial-intelligence-fundamentals.jpg</image>
     <lessons>
       <lesson>History and Scope of AI</lesson>
       <lesson>Machine Learning Basics</lesson>
@@ -176,13 +165,12 @@
       <lesson>Building a Simple ML Model</lesson>
     </lessons>
   </course>
-
   <course id="c11" level="Foundation">
     <title>Digital Marketing Fundamentals</title>
     <duration>7 Weeks</duration>
     <instructor>Ms. Hannah Reed</instructor>
     <description>Learn core digital marketing skills including SEO basics, social media strategy, and campaign performance tracking.</description>
-    <image>https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&amp;q=80</image>
+    <image>assets/courses/course-digital-marketing-fundamentals.jpg</image>
     <lessons>
       <lesson>Introduction to Digital Marketing</lesson>
       <lesson>Audience Research and Personas</lesson>
@@ -193,13 +181,12 @@
       <lesson>Campaign Planning Project</lesson>
     </lessons>
   </course>
-
   <course id="c12" level="Postgraduate">
     <title>Cloud Computing and DevOps</title>
     <duration>12 Weeks</duration>
     <instructor>Dr. Omar Nasser</instructor>
     <description>Build practical cloud and DevOps skills with CI/CD pipelines, containerization, and scalable deployment practices.</description>
-    <image>https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&amp;q=80</image>
+    <image>assets/courses/course-cloud-computing-and-devops.jpg</image>
     <lessons>
       <lesson>Cloud Service Models: IaaS, PaaS, SaaS</lesson>
       <lesson>Virtualization and Containers</lesson>
@@ -212,13 +199,12 @@
       <lesson>Scalable Deployment Project</lesson>
     </lessons>
   </course>
-
   <course id="c13" level="Foundation">
     <title>Introduction to HTML &amp; CSS</title>
     <duration>4 Weeks</duration>
     <instructor>Dr. Susan Boyle</instructor>
     <description>Learn how to create structured and beautifully styled web pages from scratch.</description>
-    <image>https://images.unsplash.com/photo-1621839673705-6617adf9e890?w=400&amp;q=80</image>
+    <image>assets/courses/course-introduction-to-html-css.jpg</image>
     <lessons>
       <lesson>Basic HTML Tags</lesson>
       <lesson>Styling with CSS</lesson>
@@ -230,7 +216,7 @@
     <duration>5 Weeks</duration>
     <instructor>Dr. Alan Turing</instructor>
     <description>Core mathematical concepts required for computer science and IT degrees.</description>
-    <image>https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&amp;q=80</image>
+    <image>assets/courses/course-basic-mathematics-for-it.jpg</image>
     <lessons>
       <lesson>Algebra Basics</lesson>
       <lesson>Discrete Math Introduction</lesson>
@@ -242,7 +228,7 @@
     <duration>6 Weeks</duration>
     <instructor>Prof. John Doe</instructor>
     <description>Understand how computers work, from hardware to operating systems.</description>
-    <image>https://images.unsplash.com/photo-1547082299-de196ea013d6?w=400&amp;q=80</image>
+    <image>assets/courses/course-it-system-fundamentals.jpg</image>
     <lessons>
       <lesson>Hardware Architecture</lesson>
       <lesson>Operating Systems Basics</lesson>
@@ -254,7 +240,7 @@
     <duration>4 Weeks</duration>
     <instructor>Ms. Sarah Jenkins</instructor>
     <description>Basic data handling using spreadsheets and introductory statistical concepts.</description>
-    <image>https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&amp;q=80</image>
+    <image>assets/courses/course-introduction-to-data-analysis.jpg</image>
     <lessons>
       <lesson>Excel Basics</lesson>
       <lesson>Formulas and Functions</lesson>
@@ -266,7 +252,7 @@
     <duration>5 Weeks</duration>
     <instructor>Dr. Victor Stone</instructor>
     <description>An introduction to digital systems and logic circuits.</description>
-    <image>https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&amp;q=80</image>
+    <image>assets/courses/course-digital-logic-design.jpg</image>
     <lessons>
       <lesson>Boolean Algebra</lesson>
       <lesson>Logic Gates Design</lesson>
@@ -278,20 +264,19 @@
     <duration>6 Weeks</duration>
     <instructor>Prof. Richard Hendricks</instructor>
     <description>The absolute basics of computer networks, the internet, and IP addressing.</description>
-    <image>https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&amp;q=80</image>
+    <image>assets/courses/course-computer-networking-101.jpg</image>
     <lessons>
       <lesson>What is the Internet?</lesson>
       <lesson>IP Addresses</lesson>
       <lesson>Network Topologies</lesson>
     </lessons>
   </course>
-
   <course id="c19" level="Undergraduate">
     <title>Object-Oriented Programming</title>
     <duration>8 Weeks</duration>
     <instructor>Dr. Emily Chen</instructor>
     <description>Advanced programming using C++ focusing on OOP principles.</description>
-    <image>https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&amp;q=80</image>
+    <image>assets/courses/course-object-oriented-programming.jpg</image>
     <lessons>
       <lesson>Classes and Objects</lesson>
       <lesson>Inheritance</lesson>
@@ -303,7 +288,7 @@
     <duration>10 Weeks</duration>
     <instructor>Prof. Linus Torvalds</instructor>
     <description>Deep dive into process management, memory management, and file systems.</description>
-    <image>https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&amp;q=80</image>
+    <image>assets/courses/course-operating-systems-concepts.jpg</image>
     <lessons>
       <lesson>Process Scheduling</lesson>
       <lesson>Memory Paging</lesson>
@@ -315,7 +300,7 @@
     <duration>8 Weeks</duration>
     <instructor>Dr. Jacob Nielsen</instructor>
     <description>Designing interactive systems with a focus on usability and user psychology.</description>
-    <image>https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&amp;q=80</image>
+    <image>assets/courses/course-human-computer-interaction.jpg</image>
     <lessons>
       <lesson>Usability Heuristics</lesson>
       <lesson>User Research</lesson>
@@ -327,7 +312,7 @@
     <duration>10 Weeks</duration>
     <instructor>Ms. Ada Lovelace</instructor>
     <description>Build iOS and Android applications using React Native.</description>
-    <image>https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&amp;q=80</image>
+    <image>assets/courses/course-mobile-app-development.jpg</image>
     <lessons>
       <lesson>React Basics</lesson>
       <lesson>Mobile Routing</lesson>
@@ -339,7 +324,7 @@
     <duration>8 Weeks</duration>
     <instructor>Prof. Vint Cerf</instructor>
     <description>Advanced networking concepts covering routing protocols and switch configurations.</description>
-    <image>https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&amp;q=80</image>
+    <image>assets/courses/course-network-routing-and-switching.jpg</image>
     <lessons>
       <lesson>OSI Model Revisited</lesson>
       <lesson>OSPF &amp; BGP</lesson>
@@ -351,20 +336,19 @@
     <duration>10 Weeks</duration>
     <instructor>Dr. Andrew Ng</instructor>
     <description>Core ML concepts using Python and scikit-learn.</description>
-    <image>https://images.unsplash.com/photo-1527474305487-b87b222841cc?w=400&amp;q=80</image>
+    <image>assets/courses/course-introduction-to-machine-learning.jpg</image>
     <lessons>
       <lesson>Linear Regression</lesson>
       <lesson>Classification Models</lesson>
       <lesson>Model Evaluation</lesson>
     </lessons>
   </course>
-
   <course id="c25" level="Postgraduate">
     <title>Advanced Artificial Intelligence</title>
     <duration>12 Weeks</duration>
     <instructor>Prof. Geoffrey Hinton</instructor>
     <description>Deep learning, neural networks, and advanced AI agent architectures.</description>
-    <image>https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&amp;q=80</image>
+    <image>assets/courses/course-advanced-artificial-intelligence.jpg</image>
     <lessons>
       <lesson>Backpropagation</lesson>
       <lesson>CNNs and RNNs</lesson>
@@ -376,7 +360,7 @@
     <duration>12 Weeks</duration>
     <instructor>Dr. Matei Zaharia</instructor>
     <description>Processing massive datasets using Hadoop and Apache Spark.</description>
-    <image>https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&amp;q=80</image>
+    <image>assets/courses/course-big-data-analytics.jpg</image>
     <lessons>
       <lesson>Hadoop Ecosystem</lesson>
       <lesson>Spark RDDs</lesson>
@@ -388,7 +372,7 @@
     <duration>10 Weeks</duration>
     <instructor>Prof. Whitfield Diffie</instructor>
     <description>Mathematical foundations of modern cryptographic systems.</description>
-    <image>https://images.unsplash.com/photo-1510511459019-5efa32dda367?w=400&amp;q=80</image>
+    <image>assets/courses/course-advanced-cryptography.jpg</image>
     <lessons>
       <lesson>Public Key Infrastructure</lesson>
       <lesson>Elliptic Curves</lesson>
@@ -400,11 +384,11 @@
     <duration>12 Weeks</duration>
     <instructor>Dr. Peter Shor</instructor>
     <description>An introduction to quantum gates, qubits, and quantum algorithms.</description>
-    <image>https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&amp;q=80</image>
+    <image>assets/courses/course-quantum-computing-fundamentals.jpg</image>
     <lessons>
       <lesson>Quantum Mechanics Basics</lesson>
       <lesson>Qubits &amp; Superposition</lesson>
-      <lesson>Shor’s Algorithm</lesson>
+      <lesson>Shorâ€™s Algorithm</lesson>
     </lessons>
   </course>
   <course id="c29" level="Postgraduate">
@@ -412,7 +396,7 @@
     <duration>10 Weeks</duration>
     <instructor>Prof. Satoshi Nakamoto</instructor>
     <description>Decentralized ledgers, smart contracts, and Web3 development.</description>
-    <image>https://images.unsplash.com/photo-1621416894569-0f39ed31d247?w=400&amp;q=80</image>
+    <image>assets/courses/course-blockchain.jpg</image>
     <lessons>
       <lesson>Blockchain Architecture</lesson>
       <lesson>Ethereum &amp; Solidity</lesson>
@@ -424,12 +408,11 @@
     <duration>12 Weeks</duration>
     <instructor>Dr. Martin Fowler</instructor>
     <description>Microservices, event-driven architecture, and system scalability.</description>
-    <image>https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&amp;q=80</image>
+    <image>assets/courses/course-advanced-software-architecture.jpg</image>
     <lessons>
       <lesson>Monolith vs Microservices</lesson>
       <lesson>Event Sourcing</lesson>
       <lesson>System Resiliency</lesson>
     </lessons>
   </course>
-
 </courses>

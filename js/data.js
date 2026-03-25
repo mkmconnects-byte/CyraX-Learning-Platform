@@ -3,7 +3,7 @@ let allCourses = [];
 let activeFilter = 'All'; 
 
 function getFallbackCourses() {
-  return [
+  const fallbackCourses = [
     { id: 'c1', level: 'Foundation', title: 'Introduction to Programming', duration: '6 Weeks', instructor: '', description: '', image: '', lessons: [] },
     { id: 'c2', level: 'Foundation', title: 'Web Development Fundamentals', duration: '8 Weeks', instructor: '', description: '', image: '', lessons: [] },
     { id: 'c3', level: 'Undergraduate', title: 'JavaScript Essentials', duration: '8 Weeks', instructor: '', description: '', image: '', lessons: [] },
@@ -35,6 +35,21 @@ function getFallbackCourses() {
     { id: 'c29', level: 'Postgraduate', title: 'Blockchain', duration: '10 Weeks', instructor: '', description: '', image: '', lessons: [] },
     { id: 'c30', level: 'Postgraduate', title: 'Advanced Software Architecture', duration: '12 Weeks', instructor: '', description: '', image: '', lessons: [] }
   ];
+
+  const fallbackImages = [
+    'assets/data_foundation.png',
+    'assets/data_analytics.png',
+    'assets/data_analyst.png',
+    'assets/google_data.png',
+    'assets/chatgpt_excel.png',
+    'assets/data_analytics.png'
+  ];
+
+  return fallbackCourses.map(function (course, index) {
+    return Object.assign({}, course, {
+      image: fallbackImages[index % fallbackImages.length]
+    });
+  });
 }
 
 function useFallbackCourses(reason) {
