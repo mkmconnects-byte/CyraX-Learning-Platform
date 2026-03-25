@@ -13,6 +13,26 @@
   margin-bottom: 1rem;
 }
 
+.crx-courses-hero-row {
+  display: grid;
+  grid-template-columns: minmax(170px, 240px) auto minmax(170px, 240px);
+  align-items: center;
+  gap: 1rem;
+}
+
+.crx-course-hero-box {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.85rem 0.95rem;
+}
+
+.crx-course-hero-box h3 {
+  color: var(--dark);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
 .crx-filter-btn {
   display: inline-flex;
   align-items: center;
@@ -65,6 +85,19 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
   gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .crx-courses-hero-row {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 0.55rem;
+  }
+
+  .crx-course-hero-box {
+    width: 100%;
+    max-width: 320px;
+  }
 }
 
 /* Course Card */
@@ -767,7 +800,7 @@
 }
 
 .crx-contact-section .crx-section-subtitle {
-  color: #8e8ea0;
+  color: var(--muted);
 }
 
 .crx-contact-grid {

@@ -8,13 +8,13 @@
   --success:       #2d6a4f;
   --warning:       #b87333;
   --danger:        #c0392b;
-  --dark:          #1a1a1a;
-  --dark-2:        #2c2c2c;
-  --mid:           #555555;
-  --muted:         #888888;
-  --border:        #e0e0e0;
-  --bg:            #f8f8f6;
-  --white:         #ffffff;
+  --dark:          #1f1b16;
+  --dark-2:        #2d261f;
+  --mid:           #4c4237;
+  --muted:         #7a6d5f;
+  --border:        #e6dccb;
+  --bg:            #f6efe2;
+  --white:         #fffaf0;
   --card-shadow:   0 2px 8px rgba(0,0,0,0.06);
   --card-shadow-hover: 0 6px 20px rgba(0,0,0,0.10);
   --radius:        16px;
@@ -38,7 +38,7 @@ html {
 
 body {
   font-family: var(--font);
-  background: var(--white);
+  background: var(--bg);
   color: var(--dark);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;

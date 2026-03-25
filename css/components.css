@@ -216,8 +216,8 @@
 
 /* ---- Footer ---- */
 .crx-footer {
-  background: #111122;
-  color: #8e8ea0;
+  background: #f0e6d6;
+  color: var(--mid);
   padding: 1.25rem 0 0;
 }
 
@@ -232,7 +232,7 @@
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 1.5rem;
   padding-bottom: 1.25rem;
-  border-bottom: 1px solid #252540;
+  border-bottom: 1px solid var(--border);
 }
 
 .crx-footer-brand p {
@@ -251,12 +251,12 @@
 .crx-social-links a {
   width: 34px;
   height: 34px;
-  background: #252540;
+  background: #e8dcc9;
   border-radius: 7px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #8e8ea0;
+  color: var(--mid);
   font-size: 0.84rem;
   transition: background var(--transition), color var(--transition), transform var(--transition);
 }
@@ -271,7 +271,7 @@
 .crx-footer-col h4 {
   font-size: 0.88rem;
   font-weight: 700;
-  color: var(--white);
+  color: var(--dark);
   margin-bottom: 0.85rem;
 }
 
@@ -283,7 +283,7 @@
 
 .crx-footer-col ul li a {
   font-size: 0.84rem;
-  color: #8e8ea0;
+  color: var(--mid);
   transition: color var(--transition), padding-left var(--transition);
 }
 
@@ -296,7 +296,7 @@
   padding: 1.25rem 0;
   text-align: center;
   font-size: 0.78rem;
-  color: #4a4a62;
+  color: var(--muted);
 }
 
 /* ---- Modal ---- */
