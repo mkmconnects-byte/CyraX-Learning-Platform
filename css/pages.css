@@ -20,6 +20,55 @@
   gap: 1rem;
 }
 
+.crx-courses-topic-bar {
+  margin-top: 0.8rem;
+  background: var(--dark-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 0.55rem 0;
+}
+
+.crx-courses-topic-track {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  animation: crx-courses-topic-loop 18s linear infinite;
+  will-change: transform;
+}
+
+.crx-courses-topic-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+
+.crx-courses-topic-item {
+  color: #d8d3c7;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  position: relative;
+  padding-right: 1.5rem;
+}
+
+.crx-courses-topic-item::after {
+  content: "•";
+  color: var(--primary-light);
+  position: absolute;
+  right: 0.35rem;
+}
+
+@keyframes crx-courses-topic-loop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .crx-course-hero-box {
   background: var(--white);
   border: 1px solid var(--border);
@@ -97,6 +146,11 @@
   .crx-course-hero-box {
     width: 100%;
     max-width: 320px;
+  }
+
+  .crx-courses-topic-item {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
   }
 }
 
@@ -433,6 +487,62 @@
   object-fit: cover;
   border-radius: var(--radius);
   box-shadow: none;
+}
+
+.crx-about-trust-strip {
+  background: #ffffff;
+  padding: 2.8rem 0 3rem;
+}
+
+.crx-about-trust-text {
+  text-align: center;
+  color: var(--dark);
+  font-size: 1.35rem;
+  font-family: var(--font-serif);
+  margin-bottom: 1.5rem;
+}
+
+.crx-about-trust-logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1.25rem;
+}
+
+.crx-about-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--mid);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.crx-about-logo i {
+  font-size: 1.05em;
+  opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+  .crx-about-trust-text {
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+  }
+
+  .crx-about-trust-logos {
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    padding-bottom: 0.2rem;
+  }
+
+  .crx-about-logo {
+    font-size: 1rem;
+  }
 }
 
 /* About page feature cards: professional, icon-free presentation */
@@ -887,10 +997,20 @@
 
 .crx-contact-marquee-content {
   display: flex;
-  width: max-content;
+  width: 200%;
   white-space: nowrap;
-  gap: 2rem;
-  animation: scroll-marquee 20s linear infinite;
+  animation: crx-contact-marquee-loop 18s linear infinite;
+  will-change: transform;
+}
+
+.crx-contact-marquee-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .crx-contact-marquee-item {
@@ -906,6 +1026,15 @@
 .crx-contact-marquee-item::after {
   content: "|";
   color: var(--primary);
+}
+
+@keyframes crx-contact-marquee-loop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 /* ---- Contact Section ---- */
@@ -1020,6 +1149,32 @@
   .crx-contact-layout {
     grid-template-columns: 1fr;
   }
+}
+
+/* ---- Contact Location Section ---- */
+.crx-location-section {
+  padding: 0 0 3rem;
+  background: var(--white);
+}
+
+.crx-location-section .crx-section-title {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.crx-location-map-wrap {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  background: var(--bg);
+}
+
+.crx-location-map-wrap iframe {
+  width: 100%;
+  height: 340px;
+  border: 0;
+  display: block;
 }
 
 
