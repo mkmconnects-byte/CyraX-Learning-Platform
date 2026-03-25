@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CyraX – Courses</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>CyraX â€“ Courses</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/components.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
@@ -71,10 +73,10 @@
       <!-- Loading Spinner -->
       <div class="crx-loading-spinner" id="loadingSpinner">
         <div class="crx-spinner"></div>
-        <p>Loading courses…</p>
+        <p>Loading coursesâ€¦</p>
       </div>
 
-      <!-- Course Grid — populated by JavaScript from courses.xml -->
+      <!-- Course Grid â€” populated by JavaScript from courses.xml -->
       <div class="crx-courses-grid" id="coursesGrid"></div>
 
       <!-- No Results Message -->
@@ -190,7 +192,7 @@
             <span class="crx-logo-icon"><i class="fas fa-graduation-cap"></i></span>
             <span class="crx-logo-text">Cyra<span class="crx-logo-accent">X</span></span>
           </a>
-          <p>A student project — an online learning platform for different course levels.</p>
+          <p>A student project â€” an online learning platform for different course levels.</p>
           <div class="crx-social-links">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -266,7 +268,9 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/ui.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,845 @@
+/* ---- Courses Section ---- */
+.crx-courses-section {
+  padding: 3rem 0 4rem;
+  background: var(--bg);
+}
+
+/* Filter Bar */
+.crx-filter-bar {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.crx-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--mid);
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.crx-filter-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.crx-filter-btn.crx-active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+
+/* Loading Spinner */
+.crx-loading-spinner {
+  text-align: center;
+  padding: 2.5rem;
+  color: var(--mid);
+}
+
+.crx-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 0.85rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Course Grid */
+.crx-courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Course Card */
+.crx-course-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.crx-course-card:hover {
+  background: #f9f7f2;
+}
+
+.crx-course-card-image {
+  width: 100%;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.crx-course-card-image img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.crx-course-card-body {
+  padding: 0.85rem 0.95rem 0.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.crx-course-level-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  margin-bottom: 0.6rem;
+}
+
+.crx-badge-foundation     { background: #dceee1; color: #2a6e41; }
+.crx-badge-undergraduate  { background: #d6e7ea; color: #1f4f54; }
+.crx-badge-postgraduate   { background: #ece4f2; color: #6b3d8a; }
+
+.crx-course-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+
+.crx-course-card-desc {
+  font-size: 0.84rem;
+  color: var(--mid);
+  line-height: 1.45;
+  margin-bottom: 0.55rem;
+  flex: 1;
+}
+
+.crx-course-meta {
+  display: flex;
+  gap: 0.85rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+
+.crx-course-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.crx-course-meta i {
+  color: var(--primary);
+}
+
+.crx-course-card-footer {
+  padding: 0.65rem 1.1rem 1.1rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.crx-course-instructor {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  color: var(--mid);
+  font-weight: 500;
+}
+
+.crx-instructor-avatar {
+  width: 26px;
+  height: 26px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 0.65rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.crx-view-lessons-btn {
+  font-size: 0.8rem;
+  padding: 0.35rem 0.8rem;
+}
+
+/* No results */
+.crx-no-results {
+  text-align: center;
+  padding: 2.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.crx-no-results i {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 0.6rem;
+  color: var(--border);
+}
+
+/* ---- Lesson Viewer Section ---- */
+.crx-lesson-section {
+  padding: 3rem 0;
+  background: #edeae3;
+}
+
+.crx-lesson-panel {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--card-shadow);
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.crx-lesson-header {
+  margin: 1.25rem 0 1.25rem;
+}
+
+.crx-lesson-header h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 0.4rem;
+}
+
+.crx-lesson-header p {
+  font-size: 0.88rem;
+  color: var(--mid);
+}
+
+.crx-lesson-header .crx-lesson-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.6rem;
+}
+
+.crx-lesson-header .crx-lesson-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.83rem;
+  color: var(--mid);
+  font-weight: 500;
+}
+
+.crx-lesson-header .crx-lesson-meta i {
+  color: var(--primary);
+}
+
+/* Lesson list */
+.crx-lesson-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  counter-reset: lesson-counter;
+}
+
+.crx-lesson-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.8rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+  counter-increment: lesson-counter;
+  cursor: default;
+}
+
+.crx-lesson-item:hover {
+  background: rgba(45, 106, 111, 0.04);
+  border-color: var(--primary-light);
+}
+
+.crx-lesson-number {
+  width: 28px;
+  height: 28px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.crx-lesson-title {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--dark-2);
+}
+
+.crx-lesson-icon {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+/* ---- About Section ---- */
+.crx-about-section {
+  padding: 1.25rem 0;
+  background: var(--white);
+}
+
+.crx-about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.crx-about-text .crx-section-title {
+  text-align: left;
+  margin-bottom: 0.85rem;
+}
+
+.crx-about-text p {
+  color: var(--mid);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 0.85rem;
+}
+
+.crx-about-highlights {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.crx-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--dark-2);
+}
+
+.crx-highlight-item i {
+  color: var(--success);
+  font-size: 0.95rem;
+}
+
+.crx-about-img-placeholder {
+  background: #ddd8d0;
+  border-radius: var(--radius-lg);
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  color: var(--primary);
+}
+
+.crx-about-img-placeholder i {
+  font-size: 4rem;
+  opacity: 0.4;
+}
+
+.crx-about-img-placeholder p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--mid);
+}
+
+/* Real about image */
+.crx-about-image img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: none;
+}
+
+/* ---- Registration Section ---- */
+.crx-register-section {
+  padding: 1.25rem 0;
+  background: var(--bg);
+}
+
+.crx-form-wrapper {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.crx-form-rules {
+  background: #f5f2eb;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1rem 0.9rem;
+  margin-bottom: 1.2rem;
+}
+
+.crx-form-rules h2 {
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.crx-form-rules h2 i {
+  color: var(--primary);
+}
+
+.crx-form-rules p {
+  font-size: 0.84rem;
+  color: var(--mid);
+  margin-bottom: 0.6rem;
+}
+
+.crx-rules-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem 0.85rem;
+}
+
+.crx-rules-list li {
+  font-size: 0.8rem;
+  color: var(--mid);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  line-height: 1.3;
+}
+
+.crx-rules-list li i {
+  font-size: 0.4rem;
+  color: var(--muted);
+  transition: color var(--transition);
+}
+
+.crx-rules-list li.crx-rule-ok {
+  color: #2a6e41;
+}
+
+.crx-rules-list li.crx-rule-ok i {
+  color: var(--success);
+}
+
+/* Form Layout */
+.crx-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem;
+  margin-bottom: 1.1rem;
+}
+
+.crx-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.crx-form-group.crx-full-width {
+  grid-column: span 2;
+}
+
+.crx-form-group.crx-center {
+  align-items: center;
+}
+
+.crx-form-group label,
+.crx-group-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--dark-2);
+}
+
+.crx-required {
+  color: var(--danger);
+  margin-left: 2px;
+}
+
+/* Inputs */
+.crx-form-group input[type="text"],
+.crx-form-group input[type="email"],
+.crx-form-group input[type="password"],
+.crx-form-group select,
+.crx-form-group textarea {
+  padding: 0.6rem 0.9rem;
+  border: 2px solid var(--border);
+  border-radius: 7px;
+  font-size: 0.93rem;
+  font-family: var(--font);
+  color: var(--dark);
+  background: var(--white);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  outline: none;
+}
+
+.crx-form-group input:focus,
+.crx-form-group select:focus,
+.crx-form-group textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(45, 106, 111, 0.10);
+}
+
+.crx-form-group input.crx-valid,
+.crx-form-group select.crx-valid,
+.crx-form-group textarea.crx-valid {
+  border-color: var(--success);
+  box-shadow: 0 0 0 3px rgba(106, 159, 107, 0.10);
+}
+
+.crx-form-group input.crx-error,
+.crx-form-group select.crx-error,
+.crx-form-group textarea.crx-error {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px rgba(192, 80, 70, 0.08);
+}
+
+.crx-form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.crx-field-hint {
+  font-size: 0.76rem;
+  color: var(--muted);
+  margin-top: -0.1rem;
+}
+
+.crx-form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238e8ea0' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  padding-right: 2.2rem;
+}
+
+/* Password wrapper */
+.crx-password-wrapper {
+  position: relative;
+}
+
+.crx-password-wrapper input {
+  width: 100%;
+  padding-right: 2.5rem;
+}
+
+.crx-toggle-password {
+  position: absolute;
+  right: 0.65rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.88rem;
+  transition: color var(--transition);
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.crx-toggle-password:hover {
+  color: var(--primary);
+}
+
+/* Radio buttons */
+.crx-radio-group {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  padding: 0.4rem 0;
+}
+
+.crx-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  color: var(--dark-2);
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+}
+
+.crx-radio-label input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.crx-radio-custom {
+  width: 17px;
+  height: 17px;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: border-color var(--transition);
+  position: relative;
+}
+
+.crx-radio-custom::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 7px;
+  height: 7px;
+  background: var(--primary);
+  border-radius: 50%;
+  transition: transform var(--transition);
+}
+
+.crx-radio-label input[type="radio"]:checked + .crx-radio-custom {
+  border-color: var(--primary);
+}
+
+.crx-radio-label input[type="radio"]:checked + .crx-radio-custom::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Checkboxes */
+.crx-checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.25rem;
+  padding: 0.4rem 0;
+}
+
+.crx-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  color: var(--dark-2);
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+}
+
+.crx-checkbox-label input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.crx-checkbox-custom {
+  width: 17px;
+  height: 17px;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  flex-shrink: 0;
+  transition: all var(--transition);
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.crx-checkbox-custom::after {
+  content: '';
+  width: 8px;
+  height: 4px;
+  border-left: 2px solid var(--white);
+  border-bottom: 2px solid var(--white);
+  transform: rotate(-45deg) scale(0);
+  transition: transform var(--transition);
+}
+
+.crx-checkbox-label input[type="checkbox"]:checked + .crx-checkbox-custom {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.crx-checkbox-label input[type="checkbox"]:checked + .crx-checkbox-custom::after {
+  transform: rotate(-45deg) scale(1);
+}
+
+.crx-terms-label {
+  font-size: 0.88rem;
+  color: var(--mid);
+  font-weight: 400;
+}
+
+.crx-form-link {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.crx-form-link:hover {
+  text-decoration: underline;
+  color: var(--accent);
+}
+
+/* Error messages */
+.crx-error-msg {
+  font-size: 0.78rem;
+  color: var(--danger);
+  font-weight: 500;
+  min-height: 0.9rem;
+  display: block;
+}
+
+/* Success message */
+.crx-form-success {
+  background: #dceee1;
+  border: 1px solid #a3d4a7;
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  text-align: center;
+  color: #2a6e41;
+}
+
+.crx-form-success i {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.85rem;
+  color: var(--success);
+}
+
+.crx-form-success h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+}
+
+.crx-form-success p {
+  font-size: 0.88rem;
+}
+
+/* ---- Contact Section ---- */
+.crx-contact-section {
+  padding: 3rem 0;
+  background: var(--white);
+}
+
+.crx-contact-section .crx-section-badge {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--accent);
+}
+
+.crx-contact-section .crx-section-title {
+  color: var(--white);
+}
+
+.crx-contact-section .crx-section-subtitle {
+  color: #8e8ea0;
+}
+
+.crx-contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.4rem;
+  justify-content: center;
+}
+
+.crx-contact-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.25rem;
+  text-align: left;
+  transition: background var(--transition), box-shadow var(--transition);
+  flex: 1;
+  min-width: 200px;
+  max-width: 280px;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  box-shadow: var(--card-shadow);
+}
+
+.crx-contact-card:hover {
+  box-shadow: var(--card-shadow-hover);
+}
+
+
+.crx-contact-icon {
+  width: 36px;
+  height: 36px;
+  background: rgba(45, 106, 111, 0.15);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  color: var(--primary-light);
+  flex-shrink: 0;
+}
+
+.crx-contact-card h2,
+.crx-contact-card h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 0.2rem;
+}
+
+.crx-contact-card p {
+  font-size: 0.84rem;
+  color: var(--mid);
+}
+
+
+/* ---- Callout Bar ---- */
+.crx-callout-bar {
+  background: var(--dark);
+  color: #ccc;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  padding: 0.6rem 1rem;
+  font-size: 0.82rem;
+  justify-content: center;
+}
+
+.crx-callout-bar span i {
+  color: var(--primary-light);
+  margin-right: 0.3rem;
+}
+

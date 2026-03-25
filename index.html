@@ -4,8 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CyraX “ Home</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>CyraX Home</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/components.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -66,7 +68,7 @@
         </div>
         <div class="crx-hero-stats">
           <div class="crx-stat-item">
-            <strong>10+</strong>
+            <strong>30+</strong>
             <span>Courses</span>
           </div>
           <div class="crx-stat-divider"></div>
@@ -132,28 +134,24 @@
   </section>
 
   <!-- Course levels overview -->
-  <section class="crx-levels-section">
+  <section class="crx-levels-section" style="background-color: #fff; padding: 5rem 0;">
     <div class="crx-container">
-      <h2 class="crx-section-title" style="margin-bottom:0.75rem;">Course levels</h2>
+      <h2 class="crx-section-title"
+        style="margin-bottom: 4rem; text-align: center; font-family: 'Merriweather', Georgia, serif; font-size: 2.4rem; font-weight: 400; color: #222;">
+        Course levels</h2>
 
       <div class="crx-levels-grid">
-        <div class="crx-level-card">
-          <div class="crx-level-badge crx-badge-foundation">Foundation</div>
-          <h3>Starting out?</h3>
+        <div class="crx-level-card crx-bg-foundation">
+          <h3>Foundation</h3>
           <p>These courses cover the basics. Good if you're new to the topic and don't know where to begin.</p>
-          <a href="courses.html" class="crx-text-link">View courses &rarr;</a>
         </div>
-        <div class="crx-level-card">
-          <div class="crx-level-badge crx-badge-undergraduate">Undergraduate</div>
-          <h3>Know the basics?</h3>
+        <div class="crx-level-card crx-bg-undergrad">
+          <h3>Undergraduate</h3>
           <p>Undergraduate level goes a bit deeper. You should have some experience before starting these.</p>
-          <a href="courses.html" class="crx-text-link">View courses &rarr;</a>
         </div>
-        <div class="crx-level-card">
-          <div class="crx-level-badge crx-badge-postgraduate">Postgraduate</div>
-          <h3>More advanced?</h3>
+        <div class="crx-level-card crx-bg-postgrad">
+          <h3>Postgraduate</h3>
           <p>Postgraduate courses are for people who already understand the fundamentals and want more.</p>
-          <a href="courses.html" class="crx-text-link">View courses &rarr;</a>
         </div>
       </div>
     </div>
@@ -366,7 +364,7 @@
             <span class="crx-logo-icon"><i class="fas fa-graduation-cap"></i></span>
             <span class="crx-logo-text">Cyra<span class="crx-logo-accent">X</span></span>
           </a>
-          <p>A student project — an online learning platform for different course levels.</p>
+          <p>A student project â€” an online learning platform for different course levels.</p>
           <div class="crx-social-links">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -409,7 +407,9 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/ui.js"></script>
 </body>
 
 </html>

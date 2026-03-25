@@ -1,0 +1,602 @@
+﻿
+:root {
+  --primary:       #A51C30;
+  --primary-dark:  #8a1528;
+  --primary-light: #c94a5e;
+  --accent:        #A51C30;
+  --accent-dark:   #8a1528;
+  --success:       #2d6a4f;
+  --warning:       #b87333;
+  --danger:        #c0392b;
+  --dark:          #1a1a1a;
+  --dark-2:        #2c2c2c;
+  --mid:           #555555;
+  --muted:         #888888;
+  --border:        #e0e0e0;
+  --bg:            #f8f8f6;
+  --white:         #ffffff;
+  --card-shadow:   0 2px 8px rgba(0,0,0,0.06);
+  --card-shadow-hover: 0 6px 20px rgba(0,0,0,0.10);
+  --radius:        16px;
+  --radius-lg:     20px;
+  --font:          'SF Pro Display', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif:    'SF Pro Display', 'Helvetica Neue', -apple-system, sans-serif;
+  --transition:    0.2s ease;
+}
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--white);
+  color: var(--dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---- Utility ---- */
+.crx-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.crx-hidden {
+  display: none !important;
+}
+
+
+/* ---- Buttons ---- */
+.crx-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.2rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 2px solid transparent;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: background var(--transition), color var(--transition),
+              border-color var(--transition), transform var(--transition),
+              filter var(--transition);
+  white-space: nowrap;
+}
+
+.crx-btn-primary {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.crx-btn-primary:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.crx-btn-primary:disabled {
+  background: #ccc;
+  border-color: #ccc;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.crx-btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.crx-btn-outline:hover {
+  background: var(--primary);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+
+.crx-btn-large {
+  padding: 0.9rem 2.2rem;
+  font-size: 1rem;
+}
+
+.crx-btn-sm {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+}
+
+.crx-btn-block {
+  width: 100%;
+  justify-content: center;
+}
+
+
+/* ---- Navigation Bar ---- */
+.crx-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.2s ease;
+}
+
+.crx-navbar.crx-scrolled {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.crx-nav-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Logo */
+.crx-nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--dark);
+  font-family: var(--font-serif);
+  letter-spacing: 0.01em;
+}
+
+.crx-logo-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--primary);
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 0.9rem;
+}
+
+.crx-logo-accent {
+  color: var(--primary);
+}
+
+/* Nav Links */
+.crx-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.crx-nav-link {
+  padding: 0 0.9rem;
+  height: 88px;
+  line-height: 88px;
+  border-radius: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--mid);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  border-bottom: 3px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.crx-nav-link:hover,
+.crx-nav-link.crx-active {
+  color: var(--dark);
+  border-bottom-color: var(--primary);
+  background: transparent;
+}
+
+/* Nav Auth Buttons */
+.crx-nav-auth {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Hamburger */
+.crx-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.crx-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--dark);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* ---- Hero Section ---- */
+.crx-hero,
+.crx-horo {
+  min-height: 100vh;
+  background: var(--dark);
+  display: flex;
+  flex-direction: column;
+  padding: 56px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.crx-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.crx-hero-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 2.5rem 1rem 2rem;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  flex: 1;
+  text-align: center;
+}
+
+/* Override: hero needs to be a block-level full-width flex wrapper */
+.crx-hero {
+  display: flex;
+  align-items: stretch;
+}
+
+.crx-hero-banner-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Dark overlay over banner image */
+.crx-hero-banner-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.crx-hero-banner-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
+
+.crx-hero-content {
+  flex: 1;
+  min-width: 280px;
+  max-width: 700px;
+  color: var(--white);
+  text-align: center;
+}
+
+.crx-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+.crx-hero-highlight {
+  color: #f5a0ac;
+}
+
+.crx-hero-subtitle {
+  font-size: 1.08rem;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.crx-hero-buttons {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.crx-hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.crx-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+}
+
+.crx-stat-item strong {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.crx-stat-item span {
+  font-size: 0.76rem;
+  color: rgba(255,255,255,0.7);
+  font-weight: 500;
+}
+
+.crx-stat-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.3);
+}
+
+/* Hero visual cards */
+.crx-hero-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  flex-shrink: 0;
+}
+
+.crx-hero-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.7rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--dark);
+  font-weight: 600;
+  font-size: 0.9rem;
+  min-width: 170px;
+}
+
+.crx-hero-card:hover {
+  background: #f0ede6;
+}
+
+.crx-hero-card i {
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
+/* Floating animation â€” disabled for organic feel */
+.crx-floating,
+.crx-floating.crx-delay-1,
+.crx-floating.crx-delay-2 {
+  animation: none;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* ---- Page Hero (inner pages) ---- */
+.crx-page-hero {
+  background: var(--white);
+  padding: 120px 1rem 40px;
+  text-align: center;
+  color: var(--dark);
+  border-bottom: none;
+}
+
+.crx-page-hero .crx-section-badge {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.crx-page-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0.4rem 0 0.3rem;
+  line-height: 1.1;
+}
+
+.crx-page-hero-subtitle {
+  font-size: 1rem;
+  color: var(--mid);
+  max-width: 600px;
+  line-height: 1.55;
+}
+
+/* ---- Contact section light variant (contact.html) ---- */
+.crx-contact-section--light {
+  background: var(--bg);
+}
+
+.crx-contact-section--light .crx-contact-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  box-shadow: none;
+}
+
+.crx-contact-section--light .crx-contact-card h2,
+.crx-contact-section--light .crx-contact-card h4 {
+  color: var(--dark);
+}
+
+.crx-contact-section--light .crx-contact-card p {
+  color: var(--mid);
+}
+
+/* override contact icon colors â€” all same */
+.crx-contact-section--light .crx-contact-icon {
+  background: rgba(165, 28, 48, 0.08);
+  color: var(--primary);
+}
+
+/* ---- Features Section ---- */
+.crx-features-section {
+  padding: 2rem 0;
+  background: var(--bg);
+  border-bottom: none;
+}
+
+.crx-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.crx-feature-card {
+  text-align: left;
+  padding: 1.1rem 1rem;
+  border: 1px solid var(--border);
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+.crx-feature-card:hover {
+  background: #fbfbfb;
+}
+
+/* Thumbnail images for feature cards */
+.crx-feature-thumb {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+
+.crx-feature-icon {
+  width: 52px;
+  height: 52px;
+  background: rgba(45, 106, 111, 0.08);
+  border: 1px solid rgba(45, 106, 111, 0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  font-size: 1.15rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.crx-feature-card:nth-child(2) .crx-feature-icon {
+  background: rgba(224, 122, 95, 0.08);
+  border-color: rgba(224, 122, 95, 0.15);
+  color: var(--accent);
+}
+
+.crx-feature-card:nth-child(3) .crx-feature-icon {
+  background: rgba(106, 159, 107, 0.08);
+  border-color: rgba(106, 159, 107, 0.15);
+  color: var(--success);
+}
+
+.crx-feature-card:nth-child(4) .crx-feature-icon {
+  background: rgba(212, 163, 74, 0.08);
+  border-color: rgba(212, 163, 74, 0.15);
+  color: var(--warning);
+}
+
+.crx-feature-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--dark);
+}
+
+.crx-feature-card p {
+  font-size: 0.9rem;
+  color: var(--mid);
+  line-height: 1.55;
+}
+
+/* ---- Section Shared Styles ---- */
+.crx-section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.crx-section-badge {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0;
+  margin-bottom: 0.5rem;
+}
+
+.crx-section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.crx-section-subtitle {
+  color: var(--mid);
+  font-size: 1rem;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
