@@ -380,16 +380,27 @@
 
 .crx-highlight-item {
   display: flex;
-  align-items: center;
-  gap: 0.55rem;
+  align-items: flex-start;
+  gap: 0.65rem;
   font-size: 0.92rem;
   font-weight: 500;
   color: var(--dark-2);
+  line-height: 1.55;
 }
 
-.crx-highlight-item i {
-  color: var(--success);
-  font-size: 0.95rem;
+.crx-highlight-marker {
+  min-width: 2rem;
+  height: 1.35rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.04em;
+  margin-top: 0.1rem;
 }
 
 .crx-about-img-placeholder {
