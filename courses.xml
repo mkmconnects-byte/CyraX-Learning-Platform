@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <courses>
 
@@ -210,6 +210,225 @@
       <lesson>Kubernetes Basics</lesson>
       <lesson>Cloud Security Best Practices</lesson>
       <lesson>Scalable Deployment Project</lesson>
+    </lessons>
+  </course>
+
+  <course id="c13" level="Foundation">
+    <title>Introduction to HTML &amp; CSS</title>
+    <duration>4 Weeks</duration>
+    <instructor>Dr. Susan Boyle</instructor>
+    <description>Learn how to create structured and beautifully styled web pages from scratch.</description>
+    <image>https://images.unsplash.com/photo-1621839673705-6617adf9e890?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>Basic HTML Tags</lesson>
+      <lesson>Styling with CSS</lesson>
+      <lesson>Building Layouts</lesson>
+    </lessons>
+  </course>
+  <course id="c14" level="Foundation">
+    <title>Basic Mathematics for IT</title>
+    <duration>5 Weeks</duration>
+    <instructor>Dr. Alan Turing</instructor>
+    <description>Core mathematical concepts required for computer science and IT degrees.</description>
+    <image>https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>Algebra Basics</lesson>
+      <lesson>Discrete Math Introduction</lesson>
+      <lesson>Logic Gates</lesson>
+    </lessons>
+  </course>
+  <course id="c15" level="Foundation">
+    <title>IT System Fundamentals</title>
+    <duration>6 Weeks</duration>
+    <instructor>Prof. John Doe</instructor>
+    <description>Understand how computers work, from hardware to operating systems.</description>
+    <image>https://images.unsplash.com/photo-1547082299-de196ea013d6?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>Hardware Architecture</lesson>
+      <lesson>Operating Systems Basics</lesson>
+      <lesson>File Systems</lesson>
+    </lessons>
+  </course>
+  <course id="c16" level="Foundation">
+    <title>Introduction to Data Analysis</title>
+    <duration>4 Weeks</duration>
+    <instructor>Ms. Sarah Jenkins</instructor>
+    <description>Basic data handling using spreadsheets and introductory statistical concepts.</description>
+    <image>https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>Excel Basics</lesson>
+      <lesson>Formulas and Functions</lesson>
+      <lesson>Basic Charts</lesson>
+    </lessons>
+  </course>
+  <course id="c17" level="Foundation">
+    <title>Digital Logic Design</title>
+    <duration>5 Weeks</duration>
+    <instructor>Dr. Victor Stone</instructor>
+    <description>An introduction to digital systems and logic circuits.</description>
+    <image>https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>Boolean Algebra</lesson>
+      <lesson>Logic Gates Design</lesson>
+      <lesson>Combinational Circuits</lesson>
+    </lessons>
+  </course>
+  <course id="c18" level="Foundation">
+    <title>Computer Networking 101</title>
+    <duration>6 Weeks</duration>
+    <instructor>Prof. Richard Hendricks</instructor>
+    <description>The absolute basics of computer networks, the internet, and IP addressing.</description>
+    <image>https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>What is the Internet?</lesson>
+      <lesson>IP Addresses</lesson>
+      <lesson>Network Topologies</lesson>
+    </lessons>
+  </course>
+
+  <course id="c19" level="Undergraduate">
+    <title>Object-Oriented Programming</title>
+    <duration>8 Weeks</duration>
+    <instructor>Dr. Emily Chen</instructor>
+    <description>Advanced programming using C++ focusing on OOP principles.</description>
+    <image>https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>Classes and Objects</lesson>
+      <lesson>Inheritance</lesson>
+      <lesson>Polymorphism</lesson>
+    </lessons>
+  </course>
+  <course id="c20" level="Undergraduate">
+    <title>Operating Systems Concepts</title>
+    <duration>10 Weeks</duration>
+    <instructor>Prof. Linus Torvalds</instructor>
+    <description>Deep dive into process management, memory management, and file systems.</description>
+    <image>https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>Process Scheduling</lesson>
+      <lesson>Memory Paging</lesson>
+      <lesson>Concurrency</lesson>
+    </lessons>
+  </course>
+  <course id="c21" level="Undergraduate">
+    <title>Human-Computer Interaction</title>
+    <duration>8 Weeks</duration>
+    <instructor>Dr. Jacob Nielsen</instructor>
+    <description>Designing interactive systems with a focus on usability and user psychology.</description>
+    <image>https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>Usability Heuristics</lesson>
+      <lesson>User Research</lesson>
+      <lesson>Prototyping Tools</lesson>
+    </lessons>
+  </course>
+  <course id="c22" level="Undergraduate">
+    <title>Mobile App Development</title>
+    <duration>10 Weeks</duration>
+    <instructor>Ms. Ada Lovelace</instructor>
+    <description>Build iOS and Android applications using React Native.</description>
+    <image>https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>React Basics</lesson>
+      <lesson>Mobile Routing</lesson>
+      <lesson>API Integration</lesson>
+    </lessons>
+  </course>
+  <course id="c23" level="Undergraduate">
+    <title>Network Routing and Switching</title>
+    <duration>8 Weeks</duration>
+    <instructor>Prof. Vint Cerf</instructor>
+    <description>Advanced networking concepts covering routing protocols and switch configurations.</description>
+    <image>https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>OSI Model Revisited</lesson>
+      <lesson>OSPF &amp; BGP</lesson>
+      <lesson>VLANs</lesson>
+    </lessons>
+  </course>
+  <course id="c24" level="Undergraduate">
+    <title>Introduction to Machine Learning</title>
+    <duration>10 Weeks</duration>
+    <instructor>Dr. Andrew Ng</instructor>
+    <description>Core ML concepts using Python and scikit-learn.</description>
+    <image>https://images.unsplash.com/photo-1527474305487-b87b222841cc?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>Linear Regression</lesson>
+      <lesson>Classification Models</lesson>
+      <lesson>Model Evaluation</lesson>
+    </lessons>
+  </course>
+
+  <course id="c25" level="Postgraduate">
+    <title>Advanced Artificial Intelligence</title>
+    <duration>12 Weeks</duration>
+    <instructor>Prof. Geoffrey Hinton</instructor>
+    <description>Deep learning, neural networks, and advanced AI agent architectures.</description>
+    <image>https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>Backpropagation</lesson>
+      <lesson>CNNs and RNNs</lesson>
+      <lesson>Generative Models</lesson>
+    </lessons>
+  </course>
+  <course id="c26" level="Postgraduate">
+    <title>Big Data Analytics</title>
+    <duration>12 Weeks</duration>
+    <instructor>Dr. Matei Zaharia</instructor>
+    <description>Processing massive datasets using Hadoop and Apache Spark.</description>
+    <image>https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>Hadoop Ecosystem</lesson>
+      <lesson>Spark RDDs</lesson>
+      <lesson>Data Pipelines</lesson>
+    </lessons>
+  </course>
+  <course id="c27" level="Postgraduate">
+    <title>Advanced Cryptography</title>
+    <duration>10 Weeks</duration>
+    <instructor>Prof. Whitfield Diffie</instructor>
+    <description>Mathematical foundations of modern cryptographic systems.</description>
+    <image>https://images.unsplash.com/photo-1510511459019-5efa32dda367?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>Public Key Infrastructure</lesson>
+      <lesson>Elliptic Curves</lesson>
+      <lesson>Quantum Cryptography</lesson>
+    </lessons>
+  </course>
+  <course id="c28" level="Postgraduate">
+    <title>Quantum Computing Fundamentals</title>
+    <duration>12 Weeks</duration>
+    <instructor>Dr. Peter Shor</instructor>
+    <description>An introduction to quantum gates, qubits, and quantum algorithms.</description>
+    <image>https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>Quantum Mechanics Basics</lesson>
+      <lesson>Qubits &amp; Superposition</lesson>
+      <lesson>Shor’s Algorithm</lesson>
+    </lessons>
+  </course>
+  <course id="c29" level="Postgraduate">
+    <title>Blockchain</title>
+    <duration>10 Weeks</duration>
+    <instructor>Prof. Satoshi Nakamoto</instructor>
+    <description>Decentralized ledgers, smart contracts, and Web3 development.</description>
+    <image>https://images.unsplash.com/photo-1621416894569-0f39ed31d247?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>Blockchain Architecture</lesson>
+      <lesson>Ethereum &amp; Solidity</lesson>
+      <lesson>DeFi Apps</lesson>
+    </lessons>
+  </course>
+  <course id="c30" level="Postgraduate">
+    <title>Advanced Software Architecture</title>
+    <duration>12 Weeks</duration>
+    <instructor>Dr. Martin Fowler</instructor>
+    <description>Microservices, event-driven architecture, and system scalability.</description>
+    <image>https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&amp;q=80</image>
+    <lessons>
+      <lesson>Monolith vs Microservices</lesson>
+      <lesson>Event Sourcing</lesson>
+      <lesson>System Resiliency</lesson>
     </lessons>
   </course>
 

@@ -15,7 +15,25 @@ function getFallbackCourses() {
     { id: 'c9', level: 'Postgraduate', title: 'Cybersecurity Basics', duration: '12 Weeks', instructor: '', description: '', image: '', lessons: [] },
     { id: 'c10', level: 'Postgraduate', title: 'Artificial Intelligence Fundamentals', duration: '12 Weeks', instructor: '', description: '', image: '', lessons: [] },
     { id: 'c11', level: 'Foundation', title: 'Digital Marketing Fundamentals', duration: '7 Weeks', instructor: '', description: '', image: '', lessons: [] },
-    { id: 'c12', level: 'Postgraduate', title: 'Cloud Computing and DevOps', duration: '12 Weeks', instructor: '', description: '', image: '', lessons: [] }
+    { id: 'c12', level: 'Postgraduate', title: 'Cloud Computing and DevOps', duration: '12 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c13', level: 'Foundation', title: 'Introduction to HTML & CSS', duration: '4 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c14', level: 'Foundation', title: 'Basic Mathematics for IT', duration: '5 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c15', level: 'Foundation', title: 'IT System Fundamentals', duration: '6 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c16', level: 'Foundation', title: 'Introduction to Data Analysis', duration: '4 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c17', level: 'Foundation', title: 'Digital Logic Design', duration: '5 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c18', level: 'Foundation', title: 'Computer Networking 101', duration: '6 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c19', level: 'Undergraduate', title: 'Object-Oriented Programming', duration: '8 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c20', level: 'Undergraduate', title: 'Operating Systems Concepts', duration: '10 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c21', level: 'Undergraduate', title: 'Human-Computer Interaction', duration: '8 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c22', level: 'Undergraduate', title: 'Mobile App Development', duration: '10 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c23', level: 'Undergraduate', title: 'Network Routing and Switching', duration: '8 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c24', level: 'Undergraduate', title: 'Introduction to Machine Learning', duration: '10 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c25', level: 'Postgraduate', title: 'Advanced Artificial Intelligence', duration: '12 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c26', level: 'Postgraduate', title: 'Big Data Analytics', duration: '12 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c27', level: 'Postgraduate', title: 'Advanced Cryptography', duration: '10 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c28', level: 'Postgraduate', title: 'Quantum Computing Fundamentals', duration: '12 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c29', level: 'Postgraduate', title: 'Blockchain', duration: '10 Weeks', instructor: '', description: '', image: '', lessons: [] },
+    { id: 'c30', level: 'Postgraduate', title: 'Advanced Software Architecture', duration: '12 Weeks', instructor: '', description: '', image: '', lessons: [] }
   ];
 }
 
@@ -843,7 +861,38 @@ function initContactForm() {
   });
 }
 
+function initFeedbackCarousel() {
+  const nextBtn = document.getElementById('feedbackNext');
+  const scrollContainer = document.getElementById('feedbackScroll');
+  if (!nextBtn || !scrollContainer) return;
 
+  let currentIndex = 0;
+  // Based on the CSS, cards are either 3 (desktop), 2 (tablet), or 1 (mobile) per view
+  // To keep it simple, we'll advance by 1 card width + margin each click.
+  
+  nextBtn.addEventListener('click', () => {
+    const cards = scrollContainer.querySelectorAll('.crx-feedback-card');
+    if (cards.length === 0) return;
+    
+    // Total cards is 10. Show 3 at a time max.
+    const maxIndex = cards.length - 1;
+    currentIndex++;
+    
+    // If we reach the end, loop back around
+    if (currentIndex > maxIndex - 2) { 
+        // A smarter way is just reading the card width
+        currentIndex = 0; 
+    }
+
+    const firstCard = cards[0];
+    const cardWidth = firstCard.offsetWidth;
+    const style = window.getComputedStyle(firstCard);
+    const marginRight = parseFloat(style.marginRight) || 0;
+    
+    const moveAmount = (cardWidth + marginRight) * currentIndex;
+    scrollContainer.style.transform = `translateX(-${moveAmount}px)`;
+  });
+}
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -852,8 +901,8 @@ document.addEventListener('DOMContentLoaded', function () {
   initHamburger();
   initModals();
   initPasswordToggles();
-  initBackButton();
   initFilters();
+  initFeedbackCarousel();
 
   // Form validation
   initFormValidation();

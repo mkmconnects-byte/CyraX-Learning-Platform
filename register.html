@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,9 +8,11 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+
 <body>
 
   <header class="crx-navbar" id="navbar">
@@ -40,7 +43,7 @@
     <div class="crx-container">
       <span class="crx-section-badge">Sign Up</span>
       <h1 class="crx-page-hero-title">Create an Account</h1>
-      <p class="crx-page-hero-subtitle">Fill in the form below to register. It's free.</p>
+
     </div>
   </section>
 
@@ -79,12 +82,14 @@
           <div class="crx-form-row">
             <div class="crx-form-group">
               <label for="fullName">Full Name <span class="crx-required">*</span></label>
-              <input type="text" id="fullName" name="fullName" placeholder="e.g. Jane Smith" autocomplete="name" required minlength="2" maxlength="80" />
+              <input type="text" id="fullName" name="fullName" placeholder="e.g. Jane Smith" autocomplete="name"
+                required minlength="2" maxlength="80" />
               <span class="crx-error-msg" id="fullNameError"></span>
             </div>
             <div class="crx-form-group">
               <label for="email">Email Address <span class="crx-required">*</span></label>
-              <input type="email" id="email" name="email" placeholder="e.g. jane@example.com" autocomplete="email" required />
+              <input type="email" id="email" name="email" placeholder="e.g. jane@example.com" autocomplete="email"
+                required />
               <span class="crx-error-msg" id="emailError"></span>
             </div>
           </div>
@@ -94,8 +99,11 @@
             <div class="crx-form-group">
               <label for="password">Password <span class="crx-required">*</span></label>
               <div class="crx-password-wrapper">
-                <input type="password" id="password" name="password" placeholder="At least 8 chars, upper/lower/number/symbol" autocomplete="new-password" required minlength="8" />
-                <button type="button" class="crx-toggle-password" data-target="password" aria-label="Toggle password visibility">
+                <input type="password" id="password" name="password"
+                  placeholder="At least 8 chars, upper/lower/number/symbol" autocomplete="new-password" required
+                  minlength="8" />
+                <button type="button" class="crx-toggle-password" data-target="password"
+                  aria-label="Toggle password visibility">
                   <i class="fas fa-eye"></i>
                 </button>
               </div>
@@ -105,8 +113,10 @@
             <div class="crx-form-group">
               <label for="confirmPassword">Confirm Password <span class="crx-required">*</span></label>
               <div class="crx-password-wrapper">
-                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repeat your password" autocomplete="new-password" required />
-                <button type="button" class="crx-toggle-password" data-target="confirmPassword" aria-label="Toggle confirm password visibility">
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repeat your password"
+                  autocomplete="new-password" required />
+                <button type="button" class="crx-toggle-password" data-target="confirmPassword"
+                  aria-label="Toggle confirm password visibility">
                   <i class="fas fa-eye"></i>
                 </button>
               </div>
@@ -188,7 +198,8 @@
           <div class="crx-form-row">
             <div class="crx-form-group crx-full-width">
               <label for="comments">Anything else you want to add?</label>
-              <textarea id="comments" name="comments" rows="4" placeholder="What are you hoping to learn, or any questions..."></textarea>
+              <textarea id="comments" name="comments" rows="4"
+                placeholder="What are you hoping to learn, or any questions..."></textarea>
             </div>
           </div>
 
@@ -198,7 +209,8 @@
               <label class="crx-checkbox-label crx-terms-label">
                 <input type="checkbox" id="termsCheck" name="terms" />
                 <span class="crx-checkbox-custom"></span>
-                I agree to the <a href="#" class="crx-form-link">Terms of Service</a> and <a href="#" class="crx-form-link">Privacy Policy</a>
+                I agree to the <a href="#" class="crx-form-link">Terms of Service</a> and <a href="#"
+                  class="crx-form-link">Privacy Policy</a>
                 <span class="crx-required">*</span>
               </label>
               <span class="crx-error-msg" id="termsError"></span>
@@ -208,7 +220,8 @@
           <!-- Submit Button -->
           <div class="crx-form-row">
             <div class="crx-form-group crx-full-width crx-center">
-              <button type="submit" id="registerSubmitBtn" class="crx-btn crx-btn-primary crx-btn-large crx-btn-block" disabled>
+              <button type="submit" id="registerSubmitBtn" class="crx-btn crx-btn-primary crx-btn-large crx-btn-block"
+                disabled>
                 <i class="fas fa-user-plus"></i> Register
               </button>
             </div>
@@ -299,10 +312,12 @@
         </div>
         <button type="submit" class="crx-btn crx-btn-primary crx-btn-block">Sign In</button>
       </form>
-      <p class="crx-modal-footer-text">Don't have an account? <a href="register.html" class="crx-form-link">Register here</a></p>
+      <p class="crx-modal-footer-text">Don't have an account? <a href="register.html" class="crx-form-link">Register
+          here</a></p>
     </div>
   </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>
