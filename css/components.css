@@ -846,3 +846,73 @@
   }
 }
 
+/* ---- Floating Chatbot Button ---- */
+.crx-chatbot-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 15px rgba(165, 28, 48, 0.4), 0 0 20px rgba(165, 28, 48, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 999;
+  animation: crxBounceChat 3s infinite;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.crx-chatbot-btn:hover {
+  background: var(--primary-dark);
+  box-shadow: 0 6px 20px rgba(165, 28, 48, 0.6), 0 0 30px rgba(165, 28, 48, 0.9);
+  animation-play-state: paused;
+  transform: scale(1.1);
+}
+
+@keyframes crxBounceChat {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(-7px);
+  }
+}
+
+/* ---- Floating WhatsApp Button ---- */
+.crx-whatsapp-btn {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25D366;
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4), 0 0 20px rgba(37, 211, 102, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 999;
+  animation: crxBounceChat 3s infinite;
+  animation-delay: 1.5s;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.crx-whatsapp-btn:hover {
+  background: #128C7E;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6), 0 0 30px rgba(37, 211, 102, 0.9);
+  animation-play-state: paused;
+  transform: scale(1.1);
+}

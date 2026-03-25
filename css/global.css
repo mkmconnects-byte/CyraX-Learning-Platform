@@ -265,7 +265,7 @@ img {
 /* ---- Hero Section ---- */
 .crx-hero,
 .crx-horo {
-  min-height: 70vh;
+  min-height: 90vh;
   background: var(--dark);
   position: relative;
   overflow: hidden;
