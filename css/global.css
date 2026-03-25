@@ -195,7 +195,7 @@ img {
 .crx-logo-icon {
   width: 32px;
   height: 32px;
-  background: url('../assets/logo.png') center/cover no-repeat;
+  background: url('../assets/logo.png') center/contain no-repeat;
   border-radius: 0;
   display: flex;
   align-items: center;
@@ -207,6 +207,8 @@ img {
 .crx-logo-icon i {
   display: none;
 }
+
+
 
 .crx-logo-accent {
   color: var(--primary);
@@ -313,8 +315,7 @@ img {
 }
 
 /* ---- Hero Section ---- */
-.crx-hero,
-.crx-horo {
+.crx-hero {
   min-height: 90vh;
   background: var(--dark);
   position: relative;

@@ -32,26 +32,6 @@
   transition: transform var(--transition);
 }
 
-.crx-level-card:hover {
-  transform: translateY(-5px);
-}
-
-.crx-level-card h3 {
-  font-family: 'Merriweather', Georgia, serif;
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: #222;
-  margin: 0 0 1rem;
-}
-
-.crx-level-card p {
-  font-size: 0.95rem;
-  color: #444;
-  line-height: 1.6;
-  flex: 1;
-  margin-bottom: 0;
-}
-
 /* ---- How to Get Started Section ---- */
 .crx-info-section {
   padding: 4rem 0;
