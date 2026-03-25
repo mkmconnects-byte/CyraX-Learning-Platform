@@ -20,60 +20,33 @@
 
 .crx-level-card {
   position: relative;
+  background: transparent;
   border: none;
-  border-radius: var(--radius);
-  padding: 4rem 2rem;
+  border-radius: 0;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-shadow: var(--card-shadow);
-  transition: transform var(--transition), box-shadow var(--transition);
-  overflow: hidden;
+  box-shadow: none;
+  transition: transform var(--transition);
 }
-
-.crx-level-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  filter: blur(4px) brightness(0.4);
-  transform: scale(1.1);
-  z-index: 0;
-  transition: filter var(--transition), transform var(--transition);
-}
-
-.crx-level-card > * {
-  position: relative;
-  z-index: 1;
-}
-
-.crx-bg-foundation::before { background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80'); }
-.crx-bg-undergrad::before { background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80'); }
-.crx-bg-postgrad::before { background-image: url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80'); }
 
 .crx-level-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-}
-
-.crx-level-card:hover::before {
-  filter: blur(2px) brightness(0.5);
-  transform: scale(1.05);
 }
 
 .crx-level-card h3 {
   font-family: 'Merriweather', Georgia, serif;
-  font-size: 1.65rem;
-  font-weight: 700;
-  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #222;
   margin: 0 0 1rem;
 }
 
 .crx-level-card p {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: #444;
   line-height: 1.6;
   flex: 1;
   margin-bottom: 0;
