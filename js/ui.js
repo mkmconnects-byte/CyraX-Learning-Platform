@@ -1,4 +1,4 @@
-﻿function initNavbar() {
+function initNavbar() {
   const navbar = document.getElementById('navbar');
   const navLinks = document.querySelectorAll('.crx-nav-link');
 
@@ -239,10 +239,52 @@ function initFeedbackCarousel() {
 }
 
 
+function initHeroCarousel() {
+  const carousel = document.getElementById('heroCarousel');
+  const maxSlides = 3;
+  let currentIndex = 0;
+
+  if (!carousel) return;
+
+  const prevBtn = document.getElementById('heroPrev');
+  const nextBtn = document.getElementById('heroNext');
+
+  function goToSlide(index) {
+    if (index < 0) {
+      currentIndex = maxSlides - 1;
+    } else if (index >= maxSlides) {
+      currentIndex = 0;
+    } else {
+      currentIndex = index;
+    }
+    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', () => { goToSlide(currentIndex - 1); resetInterval(); });
+  if (nextBtn) nextBtn.addEventListener('click', () => { goToSlide(currentIndex + 1); resetInterval(); });
+
+  let intervalId;
+  function startInterval() {
+    intervalId = setInterval(() => {
+      goToSlide(currentIndex + 1);
+    }, 5000);
+  }
+
+  function resetInterval() {
+    clearInterval(intervalId);
+    startInterval();
+  }
+
+  // start autoplay
+  startInterval();
+}
+
+
 document.addEventListener('DOMContentLoaded', function () {
   // UI interactions
   initNavbar();
   initHamburger();
+  initHeroCarousel();
   initModals();
   initPasswordToggles();
   initFilters();

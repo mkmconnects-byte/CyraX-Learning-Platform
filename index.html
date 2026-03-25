@@ -44,50 +44,110 @@
 
 
   <section class="crx-hero" id="home">
-    <div class="crx-hero-banner-photo" aria-label="Students learning banner">
-      <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=2000&q=80"
-        alt="Students learning together" />
-    </div>
-    <div class="crx-hero-body">
-      <div class="crx-hero-content">
-        <h1 class="crx-hero-title">
-          Learn new stuff,<br />
-          <span class="crx-hero-highlight">improve your skills</span>
-        </h1>
-        <p class="crx-hero-subtitle">
-          CyraX has courses for different levels. You can go through them at your own speed and get a certificate when
-          you're done.
-        </p>
-        <div class="crx-hero-buttons">
-          <a href="courses.html" class="crx-btn crx-btn-primary crx-btn-large">
-            <i class="fas fa-play-circle"></i> Browse Courses
-          </a>
-          <a href="about.html" class="crx-btn crx-btn-outline crx-btn-large">
-            About Us
-          </a>
+    <div class="crx-hero-carousel" id="heroCarousel">
+      <!-- Slide 1 -->
+      <div class="crx-hero-slide">
+        <div class="crx-hero-banner-photo" aria-label="Students learning banner">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=2000&q=80"
+            alt="Students learning together" />
         </div>
-        <div class="crx-hero-stats">
-          <div class="crx-stat-item">
-            <strong>30+</strong>
-            <span>Courses</span>
-          </div>
-          <div class="crx-stat-divider"></div>
-          <div class="crx-stat-item">
-            <strong>500+</strong>
-            <span>Students</span>
-          </div>
-          <div class="crx-stat-divider"></div>
-          <div class="crx-stat-item">
-            <strong>10</strong>
-            <span>Instructors</span>
-          </div>
-          <div class="crx-stat-divider"></div>
-          <div class="crx-stat-item">
-            <strong>95%</strong>
-            <span>Satisfied</span>
+        <div class="crx-hero-body">
+          <div class="crx-hero-content">
+            <h1 class="crx-hero-title">
+              Learn new stuff,<br />
+              <span class="crx-hero-highlight">improve your skills</span>
+            </h1>
+            <p class="crx-hero-subtitle">
+              CyraX has courses for different levels. You can go through them at your own speed and get a certificate when
+              you're done.
+            </p>
+            <div class="crx-hero-buttons">
+              <a href="courses.html" class="crx-btn crx-btn-primary crx-btn-large">
+                <i class="fas fa-play-circle"></i> Browse Courses
+              </a>
+              <a href="about.html" class="crx-btn crx-btn-outline crx-btn-large">
+                About Us
+              </a>
+            </div>
+            <div class="crx-hero-stats">
+              <div class="crx-stat-item">
+                <strong>30+</strong>
+                <span>Courses</span>
+              </div>
+              <div class="crx-stat-divider"></div>
+              <div class="crx-stat-item">
+                <strong>500+</strong>
+                <span>Students</span>
+              </div>
+              <div class="crx-stat-divider"></div>
+              <div class="crx-stat-item">
+                <strong>10</strong>
+                <span>Instructors</span>
+              </div>
+              <div class="crx-stat-divider"></div>
+              <div class="crx-stat-item">
+                <strong>95%</strong>
+                <span>Satisfied</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- Slide 2 -->
+      <div class="crx-hero-slide">
+        <div class="crx-hero-banner-photo">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=2000&q=80" alt="Students building projects" />
+        </div>
+        <div class="crx-hero-body">
+          <div class="crx-hero-content">
+            <h1 class="crx-hero-title">
+              Master your craft,<br />
+              <span class="crx-hero-highlight">build your future</span>
+            </h1>
+            <p class="crx-hero-subtitle">
+              Gain practical experience with cutting-edge tools. Join thousands of students building their portfolio with CyraX.
+            </p>
+            <div class="crx-hero-buttons">
+              <a href="courses.html" class="crx-btn crx-btn-primary crx-btn-large">
+                <i class="fas fa-play-circle"></i> Start Learning
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="crx-hero-slide">
+        <div class="crx-hero-banner-photo">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=2000&q=80" alt="Students graduating" />
+        </div>
+        <div class="crx-hero-body">
+          <div class="crx-hero-content">
+            <h1 class="crx-hero-title">
+              Learn from experts,<br />
+              <span class="crx-hero-highlight">achieve excellence</span>
+            </h1>
+            <p class="crx-hero-subtitle">
+              Interactive coursework prepared by industry veterans. Push your potential further than you thought possible.
+            </p>
+            <div class="crx-hero-buttons">
+              <a href="register.html" class="crx-btn crx-btn-primary crx-btn-large">
+                <i class="fas fa-user-plus"></i> Join CyraX
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button class="crx-hero-arrow crx-prev" id="heroPrev" aria-label="Previous Slide">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="crx-hero-arrow crx-next" id="heroNext" aria-label="Next Slide">
+      <i class="fas fa-chevron-right"></i>
+    </button>
   </section>
 
   <!-- Quick callout bar -->
