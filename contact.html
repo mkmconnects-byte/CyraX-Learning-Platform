@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CyraX â€“ Contact</title>
+  <title>CyraX - Contact</title>
   <link rel="icon" type="image/png" href="assets/logo.png" />
   <link rel="stylesheet" href="css/global.css" />
   <link rel="stylesheet" href="css/pages.css" />
@@ -24,7 +24,21 @@
       </a>
       <nav class="crx-nav-links" id="navLinks">
         <a href="index.html" class="crx-nav-link">Home</a>
-        <a href="courses.html" class="crx-nav-link">Courses</a>
+        <div class="crx-nav-dropdown">
+          <a href="courses.html" class="crx-nav-link">Courses</a>
+          <div class="crx-nav-dropdown-menu" aria-label="Courses menu">
+            <a href="courses.html" class="crx-nav-dropdown-item">Data Analytics Foundation</a>
+            <a href="courses.html" class="crx-nav-dropdown-item">Programming Basics</a>
+            <a href="courses.html" class="crx-nav-dropdown-item">Web Development Essentials</a>
+            <a href="courses.html" class="crx-nav-dropdown-item">Database Systems</a>
+            <a href="courses.html" class="crx-nav-dropdown-item">Software Engineering</a>
+            <a href="courses.html" class="crx-nav-dropdown-item">Machine Learning Fundamentals</a>
+            <a href="courses.html" class="crx-nav-dropdown-item">Cloud Computing</a>
+            <a href="courses.html" class="crx-nav-dropdown-item">Cybersecurity Principles</a>
+            <a href="courses.html" class="crx-nav-dropdown-item">UI/UX Design Basics</a>
+            <a href="courses.html" class="crx-nav-dropdown-item">Research Methods</a>
+          </div>
+        </div>
         <a href="register.html" class="crx-nav-link">Register</a>
         <a href="about.html" class="crx-nav-link">About</a>
         <a href="contact.html" class="crx-nav-link crx-active">Contact</a>
@@ -96,7 +110,7 @@
             <div class="crx-form-row">
               <div class="crx-form-group crx-full-width">
                 <label for="contactMessage">Message <span class="crx-required">*</span></label>
-                <textarea id="contactMessage" name="contactMessage" rows="5" placeholder="Write your message hereâ€¦"></textarea>
+                <textarea id="contactMessage" name="contactMessage" rows="5" placeholder="Write your message here..."></textarea>
                 <span class="crx-error-msg" id="contactMessageError"></span>
               </div>
             </div>

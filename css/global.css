@@ -242,6 +242,46 @@ img {
   background: transparent;
 }
 
+.crx-nav-dropdown {
+  position: relative;
+}
+
+.crx-nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% - 2px);
+  left: 0;
+  min-width: 280px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--card-shadow-hover);
+  padding: 0.35rem 0;
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 1200;
+}
+
+.crx-nav-dropdown:hover .crx-nav-dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.crx-nav-dropdown-item {
+  display: block;
+  padding: 0.55rem 0.85rem;
+  font-size: 0.82rem;
+  color: var(--dark-2);
+  white-space: nowrap;
+}
+
+.crx-nav-dropdown-item:hover {
+  background: var(--bg);
+  color: var(--primary);
+}
+
 /* Nav Auth Buttons - Right Side */
 .crx-nav-auth {
   display: flex;
