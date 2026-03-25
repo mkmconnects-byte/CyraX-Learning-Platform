@@ -111,8 +111,8 @@ img {
 
 .crx-btn-outline {
   background: transparent;
-  color: var(--primary);
-  border-color: var(--primary);
+  color: var(--primary-dark);
+  border-color: var(--primary-dark);
 }
 
 .crx-btn-outline:hover {

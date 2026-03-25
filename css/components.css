@@ -804,7 +804,7 @@
   cursor: pointer;
   z-index: 10;
   font-size: 1.2rem;
-  color: var(--primary);
+  color: var(--primary-dark);
   transition: all var(--transition);
 }
 .crx-feedback-next:hover {
