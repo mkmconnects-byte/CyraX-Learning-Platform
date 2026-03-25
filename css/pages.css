@@ -876,6 +876,38 @@
   font-size: 0.88rem;
 }
 
+/* ---- Contact Marquee Transition ---- */
+.crx-contact-marquee {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  padding: 0.8rem 0;
+}
+
+.crx-contact-marquee-content {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  gap: 2rem;
+  animation: scroll-marquee 20s linear infinite;
+}
+
+.crx-contact-marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+  color: var(--dark);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.crx-contact-marquee-item::after {
+  content: "|";
+  color: var(--primary);
+}
+
 /* ---- Contact Section ---- */
 .crx-contact-section {
   padding: 3rem 0;
