@@ -179,7 +179,6 @@ img {
   gap: 1rem;
 }
 
-/* Logo */
 .crx-nav-logo {
   display: flex;
   align-items: center;
@@ -189,6 +188,8 @@ img {
   color: var(--dark);
   font-family: var(--font-serif);
   letter-spacing: 0.01em;
+  flex-shrink: 0;
+  min-width: fit-content;
 }
 
 .crx-logo-icon {
@@ -207,11 +208,13 @@ img {
   color: var(--primary);
 }
 
-/* Nav Links */
+/* Nav Links - Centered */
 .crx-nav-links {
   display: flex;
   align-items: center;
   gap: 0;
+  flex: 1;
+  justify-content: center;
 }
 
 .crx-nav-link {
@@ -235,11 +238,13 @@ img {
   background: transparent;
 }
 
-/* Nav Auth Buttons */
+/* Nav Auth Buttons - Right Side */
 .crx-nav-auth {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex-shrink: 0;
+  margin-left: auto;
 }
 
 /* Hamburger */
@@ -251,6 +256,7 @@ img {
   border: none;
   cursor: pointer;
   padding: 4px;
+  flex-shrink: 0;
 }
 
 .crx-hamburger span {
