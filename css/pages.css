@@ -471,6 +471,51 @@
   font-size: 0.9rem;
 }
 
+/* ---- Register Page Animated Gallery ---- */
+.crx-register-gallery {
+  padding: 0 0 1.25rem;
+  background: var(--bg);
+}
+
+.crx-register-gallery-viewport {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--white);
+  padding: 0.6rem;
+}
+
+.crx-register-gallery-track {
+  display: flex;
+  gap: 0.75rem;
+  width: max-content;
+  animation: crx-register-slide-right 24s linear infinite;
+}
+
+.crx-register-gallery-image {
+  width: clamp(220px, 26vw, 340px);
+  height: 170px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+@keyframes crx-register-slide-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .crx-register-gallery-image {
+    width: 78vw;
+    height: 150px;
+  }
+}
+
 /* ---- Registration Section ---- */
 .crx-register-section {
   padding: 1.25rem 0;
