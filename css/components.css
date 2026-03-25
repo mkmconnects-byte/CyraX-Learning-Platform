@@ -412,34 +412,54 @@
 
 .crx-faq-item {
   border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
-  border-radius: 4px 8px 8px 4px;
-  padding: 0.75rem 0.9rem;
-  background: #f9f7f2;
-  transition: border-color var(--transition), box-shadow var(--transition);
-}
-
-.crx-faq-item:hover {
-  border-left-color: var(--primary);
-  box-shadow: 0 2px 8px rgba(26, 26, 46, 0.05);
-}
-
-.crx-faq-item[open] {
-  border-left-color: var(--primary);
+  border-radius: 6px;
+  padding: 0;
+  background: #ffffff;
+  margin-bottom: 0.1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
 .crx-faq-item summary {
-  font-weight: 600;
+  padding: 1rem 1.2rem;
+  font-weight: 500;
   color: var(--dark-2);
   cursor: pointer;
-  font-size: 0.93rem;
+  font-size: 0.95rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.crx-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.crx-faq-item summary::after {
+  content: '\f078';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 0.85rem;
+  color: var(--mid);
+  transition: transform 0.3s ease;
+}
+
+.crx-faq-item[open] summary::after {
+  transform: rotate(180deg);
 }
 
 .crx-faq-item p {
-  margin-top: 0.45rem;
+  padding: 0 1.2rem 1.2rem 2.5rem;
+  margin: 0;
   color: var(--mid);
-  font-size: 0.87rem;
+  font-size: 0.9rem;
   line-height: 1.6;
+  border-top: 1px solid transparent;
+}
+
+.crx-faq-item[open] p {
+  border-top-color: var(--bg);
+  padding-top: 1rem;
 }
 
 /* ---- Responsive Design ---- */
