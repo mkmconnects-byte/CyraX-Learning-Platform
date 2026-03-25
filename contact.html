@@ -50,80 +50,88 @@
   <section class="crx-contact-section" id="contact">
     <div class="crx-container">
 
-      <!-- Contact Form -->
-      <div class="crx-form-wrapper">
-        <h2 class="crx-section-title" style="text-align:center; margin-bottom:1.25rem;">Send a message</h2>
-        <form id="contactForm" novalidate>
-          <div class="crx-form-row">
-            <div class="crx-form-group">
-              <label for="contactName">Your Name <span class="crx-required">*</span></label>
-              <input type="text" id="contactName" name="contactName" placeholder="e.g. John Smith" />
-              <span class="crx-error-msg" id="contactNameError"></span>
-            </div>
-            <div class="crx-form-group">
-              <label for="contactEmail">Email Address <span class="crx-required">*</span></label>
-              <input type="email" id="contactEmail" name="contactEmail" placeholder="e.g. john@example.com" />
-              <span class="crx-error-msg" id="contactEmailError"></span>
-            </div>
-          </div>
-          <div class="crx-form-row">
-            <div class="crx-form-group crx-full-width">
-              <label for="contactSubject">Subject <span class="crx-required">*</span></label>
-              <input type="text" id="contactSubject" name="contactSubject" placeholder="e.g. Course enquiry" />
-              <span class="crx-error-msg" id="contactSubjectError"></span>
-            </div>
-          </div>
-          <div class="crx-form-row">
-            <div class="crx-form-group crx-full-width">
-              <label for="contactMessage">Message <span class="crx-required">*</span></label>
-              <textarea id="contactMessage" name="contactMessage" rows="5" placeholder="Write your message hereâ€¦"></textarea>
-              <span class="crx-error-msg" id="contactMessageError"></span>
-            </div>
-          </div>
-          <div class="crx-form-row">
-            <div class="crx-form-group crx-full-width crx-center">
-              <button type="submit" class="crx-btn crx-btn-primary crx-btn-large crx-btn-block">
-                <i class="fas fa-paper-plane"></i> Send Message
-              </button>
-            </div>
-          </div>
-        </form>
-        <div class="crx-form-success crx-hidden" id="contactSuccess">
-          <i class="fas fa-check-circle"></i>
-          <h3>Message sent!</h3>
-          <p>We'll try to get back to you within 24 hours.</p>
-        </div>
-      </div>
+      <div class="crx-contact-layout">
 
-      <div class="crx-contact-grid" style="margin-top: 3rem;">
-        <div class="crx-contact-card">
-          <div class="crx-contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <div class="crx-contact-info">
-            <h2>Address</h2>
-            <p>313/8, Galahitiyawa South, Ganemulla</p>
+        <!-- Contact Form -->
+        <div class="crx-form-wrapper crx-contact-form-wrapper">
+          <h2 class="crx-contact-form-title">Send a message</h2>
+          <form id="contactForm" novalidate>
+            <div class="crx-form-row">
+              <div class="crx-form-group">
+                <label for="contactName">Your Name <span class="crx-required">*</span></label>
+                <input type="text" id="contactName" name="contactName" placeholder="e.g. John Smith" />
+                <span class="crx-error-msg" id="contactNameError"></span>
+              </div>
+              <div class="crx-form-group">
+                <label for="contactEmail">Email Address <span class="crx-required">*</span></label>
+                <input type="email" id="contactEmail" name="contactEmail" placeholder="e.g. john@example.com" />
+                <span class="crx-error-msg" id="contactEmailError"></span>
+              </div>
+            </div>
+            <div class="crx-form-row">
+              <div class="crx-form-group crx-full-width">
+                <label for="contactSubject">Subject <span class="crx-required">*</span></label>
+                <input type="text" id="contactSubject" name="contactSubject" placeholder="e.g. Course enquiry" />
+                <span class="crx-error-msg" id="contactSubjectError"></span>
+              </div>
+            </div>
+            <div class="crx-form-row">
+              <div class="crx-form-group crx-full-width">
+                <label for="contactMessage">Message <span class="crx-required">*</span></label>
+                <textarea id="contactMessage" name="contactMessage" rows="5" placeholder="Write your message hereâ€¦"></textarea>
+                <span class="crx-error-msg" id="contactMessageError"></span>
+              </div>
+            </div>
+            <div class="crx-form-row">
+              <div class="crx-form-group crx-full-width crx-center">
+                <button type="submit" class="crx-btn crx-btn-primary crx-btn-large crx-btn-block">
+                  <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+              </div>
+            </div>
+          </form>
+          <div class="crx-form-success crx-hidden" id="contactSuccess">
+            <i class="fas fa-check-circle"></i>
+            <h3>Message sent!</h3>
+            <p>We'll try to get back to you within 24 hours.</p>
           </div>
         </div>
-        <div class="crx-contact-card">
-          <div class="crx-contact-icon"><i class="fas fa-envelope"></i></div>
-          <div class="crx-contact-info">
-            <h2>Email</h2>
-            <p><a href="mailto:mkm.connects@gmail.com">mkm.connects@gmail.com</a></p>
+
+        <aside class="crx-contact-side-panel">
+          <h2 class="crx-contact-side-title">Contact details</h2>
+          <p class="crx-contact-side-text">Use any of the methods below and we will get back to you as soon as possible.</p>
+          <div class="crx-contact-grid">
+            <div class="crx-contact-card">
+              <div class="crx-contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="crx-contact-info">
+                <h2>Address</h2>
+                <p>313/8, Galahitiyawa South, Ganemulla</p>
+              </div>
+            </div>
+            <div class="crx-contact-card">
+              <div class="crx-contact-icon"><i class="fas fa-envelope"></i></div>
+              <div class="crx-contact-info">
+                <h2>Email</h2>
+                <p><a href="mailto:mkm.connects@gmail.com">mkm.connects@gmail.com</a></p>
+              </div>
+            </div>
+            <div class="crx-contact-card">
+              <div class="crx-contact-icon"><i class="fas fa-phone-alt"></i></div>
+              <div class="crx-contact-info">
+                <h2>Phone</h2>
+                <p>+94 743388665</p>
+              </div>
+            </div>
+            <div class="crx-contact-card">
+              <div class="crx-contact-icon"><i class="fas fa-clock"></i></div>
+              <div class="crx-contact-info">
+                <h2>Support Hours</h2>
+                <p>Mon-Fri: 8am - 8pm</p>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="crx-contact-card">
-          <div class="crx-contact-icon"><i class="fas fa-phone-alt"></i></div>
-          <div class="crx-contact-info">
-            <h2>Phone</h2>
-            <p>+94 743388665</p>
-          </div>
-        </div>
-        <div class="crx-contact-card">
-          <div class="crx-contact-icon"><i class="fas fa-clock"></i></div>
-          <div class="crx-contact-info">
-            <h2>Support Hours</h2>
-            <p>Mon-Fri: 8am - 8pm</p>
-          </div>
-        </div>
+        </aside>
+
       </div>
 
     </div>

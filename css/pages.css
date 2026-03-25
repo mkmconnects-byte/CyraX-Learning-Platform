@@ -502,10 +502,10 @@
 
 @keyframes crx-register-slide-right {
   from {
-    transform: translateX(-50%);
+    transform: translateX(0);
   }
   to {
-    transform: translateX(0);
+    transform: translateX(-50%);
   }
 }
 
@@ -882,6 +882,44 @@
   background: var(--white);
 }
 
+.crx-contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.95fr);
+  gap: 1.4rem;
+  align-items: start;
+}
+
+.crx-contact-form-wrapper {
+  margin: 0;
+}
+
+.crx-contact-form-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.crx-contact-side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.crx-contact-side-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.crx-contact-side-text {
+  color: var(--mid);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
 .crx-contact-section .crx-section-badge {
   background: rgba(255, 255, 255, 0.08);
   color: var(--accent);
@@ -896,11 +934,10 @@
 }
 
 .crx-contact-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1rem;
   margin-top: 0.4rem;
-  justify-content: center;
 }
 
 .crx-contact-card {
@@ -910,9 +947,6 @@
   padding: 1.25rem 1.25rem;
   text-align: left;
   transition: background var(--transition), box-shadow var(--transition);
-  flex: 1;
-  min-width: 200px;
-  max-width: 280px;
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
@@ -948,6 +982,12 @@
 .crx-contact-card p {
   font-size: 0.84rem;
   color: var(--mid);
+}
+
+@media (max-width: 960px) {
+  .crx-contact-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
 
