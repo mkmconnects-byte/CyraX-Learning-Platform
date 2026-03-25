@@ -2,7 +2,7 @@ function initNavbar() {
   const navbar = document.getElementById('navbar');
   const navLinks = document.querySelectorAll('.crx-nav-link');
 
-  // Scroll shadow
+// Scroll shadow
   window.addEventListener('scroll', function () {
     if (window.scrollY > 20) {
       navbar.classList.add('crx-scrolled');
@@ -10,16 +10,16 @@ function initNavbar() {
       navbar.classList.remove('crx-scrolled');
     }
 
-    // Highlight the active section link
+// Highlight the active section link
     updateActiveNavLink();
   });
 
-  // Smooth scroll for anchor links and active class
+// Smooth scroll for anchor links and active class
   navLinks.forEach(function (link) {
     link.addEventListener('click', function () {
       navLinks.forEach(function (l) { l.classList.remove('crx-active'); });
       link.classList.add('crx-active');
-      // Close mobile menu if open
+// Close mobile menu if open
       document.getElementById('navLinks').classList.remove('crx-open');
     });
   });
@@ -42,7 +42,7 @@ function updateActiveNavLink() {
     }
   });
 
-  // Only update active state when a section is found in the viewport
+// Only update active state when a section is found in the viewport
   if (current === '') return;
 
   navLinks.forEach(function (link) {
@@ -69,21 +69,21 @@ function initModals() {
   const signInBtn   = document.getElementById('signInBtn');
   const closeSignIn = document.getElementById('closeSignIn');
 
-  // Open sign-in modal
+// Open sign-in modal
   if (signInBtn) {
     signInBtn.addEventListener('click', function () {
       signInModal.classList.remove('crx-hidden');
     });
   }
 
-  // Close modal via X button
+// Close modal via X button
   if (closeSignIn) {
     closeSignIn.addEventListener('click', function () {
       signInModal.classList.add('crx-hidden');
     });
   }
 
-  // Click overlay to close
+// Click overlay to close
   if (signInModal) {
     signInModal.addEventListener('click', function (e) {
       if (e.target === signInModal) {
@@ -92,7 +92,7 @@ function initModals() {
     });
   }
 
-  // Escape key closes modal
+// Escape key closes modal
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
       signInModal.classList.add('crx-hidden');
@@ -146,7 +146,7 @@ function initContactForm() {
     e.preventDefault();
     let valid = true;
 
-    // Name
+// Name
     const name = document.getElementById('contactName');
     const nameErr = document.getElementById('contactNameError');
     if (!name.value.trim() || name.value.trim().length < 2) {
@@ -158,7 +158,7 @@ function initContactForm() {
       name.classList.remove('crx-error');
     }
 
-    // Email
+// Email
     const email = document.getElementById('contactEmail');
     const emailErr = document.getElementById('contactEmailError');
     if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim())) {
@@ -170,7 +170,7 @@ function initContactForm() {
       email.classList.remove('crx-error');
     }
 
-    // Subject
+// Subject
     const subject = document.getElementById('contactSubject');
     const subjectErr = document.getElementById('contactSubjectError');
     if (!subject.value.trim()) {
@@ -182,7 +182,7 @@ function initContactForm() {
       subject.classList.remove('crx-error');
     }
 
-    // Message
+// Message
     const message = document.getElementById('contactMessage');
     const messageErr = document.getElementById('contactMessageError');
     if (!message.value.trim() || message.value.trim().length < 10) {
@@ -211,20 +211,20 @@ function initFeedbackCarousel() {
   if (!nextBtn || !scrollContainer) return;
 
   let currentIndex = 0;
-  // Based on the CSS, cards are either 3 (desktop), 2 (tablet), or 1 (mobile) per view
-  // To keep it simple, we'll advance by 1 card width + margin each click.
+// Based on the CSS, cards are either 3 (desktop), 2 (tablet), or 1 (mobile) per view
+// To keep it simple, we'll advance by 1 card width + margin each click.
   
   nextBtn.addEventListener('click', () => {
     const cards = scrollContainer.querySelectorAll('.crx-feedback-card');
     if (cards.length === 0) return;
     
-    // Total cards is 10. Show 3 at a time max.
+// Total cards is 10. Show 3 at a time max.
     const maxIndex = cards.length - 1;
     currentIndex++;
     
-    // If we reach the end, loop back around
+// If we reach the end, loop back around
     if (currentIndex > maxIndex - 2) { 
-        // A smarter way is just reading the card width
+// A smarter way is just reading the card width
         currentIndex = 0; 
     }
 
@@ -275,7 +275,7 @@ function initHeroCarousel() {
     startInterval();
   }
 
-  // start autoplay
+// start autoplay
   startInterval();
 }
 
@@ -287,47 +287,47 @@ function initLanguageSelector() {
 
   if (!toggle || !dropdown) return;
 
-  // Toggle dropdown visibility
+// Toggle dropdown visibility
   toggle.addEventListener('click', function (e) {
     e.preventDefault();
     dropdown.classList.toggle('crx-show');
     toggle.classList.toggle('crx-active');
   });
 
-  // Handle language selection
+// Handle language selection
   options.forEach(function (option) {
     option.addEventListener('click', function (e) {
       e.preventDefault();
       const lang = this.getAttribute('data-lang');
       
-      // Only allow English to be fully functional
+// Only allow English to be fully functional
       if (lang === 'en') {
-        // Update active state in dropdown
+// Update active state in dropdown
         options.forEach(function (opt) {
           opt.classList.remove('crx-language-active');
         });
         this.classList.add('crx-language-active');
 
-        // Update toggle button text
+// Update toggle button text
         const langText = toggle.querySelector('.crx-language-text');
         langText.textContent = 'English';
 
-        // Close dropdown
+// Close dropdown
         dropdown.classList.remove('crx-show');
         toggle.classList.remove('crx-active');
       } else if (lang === 'si') {
-        // Show alert for Sinhala (viewing only)
+// Show alert for Sinhala (viewing only)
         alert('Sinhala translation coming soon!');
         return;
       } else if (lang === 'ta') {
-        // Show alert for Tamil (viewing only)
+// Show alert for Tamil (viewing only)
         alert('Tamil translation coming soon!');
         return;
       }
     });
   });
 
-  // Close dropdown when clicking outside
+// Close dropdown when clicking outside
   document.addEventListener('click', function (e) {
     if (!e.target.closest('.crx-language-selector')) {
       dropdown.classList.remove('crx-show');
@@ -338,7 +338,7 @@ function initLanguageSelector() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  // UI interactions
+// UI interactions
   initNavbar();
   initHamburger();
   initHeroCarousel();
@@ -348,12 +348,12 @@ document.addEventListener('DOMContentLoaded', function () {
   initFilters();
   initFeedbackCarousel();
 
-  // Form validation
+// Form validation
   initFormValidation();
   initSignInValidation();
   initContactForm();
 
-  // Load and display XML course data
-  // loadCourses() triggers: renderCourses() and populateCourseDropdown()
+// Load and display XML course data
+// loadCourses() triggers: renderCourses() and populateCourseDropdown()
   loadCourses();
 });

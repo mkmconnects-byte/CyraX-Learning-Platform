@@ -32,7 +32,7 @@
   transition: transform var(--transition);
 }
 
-/* ---- How to Get Started Section ---- */
+/* How to Get Started Section*/
 .crx-info-section {
   padding: 4rem 0;
   background: var(--white);
@@ -468,7 +468,7 @@
 }
 
 @media (max-width: 768px) {
-  /* Nav */
+/* Nav */
   .crx-nav-links {
     display: none;
     position: absolute;
@@ -500,7 +500,7 @@
     display: flex;
   }
 
-  /* Hero */
+/* Hero */
   .crx-hero {
     flex-direction: column;
     text-align: center;
@@ -536,17 +536,17 @@
     transform: none;
   }
 
-  /* Features */
+/* Features */
   .crx-features-grid {
     grid-template-columns: 1fr;
   }
 
-  /* Contact */
+/* Contact */
   .crx-contact-card {
     max-width: 100%;
   }
 
-  /* Form */
+/* Form */
   .crx-form-row {
     grid-template-columns: 1fr;
   }
@@ -559,7 +559,7 @@
     grid-template-columns: 1fr;
   }
 
-  /* Footer */
+/* Footer */
   .crx-footer-grid {
     grid-template-columns: 1fr;
     gap: 1.75rem;

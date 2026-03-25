@@ -1,4 +1,4 @@
-﻿function initFilters() {
+function initFilters() {
   const filterBar = document.getElementById('filterBar');
   if (!filterBar) return;
 
@@ -6,7 +6,7 @@
     const btn = e.target.closest('.crx-filter-btn');
     if (!btn) return;
 
-    // Update active state
+// Update active state
     document.querySelectorAll('.crx-filter-btn').forEach(function (b) {
       b.classList.remove('crx-active');
     });
@@ -14,12 +14,12 @@
 
     activeFilter = btn.getAttribute('data-level');
 
-    // Filter the courses array
+// Filter the courses array
     const filtered = activeFilter === 'All'
       ? allCourses
       : allCourses.filter(function (c) { return c.level === activeFilter; });
 
-    // Hide lesson panel if open
+// Hide lesson panel if open
     hideLessons();
 
     renderCourses(filtered);
@@ -30,7 +30,7 @@
 
 
 function showLessons(courseId) {
-  // Find the course object
+// Find the course object
   const course = allCourses.find(function (c) { return c.id === courseId; });
   if (!course) return;
 
@@ -38,7 +38,7 @@ function showLessons(courseId) {
   const lessonHeader  = document.getElementById('lessonHeader');
   const lessonList    = document.getElementById('lessonList');
 
-  // Build lesson header HTML
+// Build lesson header HTML
   lessonHeader.innerHTML = `
     <h2>${escapeHtml(course.title)}</h2>
     <div class="crx-lesson-meta">
@@ -49,7 +49,7 @@ function showLessons(courseId) {
     </div>
   `;
 
-  // Build lessons list
+// Build lessons list
   lessonList.innerHTML = '';
   course.lessons.forEach(function (lesson, index) {
     const item = document.createElement('div');
@@ -62,7 +62,7 @@ function showLessons(courseId) {
     lessonList.appendChild(item);
   });
 
-  // Show the lesson section and scroll to it
+// Show the lesson section and scroll to it
   lessonSection.classList.remove('crx-hidden');
   lessonSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
@@ -80,7 +80,7 @@ function populateCourseDropdown(courses) {
   console.log('populateCourseDropdown called with', courses.length, 'courses. Select element:', !!select);
   if (!select) return;
 
-  // Clear existing options except the placeholder
+// Clear existing options except the placeholder
   while (select.options.length > 1) {
     select.remove(1);
   }
@@ -104,14 +104,14 @@ function initFormValidation() {
   if (!form) return;
 
   form.addEventListener('submit', function (e) {
-    // Prevent default HTML form submission
+// Prevent default HTML form submission
     e.preventDefault();
 
-    // Run all validation checks
+// Run all validation checks
     const isValid = validateRegistrationForm();
 
     if (isValid) {
-      // Hide form, show success message
+// Hide form, show success message
       form.style.display = 'none';
       const successMsg = document.getElementById('formSuccess');
       successMsg.classList.remove('crx-hidden');
@@ -119,7 +119,7 @@ function initFormValidation() {
     }
   });
 
-  // Also validate-on-blur for a better UX feel
+// Also validate-on-blur for a better UX feel
   ['fullName', 'email', 'password', 'confirmPassword', 'courseSelect'].forEach(function (id) {
     const el = document.getElementById(id);
     if (el) {
@@ -127,7 +127,7 @@ function initFormValidation() {
         validateField(id);
         updateRegistrationRulesUI();
       });
-      // Clear error on input
+// Clear error on input
       el.addEventListener('input', function () {
         clearFieldError(id);
         updateRegistrationRulesUI();
@@ -135,7 +135,7 @@ function initFormValidation() {
     }
   });
 
-  // Keep rules panel in sync with radios/checkboxes.
+// Keep rules panel in sync with radios/checkboxes.
   document.querySelectorAll('input[name="learningLevel"]').forEach(function (radio) {
     radio.addEventListener('change', updateRegistrationRulesUI);
   });
@@ -149,19 +149,19 @@ function initFormValidation() {
 function validateRegistrationForm() {
   let valid = true;
 
-  // 1. Full Name â€” required, letters and spaces only, min 2 chars
+// 1. Full Name — required, letters and spaces only, min 2 chars
   if (!validateField('fullName'))       valid = false;
-  // 2. Email â€” required, valid format
+// 2. Email — required, valid format
   if (!validateField('email'))          valid = false;
-  // 3. Password â€” required, min 8 chars
+// 3. Password — required, min 8 chars
   if (!validateField('password'))       valid = false;
-  // 4. Confirm Password â€” must match
+// 4. Confirm Password — must match
   if (!validateField('confirmPassword')) valid = false;
-  // 5. Course selection
+// 5. Course selection
   if (!validateField('courseSelect'))   valid = false;
-  // 6. Learning Level (radio)
+// 6. Learning Level (radio)
   if (!validateLearningLevel())        valid = false;
-  // 7. Terms checkbox
+// 7. Terms checkbox
   if (!validateTerms())                valid = false;
 
   return valid;
@@ -381,7 +381,7 @@ function initSignInValidation() {
     const emailErr = document.getElementById('siEmailError');
     const pwErr    = document.getElementById('siPasswordError');
 
-    // Email
+// Email
     if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim())) {
       emailErr.textContent = 'Please enter a valid email.';
       email.classList.add('crx-error');
@@ -391,7 +391,7 @@ function initSignInValidation() {
       email.classList.remove('crx-error');
     }
 
-    // Password
+// Password
     if (!password.value) {
       pwErr.textContent = 'Password is required.';
       password.classList.add('crx-error');
@@ -402,7 +402,7 @@ function initSignInValidation() {
     }
 
     if (valid) {
-      // Simulate a sign-in (no real backend)
+// Simulate a sign-in (no real backend)
       alert('Sign-in feature requires a backend server. This is a demo.');
     }
   });

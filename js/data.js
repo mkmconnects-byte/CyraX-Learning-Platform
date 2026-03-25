@@ -1,4 +1,4 @@
-﻿
+
 let allCourses = []; 
 let activeFilter = 'All'; 
 
@@ -64,7 +64,7 @@ function loadCourses() {
   const hasCourseDropdown = !!document.getElementById('courseSelect');
   console.log('[loadCourses] hasCourseDropdown:', hasCourseDropdown);
 
-  // Ensure register page dropdown is usable immediately, even before network/XML completes.
+// Ensure register page dropdown is usable immediately, even before network/XML completes.
   if (hasCourseDropdown) {
     const fallbackNow = getFallbackCourses();
     console.log('[loadCourses] Populating with', fallbackNow.length, 'fallback courses');
@@ -83,11 +83,11 @@ function loadCourses() {
 
   xhr.onload = function () {
     if (xhr.status === 200 || xhr.status === 0) {
-      // Parse the XML response
+// Parse the XML response
       let xmlDoc = xhr.responseXML;
 
-      // Some servers/local environments do not populate responseXML reliably.
-      // Fallback to parsing responseText manually so dropdown/course loading still works.
+// Some servers/local environments do not populate responseXML reliably.
+// Fallback to parsing responseText manually so dropdown/course loading still works.
       if (!xmlDoc && xhr.responseText) {
         try {
           xmlDoc = new DOMParser().parseFromString(xhr.responseText, 'application/xml');
@@ -105,10 +105,10 @@ function loadCourses() {
         return;
       }
 
-      // Extract all <course> nodes
+// Extract all <course> nodes
       const courseNodes = xmlDoc.querySelectorAll('course');
 
-      // Map each XML node into a JavaScript object
+// Map each XML node into a JavaScript object
       allCourses = Array.from(courseNodes).map(function (node) {
         const lessons = Array.from(node.querySelectorAll('lesson')).map(function (l) {
           return l.textContent.trim();
@@ -166,7 +166,7 @@ function renderCourses(courses) {
   const grid = document.getElementById('coursesGrid');
   const noResults = document.getElementById('noResults');
 
-  // Some pages (e.g., register page) do not have a courses grid.
+// Some pages (e.g., register page) do not have a courses grid.
   if (!grid) return;
 
   grid.innerHTML = '';
@@ -184,13 +184,13 @@ function renderCourses(courses) {
     card.setAttribute('data-id', course.id);
     card.setAttribute('data-level', course.level);
 
-    // Determine badge CSS class based on level
+// Determine badge CSS class based on level
     const badgeClass = getBadgeClass(course.level);
 
-    // Generate instructor initials for avatar
+// Generate instructor initials for avatar
     const initials = getInitials(course.instructor);
 
-    // Build the card's inner HTML
+// Build the card's inner HTML
     card.innerHTML = `
       <div class="crx-course-card-image">
         <img src="${escapeHtml(course.image)}"
@@ -218,7 +218,7 @@ function renderCourses(courses) {
       </div>
     `;
 
-    // Attach click listeners to card and button
+// Attach click listeners to card and button
     card.addEventListener('click', function () {
       showLessons(course.id);
     });
