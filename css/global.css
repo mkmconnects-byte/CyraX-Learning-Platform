@@ -195,13 +195,17 @@ img {
 .crx-logo-icon {
   width: 32px;
   height: 32px;
-  background: var(--primary);
+  background: url('../assets/logo.png') center/cover no-repeat;
   border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--white);
   font-size: 0.9rem;
+}
+
+.crx-logo-icon i {
+  display: none;
 }
 
 .crx-logo-accent {
