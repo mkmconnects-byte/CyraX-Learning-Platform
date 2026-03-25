@@ -916,3 +916,118 @@
   animation-play-state: paused;
   transform: scale(1.1);
 }
+
+/* ---- Language Selector ---- */
+.crx-language-selector {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.crx-language-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--dark);
+  transition: all var(--transition);
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.crx-language-toggle:hover {
+  border-color: var(--primary);
+  background: rgba(165, 28, 48, 0.05);
+}
+
+.crx-language-toggle.crx-active {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.crx-language-toggle i:first-child {
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+.crx-language-toggle i:last-child {
+  font-size: 0.75rem;
+  color: var(--mid);
+  transition: transform var(--transition);
+}
+
+.crx-language-toggle.crx-active i:last-child {
+  transform: rotate(180deg);
+}
+
+.crx-language-text {
+  display: inline-block;
+}
+
+.crx-language-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  min-width: 180px;
+  margin-top: 0.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.crx-language-dropdown.crx-show {
+  display: flex;
+}
+
+.crx-language-option {
+  padding: 0.8rem 1rem;
+  color: var(--dark);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.crx-language-option:last-child {
+  border-bottom: none;
+}
+
+.crx-language-option:hover {
+  background: var(--bg);
+  color: var(--primary);
+  padding-left: 1.5rem;
+}
+
+.crx-language-option.crx-language-active {
+  background: rgba(165, 28, 48, 0.1);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.crx-language-option.crx-language-active::before {
+  content: '\f05d';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  margin-right: 0.5rem;
+  font-size: 0.75rem;
+}
+
+/* Hide language selector on mobile */
+@media (max-width: 768px) {
+  .crx-language-selector {
+    display: none;
+  }
+}

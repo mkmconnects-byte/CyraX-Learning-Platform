@@ -279,6 +279,63 @@ function initHeroCarousel() {
   startInterval();
 }
 
+/** Language Selector */
+function initLanguageSelector() {
+  const toggle = document.getElementById('languageToggle');
+  const dropdown = document.getElementById('languageDropdown');
+  const options = document.querySelectorAll('.crx-language-option');
+
+  if (!toggle || !dropdown) return;
+
+  // Toggle dropdown visibility
+  toggle.addEventListener('click', function (e) {
+    e.preventDefault();
+    dropdown.classList.toggle('crx-show');
+    toggle.classList.toggle('crx-active');
+  });
+
+  // Handle language selection
+  options.forEach(function (option) {
+    option.addEventListener('click', function (e) {
+      e.preventDefault();
+      const lang = this.getAttribute('data-lang');
+      
+      // Only allow English to be fully functional
+      if (lang === 'en') {
+        // Update active state in dropdown
+        options.forEach(function (opt) {
+          opt.classList.remove('crx-language-active');
+        });
+        this.classList.add('crx-language-active');
+
+        // Update toggle button text
+        const langText = toggle.querySelector('.crx-language-text');
+        langText.textContent = 'English';
+
+        // Close dropdown
+        dropdown.classList.remove('crx-show');
+        toggle.classList.remove('crx-active');
+      } else if (lang === 'si') {
+        // Show alert for Sinhala (viewing only)
+        alert('Sinhala translation coming soon!');
+        return;
+      } else if (lang === 'ta') {
+        // Show alert for Tamil (viewing only)
+        alert('Tamil translation coming soon!');
+        return;
+      }
+    });
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.crx-language-selector')) {
+      dropdown.classList.remove('crx-show');
+      toggle.classList.remove('crx-active');
+    }
+  });
+}
+
 
 document.addEventListener('DOMContentLoaded', function () {
   // UI interactions
@@ -287,6 +344,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initHeroCarousel();
   initModals();
   initPasswordToggles();
+  initLanguageSelector();
   initFilters();
   initFeedbackCarousel();
 
