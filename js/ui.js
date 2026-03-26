@@ -387,7 +387,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // Initialize carousels
   initHeroCarousel();
   initFeedbackCarousel();
-  initTrendingCarousel();
 
   loadCourses();
 });
