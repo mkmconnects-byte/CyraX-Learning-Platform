@@ -134,6 +134,7 @@ function loadCourses() {
       hideSpinner();
       renderCourses(allCourses);          
       populateCourseDropdown(allCourses);
+      autoLoadCourseFromUrl();
     } else {
       useFallbackCourses('XHR status ' + xhr.status);
     }
@@ -253,6 +254,30 @@ function escapeHtml(str) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');
+}
+
+/** Auto-load a course from URL parameter if ?course=<courseId> is present */
+function autoLoadCourseFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const courseId = params.get('course');
+  
+  if (courseId && allCourses.length > 0) {
+    // Find the course with the matching ID
+    const course = allCourses.find(function(c) { return c.id === courseId; });
+    
+    if (course) {
+      // Auto-show the lessons for this course
+      showLessons(courseId);
+      
+      // Scroll to lessons section
+      setTimeout(function() {
+        const lessonsSection = document.getElementById('lessonsViewer');
+        if (lessonsSection) {
+          lessonsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }
 }
 
 

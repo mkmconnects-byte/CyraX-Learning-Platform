@@ -19,7 +19,7 @@ function initNavbar() {
     link.addEventListener('click', function () {
       navLinks.forEach(function (l) { l.classList.remove('crx-active'); });
       link.classList.add('crx-active');
-// Close mobile menu if open
+
       document.getElementById('navLinks').classList.remove('crx-open');
     });
   });
@@ -211,8 +211,7 @@ function initFeedbackCarousel() {
   if (!nextBtn || !scrollContainer) return;
 
   let currentIndex = 0;
-// Based on the CSS, cards are either 3 (desktop), 2 (tablet), or 1 (mobile) per view
-// To keep it simple, we'll advance by 1 card width + margin each click.
+
   
   nextBtn.addEventListener('click', () => {
     const cards = scrollContainer.querySelectorAll('.crx-feedback-card');
@@ -277,6 +276,38 @@ function initHeroCarousel() {
 
 // start autoplay
   startInterval();
+}
+
+/** Trending Courses Carousel */
+function initTrendingCarousel() {
+  const carousel = document.getElementById('trendingCarousel');
+  const prevBtn = document.getElementById('trendingPrev');
+  const nextBtn = document.getElementById('trendingNext');
+
+  if (!carousel || !prevBtn || !nextBtn) return;
+
+  let scrollPosition = 0;
+  const cardWidth = 280; // approximate width
+  const gap = 24; // gap between cards
+  const step = cardWidth + gap;
+
+  function handleScroll(direction) {
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+    
+    if (direction === 'next') {
+      scrollPosition = Math.min(scrollPosition + step, maxScroll);
+    } else {
+      scrollPosition = Math.max(scrollPosition - step, 0);
+    }
+
+    carousel.scrollTo({
+      left: scrollPosition,
+      behavior: 'smooth'
+    });
+  }
+
+  prevBtn.addEventListener('click', () => handleScroll('prev'));
+  nextBtn.addEventListener('click', () => handleScroll('next'));
 }
 
 /** Language Selector */
@@ -353,7 +384,10 @@ document.addEventListener('DOMContentLoaded', function () {
   initSignInValidation();
   initContactForm();
 
-// Load and display XML course data
-// loadCourses() triggers: renderCourses() and populateCourseDropdown()
+  // Initialize carousels
+  initHeroCarousel();
+  initFeedbackCarousel();
+  initTrendingCarousel();
+
   loadCourses();
 });
