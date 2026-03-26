@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -116,7 +117,7 @@
       </div>
       <div class="crx-about-image">
         <img
-          src="assets/hero-students-graduating.jpg"
+          src="assets\1111.jpg"
           alt="Students working together"
         />
       </div>
@@ -159,6 +160,18 @@
           <h3>Responsive Learner Support</h3>
           <p>When you need assistance, our support channels help you resolve issues quickly and continue learning with confidence.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Course Enrollment Progress Section -->
+  <section class="crx-enrollment-section">
+    <div class="crx-container">
+      <h2 class="crx-section-title">Student Enrollment Progress</h2>
+      
+      
+      <div class="crx-chart-wrapper">
+        <canvas id="enrollmentChart"></canvas>
       </div>
     </div>
   </section>
@@ -292,7 +305,7 @@
         </div>
       </div>
       <div class="crx-footer-bottom">
-        <p>&copy; 2026 CyraX. All rights reserved. Built for Web Technology Coursework.</p>
+        <p>&copy; 2026 mkm.connects. All rights reserved. Built for Web Technology Coursework.</p>
       </div>
     </div>
   </footer>
@@ -337,6 +350,122 @@
   <script src="js/data.js"></script>
   <script src="js/validation.js"></script>
   <script src="js/ui.js"></script>
+  
+  <script>
+    // Initialize enrollment chart
+    function initEnrollmentChart() {
+      const ctx = document.getElementById('enrollmentChart');
+      if (!ctx) return;
+
+      // Sample enrollment data - in a real app, this would come from backend
+      const enrollmentData = [
+        { course: 'Programming', students: 45 },
+        { course: 'Web Dev', students: 62 },
+        { course: 'JavaScript', students: 58 },
+        { course: 'Java', students: 38 },
+        { course: 'Data Structures', students: 51 },
+        { course: 'Database', students: 44 },
+        { course: 'Software Eng', students: 39 },
+        { course: 'UI/UX Design', students: 55 },
+        { course: 'Cybersecurity', students: 33 },
+        { course: 'AI & ML', students: 48 }
+      ];
+
+      const labels = enrollmentData.map(d => d.course);
+      const data = enrollmentData.map(d => d.students);
+
+      // Calculate trend line (moving average for visual effect)
+      const trendData = data.map((val, idx, arr) => {
+        if (idx === 0) return val;
+        if (idx === 1) return (arr[0] + arr[1]) / 2;
+        return (arr[idx-1] + arr[idx] + arr[idx+1]) / 3;
+      });
+
+      const chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: 'Student Enrollment',
+              data: data,
+              borderColor: '#845EC2',
+              backgroundColor: 'rgba(132, 94, 194, 0.1)',
+              borderWidth: 3,
+              tension: 0.4,
+              fill: true,
+              pointRadius: 6,
+              pointBackgroundColor: '#845EC2',
+              pointBorderColor: '#fff',
+              pointBorderWidth: 2,
+              pointHoverRadius: 8,
+            },
+            {
+              label: 'Trend',
+              data: trendData,
+              borderColor: '#FF6B6B',
+              borderWidth: 2,
+              borderDash: [5, 5],
+              fill: false,
+              pointRadius: 0,
+              tension: 0.4,
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: true,
+              position: 'top',
+              labels: {
+                font: {
+                  size: 14,
+                  weight: '600'
+                },
+                padding: 20,
+                usePointStyle: true,
+                pointStyle: 'circle'
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 70,
+              ticks: {
+                stepSize: 10,
+                font: {
+                  size: 12
+                }
+              },
+              grid: {
+                color: 'rgba(0, 0, 0, 0.05)',
+                drawBorder: false
+              }
+            },
+            x: {
+              ticks: {
+                font: {
+                  size: 12
+                }
+              },
+              grid: {
+                display: false,
+                drawBorder: false
+              }
+            }
+          }
+        }
+      });
+    }
+
+    // Initialize chart when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      initEnrollmentChart();
+    });
+  </script>
 </body>
 </html>
 

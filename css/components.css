@@ -32,6 +32,97 @@
   transition: transform var(--transition);
 }
 
+/* ---- Contact Hero Image Section ---- */
+.crx-contact-hero-image-section {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.crx-contact-hero-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .crx-contact-hero-image-wrapper {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .crx-contact-hero-image-wrapper {
+    height: 220px;
+  }
+}
+
+.crx-contact-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.crx-contact-hero-image-wrapper:hover .crx-contact-hero-image {
+  transform: scale(1.05);
+}
+
+.crx-contact-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.1) 100%);
+  pointer-events: none;
+}
+
+/* ---- Enrollment Progress Section ---- */
+.crx-enrollment-section {
+  padding: 5rem 0;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.crx-section-subtitle {
+  text-align: center;
+  color: var(--mid);
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  font-weight: 400;
+}
+
+.crx-chart-wrapper {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  height: 400px;
+}
+
+@media (max-width: 768px) {
+  .crx-chart-wrapper {
+    height: 300px;
+    padding: 1.5rem;
+  }
+}
+
+.crx-chart-wrapper canvas {
+  max-height: 100%;
+}
+
 /* How to Get Started Section*/
 .crx-info-section {
   padding: 4rem 0;
