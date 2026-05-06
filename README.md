@@ -16,6 +16,8 @@ It was developed to demonstrate practical implementation of UI/UX design, client
 ### Home Interface
 
 ![Home](assets/screenshots/home.png)
+![home1](assets/screenshots/home1.png)
+![home2](assets/screenshots/home2.png)
 
 ### Course Catalogue
 
