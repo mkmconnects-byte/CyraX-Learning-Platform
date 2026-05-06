@@ -32,6 +32,7 @@ It was developed to demonstrate practical implementation of UI/UX design, client
 ### Platform Overview
 
 ![About](assets/screenshots/about.png)
+![About1](assets/screenshots/about1.png)
 
 ---
 
